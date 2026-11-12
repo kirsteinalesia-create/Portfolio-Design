@@ -1,0 +1,583 @@
+/* =========================================================
+   Lutra — Mobile Microlearning App (Work at DHBW)
+   Structure analogous to the Flamigo / Antara project pages.
+   Middle-ground Farbwelt: warm portfolio base (cream / paper)
+   blended with Lutra's real brand — navy, periwinkle & amber
+   (straight from the otter mascot with its amber glasses).
+   "Your daily dose of knowledge — in just 3 minutes."
+   ========================================================= */
+
+:root {
+  --lu-navy:      #223a74;   /* Lutra signature navy */
+  --lu-navy-dk:   #192a56;   /* deep navy (headings) */
+  --lu-blue:      #3f5fc4;   /* brighter accent blue */
+  --lu-peri:      #b9c4ec;   /* periwinkle */
+  --lu-peri-lt:   #e7ebf9;   /* soft periwinkle wash */
+  --lu-peri-pale: #f1f3fb;   /* almost-white periwinkle */
+  --lu-amber:     #9b8ec4;   /* lavender accent */
+  --lu-amber-dk:  #6f5fa0;   /* deep lavender */
+  --lu-amber-soft:#e8e2f4;   /* soft lavender wash */
+  --lu-sand:      #c4b8db;   /* muted lilac (bridge to portfolio) */
+  --lu-ink:       #2c2740;   /* deep plum-navy ink (text) */
+  --lu-ink-soft:  #4a4560;   /* softer ink */
+  --lu-paper:     #ffffff;
+  --lu-cream:     #fbf5ec;   /* warm cream section bg */
+}
+
+/* ————— Body theme (Lutra only) ————— */
+body.lutra {
+  background: var(--lu-paper);
+  color: var(--lu-ink);
+}
+body.lutra .eyebrow { color: var(--lu-navy); }
+body.lutra h1, body.lutra h2, body.lutra h3, body.lutra h4 { color: var(--lu-navy-dk); }
+body.lutra strong { color: var(--lu-navy); }
+
+body.lutra .site-header.is-scrolled { background: rgba(251, 245, 236, 0.9); }
+body.lutra .btn-outline { color: var(--lu-navy); border-color: var(--lu-navy); }
+body.lutra .btn-outline:hover { background: var(--lu-navy); color: #fff; }
+
+/* =========================================================
+   HERO — periwinkle sky fading into warm sand + otter
+   ========================================================= */
+.lutra-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 96px) 0 84px;
+  background:
+    radial-gradient(60% 55% at 86% 10%, rgba(232,161,60,0.16) 0%, transparent 55%),
+    radial-gradient(70% 70% at 6% 16%, var(--lu-peri-lt) 0%, transparent 56%),
+    linear-gradient(176deg, var(--lu-peri-lt) 0%, #eef0f9 34%, var(--lu-cream) 74%, #ecd9c6 100%);
+}
+.lutra-hero .container { position: relative; z-index: 3; }
+
+.lutra-hero .eyebrow { display: block; margin-bottom: 18px; }
+
+.lutra-hero h1 {
+  font-size: clamp(3.2rem, 9vw + 1rem, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--lu-navy-dk);
+}
+.lutra-hero .script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--lu-navy);
+  font-size: 1.15em;
+  letter-spacing: 0;
+}
+.lutra-lead {
+  max-width: 560px;
+  margin-top: 26px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--lu-ink);
+}
+.lutra-claim {
+  display: inline-block;
+  margin-top: 30px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2vw + 0.6rem, 2rem);
+  color: var(--lu-navy);
+  border-left: 3px solid var(--lu-amber);
+  padding-left: 18px;
+}
+.lutra-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 34px;
+  margin-top: 40px;
+  font-size: 0.92rem;
+  color: var(--lu-ink);
+}
+.lutra-meta span { opacity: 0.85; }
+.lutra-meta strong { color: var(--lu-navy); }
+
+/* floating otter mascot on the right */
+.lutra-bird {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(140px, 20vw, 300px);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.98;
+  filter: drop-shadow(0 30px 50px rgba(25,42,86,0.3));
+  animation: lu-bird-float 7s ease-in-out infinite;
+}
+@keyframes lu-bird-float {
+  0%, 100% { transform: translateY(-50%) rotate(0deg); }
+  50%      { transform: translateY(calc(-50% - 18px)) rotate(-2deg); }
+}
+
+/* floating learning bubbles */
+.lutra-bubbles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.lutra-bubbles span {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(140deg, var(--lu-peri), var(--lu-amber-soft));
+  opacity: 0.6;
+  animation: lu-float 9s ease-in-out infinite;
+}
+.lutra-bubbles span:nth-child(1) { width: 26px; height: 26px; left: 6%;  top: 30%; animation-delay: 0s;   opacity: 0.5; }
+.lutra-bubbles span:nth-child(2) { width: 14px; height: 14px; left: 12%; top: 54%; animation-delay: 1.2s; background: var(--lu-amber); opacity: 0.35; }
+.lutra-bubbles span:nth-child(3) { width: 40px; height: 40px; left: 4%;  top: 70%; animation-delay: 0.6s; opacity: 0.4; }
+.lutra-bubbles span:nth-child(4) { width: 18px; height: 18px; left: 22%; top: 80%; animation-delay: 2s;   opacity: 0.6; }
+.lutra-bubbles span:nth-child(5) { width: 30px; height: 30px; right: 34%; top: 20%; animation-delay: 1.6s; opacity: 0.45; }
+.lutra-bubbles span:nth-child(6) { width: 12px; height: 12px; right: 30%; top: 40%; animation-delay: 0.9s; background: var(--lu-amber); opacity: 0.4; }
+@keyframes lu-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-22px); }
+}
+
+/* =========================================================
+   Section basics
+   ========================================================= */
+.lutra-section { position: relative; padding: 90px 0; overflow: hidden; }
+.lutra-section .container { position: relative; z-index: 2; max-width: 1200px; }
+
+.lutra-section.cream { background: var(--lu-cream); }
+
+/* Core-idea band — periwinkle gradient (the colored section) */
+.lutra-section.sky {
+  background:
+    radial-gradient(80% 100% at 100% 0%, rgba(232,161,60,0.14) 0%, transparent 45%),
+    linear-gradient(180deg, var(--lu-peri-lt) 0%, var(--lu-peri) 100%);
+}
+.lutra-section.sky h2,
+.lutra-section.sky h3 { color: var(--lu-navy-dk); }
+.lutra-section.sky p,
+.lutra-section.sky li { color: #30305a; }
+
+.section-kicker {
+  font-size: 0.76rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lu-amber-dk);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+.lutra-section.sky .section-kicker { color: var(--lu-navy); }
+.lutra-section h2 { font-size: clamp(1.9rem, 3vw + 0.6rem, 2.9rem); margin-bottom: 22px; }
+.lutra-section p { font-size: 1.05rem; line-height: 1.8; }
+
+/* =========================================================
+   Briefing / Intro — two columns with info card
+   ========================================================= */
+.lutra-intro-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.lutra-goalcard {
+  position: relative;
+  background: var(--lu-paper);
+  border: 1px solid rgba(34,58,116,0.12);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 24px 50px -34px rgba(25,42,86,0.5);
+}
+.lutra-goalcard::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 32px; right: 32px;
+  height: 4px;
+  border-radius: 0 0 4px 4px;
+  background: linear-gradient(90deg, var(--lu-navy), var(--lu-amber));
+}
+.lutra-goalcard h3 { font-size: 1.15rem; margin: 6px 0 14px; }
+.lutra-goalcard ul { list-style: none; margin: 0; padding: 0; }
+.lutra-goalcard li {
+  position: relative;
+  padding: 9px 0 9px 26px;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(34,58,116,0.08);
+}
+.lutra-goalcard li:last-child { border-bottom: 0; }
+.lutra-goalcard li::before {
+  content: "";
+  position: absolute;
+  left: 4px; top: 16px;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--lu-amber);
+}
+
+/* =========================================================
+   Value chips
+   ========================================================= */
+.lutra-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+.lutra-values .chip {
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, var(--lu-navy), var(--lu-blue));
+  color: #fff;
+  box-shadow: 0 14px 30px -18px rgba(25,42,86,0.6);
+}
+.lutra-values .chip:nth-child(2) { background: linear-gradient(135deg, var(--lu-blue), var(--lu-amber)); }
+.lutra-values .chip:nth-child(3) { background: linear-gradient(135deg, var(--lu-amber), var(--lu-amber-dk)); }
+.lutra-values .chip:nth-child(4) { background: linear-gradient(135deg, var(--lu-navy), var(--lu-amber)); }
+
+/* =========================================================
+   Target audience / Persona
+   ========================================================= */
+.persona {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 44px;
+  align-items: center;
+}
+.persona-avatar {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: radial-gradient(circle at 35% 30%, var(--lu-blue), var(--lu-navy));
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 30px 60px -30px rgba(25,42,86,0.55), 0 0 0 10px var(--lu-peri-lt);
+}
+.persona-avatar svg { width: 130px; height: 130px; }
+.persona-list { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 40px; }
+.persona-list li {
+  break-inside: avoid;
+  position: relative;
+  padding: 10px 0 10px 28px;
+  line-height: 1.5;
+}
+.persona-list li::before {
+  content: "✓";
+  position: absolute; left: 0; top: 9px;
+  color: var(--lu-amber-dk);
+  font-weight: 700;
+}
+
+/* =========================================================
+   Core idea — big central statement (periwinkle design)
+   ========================================================= */
+.leitidee { text-align: center; padding: 110px 0; }
+.leitidee .big-idea {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3vw + 0.6rem, 2.9rem);
+  line-height: 1.05;
+  margin: 10px 0 34px;
+  color: var(--lu-navy-dk);
+}
+.lutra-section.sky.leitidee .big-idea .accent {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.15em;
+  color: var(--lu-amber-dk);
+}
+.lutra-section.sky.leitidee > .container > p:not(.big-idea) {
+  color: #30305a; max-width: 640px; margin: 0 auto;
+}
+.leitidee-points {
+  list-style: none; padding: 0; margin: 36px auto 0; max-width: 720px;
+  display: grid; gap: 12px; text-align: left;
+}
+.leitidee-points li {
+  position: relative;
+  padding: 14px 14px 14px 42px;
+  background: var(--lu-paper);
+  border-radius: 14px;
+  color: var(--lu-ink);
+  font-size: 0.98rem;
+  box-shadow: 0 16px 34px -26px rgba(25,42,86,0.5);
+}
+.leitidee-points li::before {
+  content: "";
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  width: 10px; height: 10px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--lu-navy), var(--lu-amber));
+}
+
+/* =========================================================
+   Product / Features — 3 cards
+   ========================================================= */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 20px;
+}
+.media-card {
+  background: var(--lu-paper);
+  border-radius: 22px;
+  padding: 34px 30px;
+  border: 1px solid rgba(34,58,116,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 24px 50px -40px rgba(25,42,86,0.5);
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.media-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--lu-peri-lt); color: var(--lu-navy);
+  font-family: var(--font-serif); font-weight: 700; font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+.media-card:nth-child(2) .media-num { background: var(--lu-amber-soft); color: var(--lu-amber-dk); }
+.media-card:nth-child(3) .media-num { background: var(--lu-navy); color: #fff; }
+.media-card h3 { font-size: 1.25rem; margin-bottom: 6px; }
+.media-card .media-role {
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--lu-amber-dk); font-weight: 600; margin-bottom: 14px; display: block;
+}
+.media-card:nth-child(2) .media-role { color: var(--lu-navy); }
+.media-card ul { list-style: none; margin: 0 0 14px; padding: 0; }
+.media-card li { position: relative; padding: 6px 0 6px 20px; font-size: 0.92rem; line-height: 1.5; }
+.media-card li::before {
+  content: ""; position: absolute; left: 2px; top: 13px;
+  width: 7px; height: 7px; border-radius: 50%; background: var(--lu-amber);
+}
+.media-card:nth-child(2) li::before { background: var(--lu-navy); }
+.media-card .media-tag {
+  font-size: 0.82rem; color: var(--lu-ink-soft); font-style: italic;
+  border-top: 1px solid rgba(44,39,64,0.12); padding-top: 12px; display: block;
+  margin-top: auto;
+}
+
+.media-conclusion {
+  margin-top: 40px;
+  background: var(--lu-paper);
+  border-left: 4px solid var(--lu-amber);
+  border-radius: 0 18px 18px 0;
+  padding: 26px 30px;
+  font-size: 1rem;
+  line-height: 1.75;
+  box-shadow: 0 20px 44px -34px rgba(25,42,86,0.45);
+}
+
+/* =========================================================
+   Learning topics list
+   ========================================================= */
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin: 34px auto 0;
+  max-width: 820px;
+}
+.games-list .game {
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--lu-peri-lt);
+  border: 1.5px solid rgba(34,58,116,0.2);
+  color: var(--lu-navy-dk);
+  font-size: 0.98rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   Brand / Logo showcase
+   ========================================================= */
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 44px;
+  align-items: center;
+  margin-top: 20px;
+}
+.logo-stage {
+  border-radius: 26px;
+  padding: 48px;
+  background:
+    radial-gradient(70% 70% at 30% 25%, var(--lu-peri-lt) 0%, transparent 60%),
+    linear-gradient(150deg, #fff 0%, var(--lu-cream) 100%);
+  box-shadow: 0 30px 60px -34px rgba(25,42,86,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-stage img { width: 62%; max-width: 260px; filter: drop-shadow(0 20px 34px rgba(25,42,86,0.25)); }
+.logo-notes h3 { font-size: 1.3rem; margin-bottom: 14px; }
+.logo-notes p { font-size: 1rem; line-height: 1.75; }
+
+/* palette swatches */
+.palette { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.swatch {
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  font-size: 0.72rem; letter-spacing: 0.04em; color: var(--lu-ink-soft);
+}
+.swatch::before {
+  content: "";
+  width: 54px; height: 54px; border-radius: 16px;
+  box-shadow: 0 12px 26px -14px rgba(25,42,86,0.5);
+}
+.swatch.navy::before  { background: var(--lu-navy); }
+.swatch.peri::before  { background: var(--lu-peri); }
+.swatch.amber::before { background: var(--lu-amber); }
+.swatch.sand::before  { background: var(--lu-sand); }
+.swatch.cream::before { background: var(--lu-cream); border: 1px solid rgba(44,39,64,0.12); }
+
+/* =========================================================
+   Mockups
+   ========================================================= */
+.mockup-intro { max-width: 680px; }
+
+/* framed landscape mockups (key visual + poster) */
+.mockup-shot {
+  margin: 48px auto 0;
+  max-width: 820px;
+}
+.mockup-shot img {
+  width: 100%;
+  display: block;
+  border-radius: 16px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 34px 70px -34px rgba(25, 42, 86, 0.45);
+}
+.mockup-shot figcaption {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--lu-ink-soft);
+  font-style: italic;
+}
+
+/* single home screen shown in a realistic phone frame, paired with a note */
+.mockup-split {
+  margin: 56px auto 0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 54px;
+  align-items: center;
+  max-width: 940px;
+}
+.mockup-phone {
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 42px;
+  background: linear-gradient(155deg, #2b2b33 0%, #15151b 100%);
+  box-shadow:
+    0 40px 70px -30px rgba(25, 42, 86, 0.5),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+.mockup-phone-notch {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 20px;
+  border-radius: 999px;
+  background: #15151b;
+  z-index: 2;
+}
+.mockup-phone img {
+  width: 100%;
+  display: block;
+  border-radius: 32px;
+}
+.mockup-split-text h3 { font-size: 1.4rem; margin-bottom: 14px; }
+.mockup-split-text p { font-size: 1.02rem; line-height: 1.8; }
+.mockup-split-text p + p { margin-top: 14px; }
+
+/* =========================================================
+   My role
+   ========================================================= */
+.lutra-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+.role-badges { display: grid; gap: 20px; }
+.role-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--lu-paper);
+  border-radius: 20px;
+  padding: 24px 28px;
+  border: 1px solid rgba(34,58,116,0.12);
+  box-shadow: 0 24px 50px -36px rgba(25,42,86,0.45);
+}
+.role-badge .role-ico {
+  flex: 0 0 auto;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--lu-navy), var(--lu-blue));
+  color: #fff;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.role-badge:nth-child(2) .role-ico { background: linear-gradient(135deg, var(--lu-blue), var(--lu-amber)); }
+.role-badge:nth-child(3) .role-ico { background: linear-gradient(135deg, var(--lu-amber), var(--lu-amber-dk)); }
+.role-badge h3 { font-size: 1.15rem; margin: 0 0 4px; }
+.role-badge p { font-size: 0.92rem; line-height: 1.55; margin: 0; color: var(--lu-ink-soft); }
+
+.role-lead p { font-size: 1.05rem; line-height: 1.8; }
+.role-lead .role-highlight {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--lu-amber);
+  background: var(--lu-peri-lt);
+  border-radius: 0 16px 16px 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   Conclusion
+   ========================================================= */
+.lutra-fazit {
+  text-align: center;
+  background: linear-gradient(180deg, var(--lu-peri-lt) 0%, var(--lu-paper) 100%);
+  padding: 100px 0;
+}
+.lutra-fazit .container { max-width: 760px; }
+.lutra-fazit p { font-size: 1.12rem; line-height: 1.85; }
+.lutra-fazit .fazit-claim {
+  font-family: var(--font-serif); font-style: italic; font-weight: 700;
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.4rem);
+  color: var(--lu-navy); margin: 30px 0;
+}
+
+.lutra-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 40px; }
+.lutra-tags .tag {
+  padding: 8px 18px; border-radius: 999px;
+  background: var(--lu-peri-lt); color: var(--lu-navy-dk);
+  font-size: 0.85rem;
+}
+.lutra-tags .tag:nth-child(3n+2) { background: var(--lu-amber-soft); color: var(--lu-amber-dk); }
+.lutra-tags .tag:nth-child(3n) { background: var(--lu-navy); color: #fff; }
+
+.lutra-bottom-back { text-align: center; padding: 50px 0 20px; }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 900px) {
+  .lutra-bird { position: static; transform: none; width: 180px; margin: 24px auto 0; display: block; animation: none; opacity: 0.6; }
+  .lutra-intro-grid { grid-template-columns: 1fr; gap: 32px; }
+  .persona { grid-template-columns: 1fr; gap: 28px; }
+  .persona-list { columns: 1; }
+  .media-grid { grid-template-columns: 1fr; }
+  .logo-showcase { grid-template-columns: 1fr; gap: 30px; }
+  .lutra-role-grid { grid-template-columns: 1fr; gap: 28px; }
+  .lutra-hero { padding-bottom: 64px; }
+  .mockup-split { grid-template-columns: 1fr; gap: 28px; }
+  .mockup-split-text { text-align: center; }
+}

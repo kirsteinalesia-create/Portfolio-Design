@@ -1,0 +1,372 @@
+/* =========================================================
+   Sippy — macOS Water Tracker (Personal Project)
+   Palette: warm beige, dark brown, dusty pink, water blue
+   ========================================================= */
+
+:root {
+  --sp-blue:      #5ba4d9;
+  --sp-blue-lt:   #d0e8f7;
+  --sp-blue-pale: #e8f3fb;
+  --sp-beige:     #f5efe8;
+  --sp-beige-dk:  #e8ddd2;
+  --sp-brown:     #4a2b21;
+  --sp-brown-md:  #6f3f2e;
+  --sp-pink:      #d4929e;
+  --sp-pink-lt:   #f3e0e5;
+  --sp-paper:     #faf7f4;
+}
+
+body.sippy .eyebrow { color: var(--sp-blue); }
+body.sippy .site-header.is-scrolled { background: rgba(250,247,244,0.9); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.sippy-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--nav-h) + 96px) 0 84px;
+  background:
+    radial-gradient(70% 65% at 85% 10%, var(--sp-blue-pale) 0%, transparent 55%),
+    radial-gradient(60% 60% at 10% 80%, var(--sp-pink-lt) 0%, transparent 55%),
+    linear-gradient(180deg, var(--sp-paper) 0%, var(--sp-beige) 100%);
+}
+.sippy-hero .container { position: relative; z-index: 2; }
+
+.sippy-hero .eyebrow { display: block; margin-bottom: 18px; }
+
+.sippy-hero h1 {
+  font-size: clamp(3.2rem, 9vw + 1rem, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+.sippy-hero .script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--sp-blue);
+  font-size: 1.15em;
+  letter-spacing: 0;
+}
+
+.sippy-lead {
+  max-width: 560px;
+  margin-top: 26px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--sp-brown);
+}
+
+.sippy-claim {
+  display: inline-block;
+  margin-top: 30px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2vw + 0.6rem, 2rem);
+  color: var(--sp-blue);
+  border-left: 3px solid var(--sp-pink);
+  padding-left: 18px;
+}
+
+.sippy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 34px;
+  margin-top: 40px;
+  font-size: 0.92rem;
+  color: var(--sp-brown);
+}
+.sippy-meta span { opacity: 0.85; }
+.sippy-meta strong { color: var(--sp-blue); }
+
+/* Otter mascot beside hero text */
+.sippy-hero-mascot {
+  position: absolute;
+  right: 7%;
+  bottom: 48px;
+  width: min(300px, 30vw);
+  aspect-ratio: 1;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+}
+.sippy-hero-mascot img {
+  position: relative;
+  z-index: 2;
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 26px 60px -24px rgba(74, 43, 33, 0.45);
+  animation: sippy-bob 5.5s ease-in-out infinite;
+}
+@keyframes sippy-bob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-12px) rotate(1deg); }
+}
+/* soft disc behind the otter */
+.sippy-hero-mascot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, var(--sp-blue-lt) 0%, var(--sp-blue-pale) 55%, rgba(232,243,251,0) 72%);
+  z-index: 1;
+}
+/* floating water drops */
+.sippy-drop {
+  position: absolute;
+  z-index: 3;
+  background: var(--sp-blue);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(45deg);
+  opacity: 0.85;
+  box-shadow: inset -2px -2px 4px rgba(255,255,255,0.4);
+  animation: sippy-float 6s ease-in-out infinite;
+}
+.sippy-drop.d1 { width: 16px; height: 16px; top: 10%;  left: 6%;  background: var(--sp-blue); animation-delay: 0s; }
+.sippy-drop.d2 { width: 11px; height: 11px; top: 26%; right: 2%; background: var(--sp-pink); opacity: 0.8; animation-delay: 1.4s; }
+.sippy-drop.d3 { width: 13px; height: 13px; top: 58%; left: 12%; background: var(--sp-blue); opacity: 0.7; animation-delay: 2.2s; }
+.sippy-drop.d4 { width: 9px;  height: 9px;  top: 44%; right: 14%; background: var(--sp-blue); opacity: 0.6; animation-delay: 3s; }
+@keyframes sippy-float {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50%      { transform: rotate(45deg) translateY(-14px); }
+}
+
+/* softly rising bubbles */
+.sippy-bubbles { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.sippy-bubbles span {
+  position: absolute;
+  bottom: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.9), var(--sp-blue-lt) 55%, rgba(208,232,247,0.1) 100%);
+  border: 1px solid rgba(91,164,217,0.25);
+  opacity: 0;
+  animation: sippy-rise linear infinite;
+}
+.sippy-bubbles span:nth-child(1) { width: 22px; height: 22px; left: 8%;  animation-duration: 13s; animation-delay: 0s;   }
+.sippy-bubbles span:nth-child(2) { width: 12px; height: 12px; left: 18%; animation-duration: 10s; animation-delay: 2.5s; }
+.sippy-bubbles span:nth-child(3) { width: 28px; height: 28px; left: 30%; animation-duration: 16s; animation-delay: 1s;   }
+.sippy-bubbles span:nth-child(4) { width: 10px; height: 10px; left: 62%; animation-duration: 11s; animation-delay: 3.5s; }
+.sippy-bubbles span:nth-child(5) { width: 18px; height: 18px; left: 78%; animation-duration: 14s; animation-delay: 0.8s; }
+.sippy-bubbles span:nth-child(6) { width: 14px; height: 14px; left: 90%; animation-duration: 12s; animation-delay: 2s;   }
+@keyframes sippy-rise {
+  0%   { transform: translateY(0) translateX(0);     opacity: 0; }
+  10%  { opacity: 0.8; }
+  50%  { transform: translateY(-48vh) translateX(14px); }
+  90%  { opacity: 0.7; }
+  100% { transform: translateY(-94vh) translateX(-10px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sippy-hero-mascot img,
+  .sippy-drop,
+  .sippy-bubbles span { animation: none; }
+  .sippy-bubbles span { opacity: 0; }
+}
+
+/* big soft background blob */
+.sippy-hero-blob {
+  position: absolute;
+  top: -8%;
+  right: -6%;
+  width: 46vw;
+  max-width: 620px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle at 50% 50%, var(--sp-blue-pale) 0%, rgba(232,243,251,0) 68%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+.sippy-section {
+  padding: 80px 0;
+  position: relative;
+}
+.sippy-section.beige { background: var(--sp-beige); }
+.sippy-section.blue  { background: var(--sp-blue-pale); }
+
+.sippy-section .section-kicker {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sp-blue);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.sippy-section.blue .section-kicker { color: var(--sp-brown-md); }
+
+.sippy-section h2 {
+  font-size: clamp(1.9rem, 3vw + 0.6rem, 2.9rem);
+  margin-bottom: 22px;
+}
+.sippy-section .container { position: relative; z-index: 2; max-width: 1080px; }
+.sippy-section p { font-size: 1.05rem; line-height: 1.8; }
+
+/* =========================================================
+   FEATURES — icon cards
+   ========================================================= */
+.sippy-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+.sippy-feat {
+  padding: 36px 28px;
+  background: var(--sp-paper);
+  border-radius: 20px;
+  border: 1px solid rgba(74,43,33,0.08);
+  box-shadow: 0 8px 30px -12px rgba(74,43,33,0.10);
+}
+.sippy-feat-ico {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--sp-blue-lt) 0%, var(--sp-blue-pale) 100%);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  color: var(--sp-blue);
+}
+.sippy-feat-ico svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sippy-feat h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.sippy-feat p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--sp-brown-md);
+}
+
+/* =========================================================
+   SCREENSHOTS — side by side
+   ========================================================= */
+.sippy-screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+  align-items: start;
+}
+.sippy-screen-card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.sippy-window {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(74, 43, 33, 0.10);
+  box-shadow: 0 26px 70px -28px rgba(74, 43, 33, 0.38);
+  /* soft watery backdrop behind the popover */
+  background:
+    radial-gradient(120% 90% at 50% 0%, var(--sp-blue-pale) 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, var(--sp-beige) 100%);
+}
+.sippy-window-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 15px;
+  background: linear-gradient(180deg, #f4efe9 0%, #e8ded3 100%);
+  border-bottom: 1px solid rgba(74, 43, 33, 0.08);
+}
+.sippy-window-bar i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: block;
+}
+.sippy-window-bar i:nth-child(1) { background: #e3938c; }
+.sippy-window-bar i:nth-child(2) { background: #e6cf9a; }
+.sippy-window-bar i:nth-child(3) { background: #a9c6a0; }
+.sippy-window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--sp-brown-md);
+  opacity: 0.8;
+}
+
+/* The actual Sippy popover, cleanly cropped and centred in the window */
+.sippy-shot {
+  display: block;
+  width: 86%;
+  margin: 26px auto 30px;
+  border-radius: 20px;
+  background: var(--sp-paper);
+  box-shadow: 0 18px 44px -20px rgba(74, 43, 33, 0.40);
+}
+
+.sippy-screen-card figcaption {
+  padding: 16px 12px 0;
+  font-size: 0.92rem;
+  color: var(--sp-brown-md);
+  text-align: center;
+}
+.sippy-screen-card figcaption strong {
+  color: var(--sp-blue);
+}
+
+/* =========================================================
+   TECH STACK — chips
+   ========================================================= */
+.sippy-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.sippy-values .chip {
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  background: var(--sp-blue-lt);
+  color: var(--sp-brown);
+  font-weight: 500;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .sippy-hero h1 { font-size: clamp(2.4rem, 8vw, 4rem); }
+  .sippy-hero-mascot {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 180px;
+    margin: 28px 0 0;
+  }
+  .sippy-hero-blob { display: none; }
+  .sippy-drop { display: none; }
+  .sippy-bubbles { display: none; }
+  .sippy-screens { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .sippy-features { grid-template-columns: 1fr; }
+}

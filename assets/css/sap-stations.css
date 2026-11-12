@@ -1,0 +1,342 @@
+/* =========================================================
+   SAP Stations — Shared Design Enhancements
+   Applied to timeline + all station detail pages
+   ========================================================= */
+
+/* ————— Hero: subtle gradient background ————— */
+.station-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(75% 75% at 85% 40%, rgba(200,112,130,0.12) 0%, transparent 55%),
+    radial-gradient(60% 60% at 5%  50%, rgba(107,63,42,0.08)  0%, transparent 55%),
+    var(--c-paper);
+}
+
+/* ————— Particles: not used ————— */
+.st-particles { display: none; }
+
+/* ————— Binary code decoration (Station 2) ————— */
+.st2-binary {
+  position: absolute;
+  right: 0;
+  top: calc(var(--nav-h) + 20px);
+  width: 45%;
+  height: 140%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 50;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.55rem, 0.8vw, 0.75rem);
+  line-height: 1.9;
+  letter-spacing: 0.15em;
+  word-break: break-all;
+  color: var(--c-tan);
+  opacity: 1;
+  -webkit-mask-image: linear-gradient(to left, black 0%, transparent 80%);
+  mask-image: linear-gradient(to left, black 0%, transparent 80%);
+}
+.st2-binary span {
+  color: var(--c-rose);
+}
+@media (max-width: 900px) {
+  .st2-binary { display: none; }
+}
+
+/* ————— Station 1 hero: allow blur to overflow ————— */
+.station-hero:has(.st1-blur) { overflow: visible; }
+
+/* ————— Blue blur glow (Station 1 only, behind logo) ————— */
+.st1-blur {
+  position: absolute;
+  right: 3%;
+  top: 75%;
+  transform: translateY(-50%);
+  width: clamp(260px, 28vw, 440px);
+  height: clamp(260px, 28vw, 440px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(100,170,240,0.25) 0%, transparent 70%);
+  filter: blur(40px);
+  z-index: 49;
+  pointer-events: none;
+}
+@media (max-width: 900px) {
+  .st1-blur { display: none; }
+}
+
+/* ————— Station 1: floating DCT logo (like Flamigo bird) ————— */
+.st1-floating-logo {
+  position: absolute;
+  right: 7%;
+  top: 75%;
+  transform: translateY(-50%);
+  width: clamp(140px, 17vw, 250px);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 1;
+  filter: drop-shadow(0 16px 32px rgba(107,63,42,0.10));
+  animation: st1-logo-float 8s ease-in-out infinite;
+}
+@keyframes st1-logo-float {
+  0%, 100% { transform: translateY(-50%); }
+  50%      { transform: translateY(calc(-50% - 12px)); }
+}
+@media (max-width: 900px) {
+  .st1-floating-logo { display: none; }
+}
+
+.station-hero .container,
+.page-hero .container { position: relative; z-index: 1; }
+
+/* ————— Hero title: script span neutralised on SAP pages ————— */
+.station-hero h1 .script,
+.page-hero h1 .script {
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ————— Hero brand claim ————— */
+.st-claim {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.6rem);
+  color: var(--c-brown);
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+/* ————— Section kickers ————— */
+.st-kicker {
+  display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+/* kicker inside dark sections */
+.station-story .st-kicker {
+  color: var(--accent-soft);
+}
+.station-feedback .st-kicker {
+  color: var(--accent-soft);
+  text-align: center;
+}
+
+/* ————— Gradient skill chips ————— */
+.st-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+.st-chips .chip {
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown));
+  box-shadow: 0 10px 24px -14px rgba(107,63,42,0.45);
+  border: none;
+}
+.st-chips .chip:nth-child(2n) { background: linear-gradient(135deg, var(--c-brown), var(--c-rose)); }
+.st-chips .chip:nth-child(3n) { background: linear-gradient(135deg, var(--c-tan), #a06040); }
+
+/* ————— Big-idea statement ————— */
+.st-big-idea {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.2vw + 0.5rem, 2.4rem);
+  line-height: 1.15;
+  color: var(--c-paper);
+  margin: 0 0 48px;
+  max-width: 720px;
+}
+.st-big-idea .st-accent { color: var(--accent-soft); }
+
+/* ————— Role badge grid ————— */
+.st-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.st-role-badges { display: grid; gap: 14px; }
+
+.st-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(247,242,238,0.07);
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(247,242,238,0.10);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.st-badge:hover {
+  background: rgba(247,242,238,0.12);
+  border-color: rgba(247,242,238,0.2);
+}
+
+.st-badge-ico {
+  flex: 0 0 auto;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown));
+  color: var(--c-paper);
+  font-size: 1.1rem;
+}
+.st-badge:nth-child(2) .st-badge-ico { background: linear-gradient(135deg, var(--c-brown), var(--c-tan)); }
+.st-badge:nth-child(3) .st-badge-ico { background: linear-gradient(135deg, var(--c-rose), var(--accent)); }
+
+.st-badge h3 { font-size: 1rem; margin: 0 0 4px; color: var(--c-paper); font-family: var(--font-serif); }
+.st-badge p  { font-size: 0.88rem; line-height: 1.55; margin: 0; color: rgba(247,242,238,0.7); }
+
+.st-role-copy p { font-size: 1.05rem; line-height: 1.8; color: rgba(247,242,238,0.9); margin: 0; }
+
+.st-highlight {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--accent);
+  background: rgba(200,112,130,0.10);
+  border-radius: 0 14px 14px 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(247,242,238,0.85);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* ————— Decorative feedback quote ————— */
+.st-quote {
+  position: relative;
+  z-index: 1;
+  background: rgba(247,242,238,0.04);
+  border: 1px solid rgba(247,242,238,0.10);
+  border-radius: 20px;
+  padding: 44px 40px 36px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.st-quote-mark {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--accent);
+  opacity: 0.45;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.st-quote p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(247,242,238,0.9);
+  font-style: italic;
+  margin: 0 0 16px;
+}
+.st-quote p:last-of-type { margin-bottom: 0; }
+
+.st-quote footer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.st-quote cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--c-paper);
+}
+.st-quote-role {
+  font-size: 0.82rem;
+  color: rgba(247,242,238,0.5);
+  letter-spacing: 0.02em;
+}
+
+/* Feedback carousel slides with new quote styling */
+.feedback-slide .st-quote {
+  max-width: none;
+}
+
+/* ————— Enhanced timeline cards: gradient tags ————— */
+.st-tl-chips .tag {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown)) !important;
+  border: none !important;
+  box-shadow: 0 6px 16px -10px rgba(107,63,42,0.4);
+}
+.st-tl-chips .tag:nth-child(2n) { background: linear-gradient(135deg, var(--c-brown), var(--c-rose)) !important; }
+.st-tl-chips .tag:nth-child(3n) { background: linear-gradient(135deg, var(--c-tan), #a06040) !important; }
+
+/* ————— Timeline section: enhanced star cards ————— */
+.star-card {
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+.star-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -15px rgba(200,112,130,0.3);
+}
+
+/* Klickbare STAR-Karte (Link-Variante): sichere Klickfläche & Affordance */
+a.star-card {
+  display: block;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  text-decoration: none;
+}
+a.star-card * { pointer-events: none; }
+a.star-card .star-icon { transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out); }
+a.star-card:hover .star-icon { background: rgba(255,255,255,0.18); color: #fff; }
+
+/* ————— TWN card: rosa-brown accent ————— */
+.star-card--twn {
+  background: linear-gradient(135deg, rgba(200,112,130,0.15), rgba(107,63,42,0.12));
+  border-color: rgba(200,112,130,0.25);
+}
+.star-card--twn:hover {
+  border-color: rgba(200,112,130,0.45);
+}
+.star-card--twn .star-icon {
+  background: linear-gradient(135deg, rgba(200,112,130,0.25), rgba(107,63,42,0.2));
+  color: rgba(238,178,192,0.9);
+}
+
+/* ————— AI@STAR card: blue-brown accent ————— */
+a.star-card[href*="star-ai"] {
+  background: linear-gradient(135deg, rgba(100,170,240,0.15), rgba(107,63,42,0.12));
+  border-color: rgba(100,170,240,0.25);
+}
+a.star-card[href*="star-ai"]:hover {
+  border-color: rgba(100,170,240,0.45);
+}
+a.star-card[href*="star-ai"] .star-icon {
+  background: linear-gradient(135deg, rgba(100,170,240,0.25), rgba(107,63,42,0.2));
+  color: rgba(150,200,255,0.9);
+}
+
+/* ————— Insight section kicker ————— */
+.station-insight .st-kicker {
+  color: var(--accent);
+}
+
+/* ————— Responsive ————— */
+@media (max-width: 900px) {
+  .st-role-grid { grid-template-columns: 1fr; }
+  .st-particles span:nth-child(3) { display: none; }
+  .st-quote { padding: 32px 24px 28px; }
+}

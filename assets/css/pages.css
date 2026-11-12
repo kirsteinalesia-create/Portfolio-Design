@@ -1,0 +1,1472 @@
+/* =========================================================
+   Inhalts-Seiten (About, DHBW, My work, Contact)
+   ========================================================= */
+
+/* Zweispaltiges About-Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 100px;
+  align-items: center;
+  padding: 60px 0 100px;
+  position: relative;
+}
+
+/* Foto-Bühne — deutlich größer, mit rosa Blob + braunem Halbmond dahinter */
+.about-photo {
+  position: relative;
+  aspect-ratio: 4/5;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 50% 50% 40% 40% / 55% 55% 45% 45%;
+  overflow: visible;
+  z-index: 2;
+  justify-self: center;
+}
+.about-photo::before,
+.about-photo::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+.about-photo::before {
+  inset: -6% -8% -6% -8%;
+  background: radial-gradient(circle at 30% 30%, var(--c-blush) 0%, var(--c-pink) 100%);
+}
+.about-photo::after {
+  right: -14%;
+  top: 18%;
+  width: 70%;
+  height: 70%;
+  background: var(--c-brown);
+  z-index: -2;
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: inherit;
+  mask-image: radial-gradient(circle at 50% 45%, black 62%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 45%, black 62%, transparent 100%);
+}
+
+/* Dekorative braune Element-Familie */
+.about-deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+.about-deco.top-right {
+  right: -60px;
+  top: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  border: 1px solid var(--c-tan);
+  opacity: 0.4;
+}
+.about-deco.bottom-left {
+  left: -80px;
+  bottom: 40px;
+  width: 180px;
+  height: 180px;
+  background: var(--c-blush);
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0;
+}
+.about-deco.wave {
+  left: 0;
+  right: 0;
+  bottom: -40px;
+  width: 100%;
+  height: 80px;
+  opacity: 0.5;
+}
+.about-deco.wave svg { width: 100%; height: 100%; }
+.about-deco.wave path { fill: none; stroke: var(--c-tan); stroke-width: 1; }
+
+.about-text {
+  position: relative;
+  z-index: 3;
+}
+.about-text h2 {
+  font-size: clamp(2rem, 3vw + 1rem, 3rem);
+  margin-bottom: 24px;
+}
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--fg);
+}
+
+/* ================ About-Intro: Text links · Portrait randbündig rechts ================ */
+.about-intro {
+  position: relative;
+  overflow: visible;
+  min-height: calc(100vh - var(--nav-h));
+}
+.about-intro > .container {
+  position: relative;
+  z-index: 2;
+}
+.about-intro-text {
+  max-width: 560px;
+}
+.about-intro-text .eyebrow {
+  display: block;
+  margin-bottom: 16px;
+}
+.about-intro-text h1 {
+  font-size: clamp(2.3rem, 4.5vw + 0.5rem, 3.9rem);
+  margin-bottom: 32px;
+}
+.about-intro-text h2 {
+  font-size: clamp(1.7rem, 2.4vw + 1rem, 2.6rem);
+  margin: 28px 0 20px;
+}
+.about-intro-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--fg);
+  margin-bottom: 18px;
+  max-width: 54ch;
+}
+.about-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Portrait: beginnt am rechten Viewport-Rand, reicht nach innen.
+   Nur die beiden linken (inneren) Ecken werden gerundet. */
+.about-intro-photo {
+  position: absolute;
+  top: calc(var(--nav-h) + 80px);
+  right: 0;
+  bottom: 48px;
+  width: clamp(320px, 40vw, 600px);
+  border-radius: 28px 0 0 28px;
+  z-index: 1;
+}
+/* Nur das Portrait wird in die runden Ecken geclippt – nicht das Pflanzen-Overlay,
+   damit die Pflanze über die linke/untere Kante hinausragen darf. */
+.about-intro-photo img:not(.portrait-plant) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 28%;
+  display: block;
+  border-radius: inherit;
+}
+
+/* Dekoratives Pflanzen-Overlay, überlappt die untere linke Ecke des Portraits (-35°).
+   Ragt bewusst über die linke/untere Kante hinaus, sitzt dort über dem hellen
+   Hintergrund und wird dadurch klar sichtbar. */
+ .about-intro-photo .portrait-plant {
+   position: absolute;
+   left: -217px;
+   bottom: -187px;
+   width: 495px;
+   height: auto;              /* Seitenverhältnis bleibt erhalten */
+   transform: rotate(-5deg);
+   transform-origin: center center;
+   opacity: 1;
+   filter: saturate(1.5) brightness(0.82);  /* hebt die zarte Linienzeichnung hervor */
+   z-index: 5;                /* klar vor dem Portrait */
+   pointer-events: none;
+ }
+ @media (max-width: 900px) {
+   .about-intro-photo .portrait-plant { width: 375px; left: -80px; bottom: -86px; }
+ }
+ @media (max-width: 480px) {
+   .about-intro-photo .portrait-plant { width: 300px; left: -62px; bottom: -66px; }
+ }
+
+@media (max-width: 1024px) {
+  .about-intro-text { max-width: 46vw; }
+  .about-intro-photo { width: clamp(300px, 44vw, 480px); }
+}
+
+/* ================ Hintergrund-Dekorationen (mehrfach nutzbar) ================ */
+
+/* Container für floating shapes hinter Content */
+.bg-decor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Deko im Hero nicht hinter die fixierte Kopfzeile/Menüleiste ragen lassen */
+.page-hero .bg-decor { top: var(--nav-h); }
+
+.bg-decor .shape {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+/* Sanftes Floating */
+@keyframes floaty {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50%      { transform: translate(0, -30px) rotate(4deg); }
+}
+@keyframes floaty2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-20px, 20px); }
+}
+@keyframes floaty3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(15px, -18px) scale(1.05); }
+}
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Shape-Varianten */
+.bg-decor .blob-blush {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle at 30% 30%, var(--c-blush) 0%, transparent 70%);
+  animation: floaty 14s var(--ease-in-out) infinite;
+}
+.bg-decor .blob-pink {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, var(--c-pink) 0%, transparent 70%);
+  opacity: 0.55;
+  animation: floaty2 18s var(--ease-in-out) infinite;
+}
+.bg-decor .blob-brown {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, var(--c-brown) 0%, transparent 70%);
+  opacity: 0.14;
+  animation: floaty3 16s var(--ease-in-out) infinite;
+}
+.bg-decor .ring {
+  border: 1.5px solid var(--c-tan);
+  opacity: 0.35;
+}
+.bg-decor .ring.slow-spin {
+  animation: spinSlow 40s linear infinite;
+}
+.bg-decor .dot-grid {
+  width: 220px; height: 220px;
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  gap: 2px;
+  opacity: 0.9;
+  border-radius: 0;
+}
+.bg-decor .dot-grid span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-pink);
+  align-self: center;
+  justify-self: center;
+  opacity: 0.35;
+  transform: scale(1);
+  animation: dotBreathe 3.6s var(--ease-in-out) infinite;
+  will-change: opacity, transform;
+}
+@keyframes dotBreathe {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50%      { opacity: 0.95; transform: scale(1.6); }
+}
+
+/* Zart-brauner Wave-Divider (SVG als Background nicht nötig, wir nutzen ein SVG-Element) */
+.decor-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.decor-wave.top    { top: -60px; }
+.decor-wave.bottom { bottom: -60px; }
+.decor-wave svg    { width: 100%; height: 100%; }
+.decor-wave path   { fill: none; stroke: var(--c-tan); stroke-width: 1; }
+
+/* Stärker sichtbarer Divider — für DHBW / My own work als Trenner zwischen Hero und Content */
+.decor-wave-strong {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  pointer-events: none;
+  margin-top: 40px;
+}
+.decor-wave-strong svg { width: 100%; height: 100%; display: block; }
+.decor-wave-strong path {
+  fill: none;
+  stroke: var(--c-tan);
+  stroke-width: 1;
+  opacity: 0.55;
+}
+
+/* Body relative machen — sonst greifen absolute-Kinder nicht */
+main, .page-body, .content-section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Content-Section mit Deko */
+.section-decorated {
+  position: relative;
+  padding: 80px 0 120px;
+  overflow: hidden;
+}
+.section-decorated > .container { position: relative; z-index: 2; }
+
+/* Content-Section mit Deko */
+/* Skill Chips */
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.skill {
+  padding: 8px 16px;
+  background: var(--c-paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--fg);
+  cursor: default;
+}
+
+/* ================ Skill-Skalen (Softskills mit animiertem Punkt) ================ */
+.skill-bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 28px 60px;
+  margin-top: 24px;
+}
+@media (max-width: 700px) {
+  .skill-bars { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.skill-bar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.skill-bar .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  min-height: 2.6em;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--fg);
+}
+.skill-bar .label .name { font-weight: 500; }
+.skill-bar .label .value {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.skill-bar .track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: var(--c-blush);
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.skill-bar .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent));
+  border-radius: 999px;
+  transition: width 1.6s var(--ease-out);
+}
+
+.skill-bar .dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--c-paper);
+  border: 3px solid var(--accent);
+  transform: translate(-50%, -50%);
+  transition: left 1.6s var(--ease-out);
+  box-shadow: 0 4px 10px -2px rgba(200, 112, 130, 0.5);
+}
+.skill-bar .dot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  transform: scale(0.6);
+}
+.skill-bar.is-visible .dot::after {
+  animation: dotPing 1.6s var(--ease-out) forwards;
+  animation-delay: 1.4s;
+}
+@keyframes dotPing {
+  0%   { opacity: 0.6; transform: scale(0.6); }
+  100% { opacity: 0;   transform: scale(2);   }
+}
+
+.skill-bar .marks {
+  position: absolute;
+  left: 0; right: 0; top: 50%;
+  height: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.skill-bar .marks span {
+  width: 2px;
+  height: 8px;
+  background: rgba(74, 43, 33, 0.15);
+  border-radius: 2px;
+}
+
+/* ================ Werdegang / Education Timeline ================ */
+.edu-timeline {
+  position: relative;
+  margin: 40px 0 20px;
+  padding-left: 30px;
+}
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent-soft), var(--c-tan));
+  border-radius: 2px;
+}
+
+.edu-item {
+  position: relative;
+  padding: 0 0 32px;
+}
+.edu-item::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--c-paper);
+  border: 3px solid var(--accent);
+  transition: transform 0.3s var(--ease-out), background 0.3s var(--ease-out);
+}
+.edu-item:hover::before {
+  transform: scale(1.2);
+  background: var(--accent);
+}
+
+.edu-item .year {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+.edu-item h4 {
+  font-size: 1.15rem;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin: 0 0 4px;
+  color: var(--fg);
+}
+.edu-item .place {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.edu-item p {
+  font-size: 0.95rem;
+  color: var(--fg);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Section-Grid für About-Detail-Section (Werdegang + Skills nebeneinander) */
+.about-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-top: 40px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .about-details-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ============ Dekorativer Pflanzen-Hintergrund (Journey/Internships → Footer) ============ */
+/* Pflanze sitzt bodenbündig an der Grenze zum Footer und reicht hinter den
+   Section-Inhalt nach oben. .section-decorated ist position:relative + overflow:hidden,
+   wodurch die Pflanze exakt an der Section-/Footer-Grenze beschnitten wird und den
+   Footer nicht überlappt. Der Inhalt (> .container) liegt mit z-index:2 davor. */
+.about-journey::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(440px, 58vw);
+  height: clamp(360px, 72%, 820px);
+  background: url('../img/Pflanze2.png') no-repeat bottom left;
+  background-size: contain;
+  opacity: 0.44;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 900px) {
+  .about-journey::before {
+    width: min(300px, 70vw);
+    height: clamp(300px, 46%, 620px);
+    opacity: 0.32;
+  }
+}
+
+.about-details-grid > div h3 {
+  font-size: 1.6rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.about-details-grid > div .subhead {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* Kompakte Liste für Praktika / Ferienarbeit */
+.mini-exp {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+}
+.mini-exp li {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.mini-exp li:last-child { border-bottom: 0; }
+.mini-exp .m-year {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  padding-top: 3px;
+}
+.mini-exp .m-role strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--fg);
+  margin-bottom: 2px;
+}
+.mini-exp .m-role span {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Values (drei Werte-Karten) */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 60px 0 100px;
+}
+.value-card {
+  padding: 36px 28px;
+  border-radius: 20px;
+  background: var(--c-paper);
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.value-card::before {
+  content: attr(data-number);
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  font-family: var(--font-serif);
+  font-size: 6rem;
+  color: var(--c-blush);
+  line-height: 1;
+  z-index: 0;
+  transition: color 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+.value-card > * { position: relative; z-index: 1; }
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+}
+.value-card:hover::before {
+  color: var(--accent-soft);
+  transform: translateY(-4px) rotate(-4deg);
+}
+.value-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+.value-card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+/* Project Grid (My own work) */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 40px 0 100px;
+}
+.project-card {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--c-tan), var(--c-brown));
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out);
+}
+.project-card:hover { transform: translateY(-6px); }
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(130,95,75,0.95) 0%, rgba(130,95,75,0.72) 38%, rgba(130,95,75,0.30) 68%, rgba(130,95,75,0.06) 100%);
+}
+.project-card .info {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  color: var(--c-paper);
+  z-index: 2;
+}
+.project-card h3 { color: var(--c-paper); font-size: 1.5rem; margin: 0 0 6px; }
+.project-card p { color: rgba(247,242,238,0.85); font-size: 0.9rem; margin: 0; min-height: 2.8em; }
+.project-card .card-kicker {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4b5a0;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.project-card .placeholder-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(247,242,238,0.35);
+  font-size: 4rem;
+}
+
+/* Projektbilder an die warme Farbwelt anpassen:
+   entsättigen + leichter Sepia-Ton, damit sie nicht "knallig" wirken. */
+.project-card .card-media {
+  filter: saturate(0.62) sepia(0.22) brightness(0.96) contrast(0.97);
+}
+/* Warmer Braun-Schleier (multiply) über dem ganzen Bild,
+   zieht kräftige Farben in die warme Portfolio-Palette.
+   Einheitlich auf allen Karten. */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #a08068;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Antara project card (Work at DHBW) */
+.project-card.antara-card {
+  display: block;
+  background: linear-gradient(135deg, var(--c-blush), var(--c-brown-dk));
+}
+.project-card.antara-card .card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card.antara-card:hover .card-media { transform: scale(1.05); }
+
+
+
+/* Flamigo project card (Work at DHBW) */
+.project-card.flamigo-card {
+  display: block;
+  background: linear-gradient(135deg, var(--c-blush), var(--c-rose));
+}
+.project-card.flamigo-card .card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card.flamigo-card:hover .card-media { transform: scale(1.05); }
+
+
+
+/* Voyama project card (Work at DHBW) */
+.project-card.voyama-card {
+  display: block;
+  background: linear-gradient(135deg, var(--c-tan), var(--c-brown-dk));
+}
+.project-card.voyama-card .card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card.voyama-card:hover .card-media { transform: scale(1.05); }
+
+
+
+.card-info-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  color: var(--c-paper);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 200px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.card-info-badge .info-ico {
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.85;
+}
+
+/* Night of the Graduates project card (Work at DHBW) */
+.project-card.notg-card {
+  display: block;
+  background: linear-gradient(135deg, var(--c-cream), var(--c-brown-dk));
+}
+.project-card.notg-card .card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card.notg-card:hover .card-media { transform: scale(1.05); }
+
+
+
+/* Sippy project card (Work at DHBW) — personal macOS app */
+.project-card.sippy-card {
+  display: block;
+  background: linear-gradient(135deg, #bfe0f2, #5ba4d9);
+}
+.project-card.sippy-card .card-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  /* Keep the otter warm & friendly instead of the global sepia wash */
+  filter: saturate(0.92) brightness(1.02);
+  transition: transform 0.6s var(--ease-out);
+}
+.project-card.sippy-card:hover .card-media { transform: scale(1.05); }
+/* Soft watery blue scrim: bright at the top so the otter stays visible,
+   deepening toward the bottom so the title + kicker stay readable. */
+
+
+/* Darken the glass badge a touch so its text reads over the bright otter */
+.project-card.sippy-card .card-info-badge {
+  background: rgba(36, 78, 112, 0.42);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Contact */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 20px 0 60px;
+  align-items: start;
+}
+
+.contact-intro h2 {
+  font-size: clamp(2.4rem, 4vw + 1rem, 4rem);
+  line-height: 1.05;
+}
+.contact-intro h2 .accent {
+  font-family: var(--font-script);
+  color: var(--accent);
+  font-size: 1.2em;
+}
+.contact-intro p { font-size: 1.1rem; line-height: 1.7; margin-top: 24px; color: var(--fg); }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.3s var(--ease-out);
+}
+.contact-list a { color: var(--fg); }
+.contact-list li:hover a { color: var(--accent); }
+.contact-list .ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c-blush);
+  color: var(--c-brown-dk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+.contact-list .ico svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.contact-list li:hover .ico { background: var(--accent); color: var(--c-paper); }
+
+.contact-form {
+  padding: 40px;
+  background: var(--c-paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+}
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: transparent;
+  font: inherit;
+  color: var(--fg);
+  transition: border-color 0.3s var(--ease-out), background 0.3s var(--ease-out);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(238, 178, 192, 0.06);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+/* Responsive */
+
+/* Tablet: Values-Grid 2-spaltig */
+@media (max-width: 1100px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { gap: 24px; }
+}
+
+@media (max-width: 900px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { max-width: 380px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .project-grid { grid-template-columns: 1fr; }
+
+  /* About-Intro: Portrait rückt unter den Text, bleibt rechts bündig
+     mit sichtbar gerundeten linken Ecken. */
+  .about-intro-text { max-width: none; }
+  .about-intro-photo {
+    position: relative;
+    top: auto;
+    right: 0;
+    bottom: auto;
+    width: 88%;
+    max-width: 520px;
+    margin: 40px 0 0 auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 24px 0 0 24px;
+  }
+}
+
+/* =========================================================
+   Station 01 · Cloud ERP DCT — Role + Logo carousel
+   ========================================================= */
+
+/* Gemeinsame Startposition (linke Kante) für die drei H2-Blöcke:
+   "My role in the team", "Branding for the team", "What I took away".
+   Diese neue Container-Breite ist schmaler als der 1240er Standard-
+   Container (Hero-H1) → drei Sections rücken minimal ein, aber sind
+   weiter außen als der frühere .station-story-Container (820px). */
+.station-role .container,
+.station-branding .container {
+  max-width: 1080px;
+}
+
+/* -------- Rolle im Team: Text links, Mockup absolut positioniert -------- */
+.station-role {
+  position: relative;
+  /* Kein overflow:hidden mehr → Mockup wird oben/unten NICHT beschnitten.
+     Die horizontale Beschneidung übernimmt das body { overflow-x: hidden } global. */
+  overflow-x: clip;
+  overflow-y: visible;
+  padding: 110px 0 120px;
+  min-height: 640px;
+  z-index: 20;
+}
+.station-role .role-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+.station-role .role-copy h2 {
+  color: var(--c-paper);
+  font-size: clamp(1.8rem, 2vw + 0.8rem, 2.4rem);
+  margin: 0 0 22px;
+}
+.station-role .role-copy p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(247, 242, 238, 0.9);
+  margin: 0;
+}
+
+/* Mockup: aus dem Layout gelöst, absolut positioniert.
+   Nur der Mockup ist größer und wird über die rechte Kante hinaus-
+   geschoben – der restliche Section-Container bleibt unverändert.
+   Der Mockup liegt auf der höchsten Ebene (z-index) und wird nur
+   horizontal (durch body:overflow-x) abgeschnitten – nie oben/unten. */
+.station-role .role-mockup {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 52%;
+  width: 62vw;
+  min-width: 620px;
+  max-width: 1120px;
+  z-index: 50;
+  pointer-events: none;
+}
+.station-role .role-mockup img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35));
+}
+
+/* -------- Branding-Sektion (cream) -------- */
+.station-branding {
+  padding: 80px 0 40px;
+  background: var(--c-paper);
+  color: var(--fg);
+  position: relative;
+  z-index: 1;
+}
+.station-branding h2 {
+  font-size: clamp(1.8rem, 2vw + 0.8rem, 2.4rem);
+  margin: 0 0 16px;
+}
+.station-branding .branding-lead {
+  max-width: none;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--fg);
+  margin: 0 0 20px;
+}
+.station-branding .takeaways {
+  /* Liste ohne default-Padding, damit ihre linke Kante exakt mit der
+     linken Kante von "Branding for the team" und deren Absatz übereinstimmt.
+     Die Aufzählungspunkte werden per ::before positioniert, sodass der
+     linke Rand von List-Item und Text mit den anderen Section-Elementen
+     bündig ist. */
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 20px;
+  max-width: none;
+}
+.station-branding .takeaways li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: var(--fg);
+}
+.station-branding .takeaways li::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.7;
+}
+.station-branding .station-tags {
+  border-top-color: var(--line);
+}
+.station-branding .station-tags .tag {
+  background: var(--c-blush);
+  color: var(--c-brown-dk);
+  border: 1px solid transparent;
+}
+
+/* Logo-Karussell */
+.logo-carousel {
+  position: relative;
+  max-width: 1180px;
+  margin: 50px auto 30px;
+  padding: 20px 70px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.carousel-viewport {
+  flex: 1 1 auto;
+  overflow: hidden;
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* Transition wird per JS gesteuert (für den nahtlosen Sprung ohne
+     Animation), Default-Transition dient als Fallback. */
+  transition: transform 0.6s var(--ease-out);
+  will-change: transform;
+}
+.carousel-slide {
+  flex: 0 0 calc(100% / 3);
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+/* Klone im Infinite-Loop erben dieselbe Größe/Padding wie Originale — hier
+   nur um explizit klarzumachen, dass Klone unsichtbar für Screenreader
+   und identisch dimensioniert sind. */
+.carousel-slide.is-clone { pointer-events: none; }
+
+/* Logo-Karte: gleiche Größe für alle Logos */
+.logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
+  padding: 20px 24px;
+  background: transparent;
+  border-radius: 12px;
+}
+.logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Pfeile */
+.carousel-arrow {
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--c-brown-dk);
+  border: 1.5px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+.carousel-arrow:hover {
+  background: var(--c-brown-dk);
+  color: var(--c-paper);
+  border-color: var(--c-brown-dk);
+  transform: scale(1.05);
+}
+.carousel-arrow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Dots (kleine Indikatoren) */
+.carousel-dots {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(74, 43, 33, 0.2);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.carousel-dots button.is-active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* -------- Feedback-Section -------- */
+.station-feedback {
+  background: var(--c-brown-dk);
+  color: var(--c-paper);
+  padding: 60px 0 70px;
+}
+.station-feedback h2 {
+  color: var(--c-paper);
+  text-align: center;
+  margin: 0 0 40px;
+  font-size: clamp(1.8rem, 2vw + 0.8rem, 2.4rem);
+}
+.feedback-quote {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.02rem;
+  line-height: 1.85;
+  color: rgba(247, 242, 238, 0.92);
+  text-align: center;
+}
+.feedback-quote p { margin: 0 0 22px; }
+.feedback-quote footer {
+  font-size: 0.85rem;
+  color: var(--accent-soft);
+  letter-spacing: 0.04em;
+}
+
+/* -------- Feedback-Carousel (mehrere Feedbacks, Cross-Fade) --------
+   Alle Slides liegen in derselben Grid-Zelle übereinander gestapelt.
+   Nur der aktive Slide ist sichtbar (opacity 1). Kein Layout-Shift,
+   weil das Grid immer der Höhe des längsten Slides folgt. */
+.feedback-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 60px; /* Platz für die Pfeile links/rechts */
+}
+.feedback-carousel .feedback-stage {
+  display: grid;
+  /* Alle Slides teilen sich exakt eine Grid-Zelle */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  align-items: center;       /* kürzere Feedbacks vertikal zentrieren */
+}
+.feedback-carousel .feedback-slide {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out), visibility 0s linear 0.6s;
+}
+.feedback-carousel .feedback-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out), visibility 0s linear 0s;
+}
+.feedback-carousel .feedback-slide .feedback-quote {
+  max-width: none;
+}
+
+/* Pfeile und Dots reuse-freundlich basierend auf Logo-Carousel-Look */
+.feedback-carousel .carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--c-paper);
+  border: 1.5px solid rgba(247, 242, 238, 0.35);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), color 0.25s var(--ease-out), transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+}
+.feedback-carousel .carousel-arrow.prev { left: 0; }
+.feedback-carousel .carousel-arrow.next { right: 0; }
+.feedback-carousel .carousel-arrow:hover {
+  background: rgba(247, 242, 238, 0.15);
+  border-color: rgba(247, 242, 238, 0.6);
+  transform: translateY(-50%) scale(1.05);
+}
+.feedback-carousel .carousel-dots {
+  position: relative;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.feedback-carousel .carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(247, 242, 238, 0.28);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out), transform 0.25s var(--ease-out);
+}
+.feedback-carousel .carousel-dots button.is-active {
+  background: var(--accent-soft);
+  transform: scale(1.3);
+}
+
+/* Back-Button: deutlich weiter unten, klar außerhalb der Feedback-Section */
+.station-back {
+  padding: 90px 0 110px;
+}
+
+/* -------- Responsive: Rolle + Karussell + Feedback -------- */
+@media (max-width: 900px) {
+  .station-role {
+    min-height: auto;
+    padding: 40px 0 60px;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  .station-role .role-copy {
+    max-width: none;
+    width: 100%;
+    min-width: 0;
+  }
+  .station-role .role-copy p {
+    max-width: none;
+    overflow-wrap: anywhere;
+  }
+  /* Mockup unten stapeln, nur leicht rechts angeschnitten */
+  .station-role .role-mockup {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 115%;
+    min-width: 0;
+    max-width: none;
+    margin: 32px 0 0 -5%;
+  }
+
+  .station-role .container,
+  .station-branding .container {
+    max-width: 100%;
+  }
+
+  .carousel-slide { flex-basis: 50%; }
+  .logo-card { height: 150px; }
+  .logo-carousel { padding: 20px 56px; margin: 30px auto 30px; }
+
+  .station-back { padding: 60px 0 80px; }
+  .station-feedback { padding: 60px 0 80px; }
+
+  .feedback-carousel { padding: 0 48px; }
+  .feedback-carousel .carousel-arrow { width: 40px; height: 40px; }
+}
+
+@media (max-width: 600px) {
+  .carousel-slide { flex-basis: 100%; }
+  .logo-card { height: 160px; }
+  .logo-carousel { padding: 20px 50px; }
+  .carousel-arrow { width: 40px; height: 40px; }
+  .feedback-quote { text-align: left; }
+  .feedback-carousel { padding: 0 44px; }
+}
+
+/* =========================================================
+   Station 02 · Experience by CLM — From insight to solution
+   Zwei-spaltiges Layout mit Text + Bild, wiederverwendet für
+   DLD-Prozess und README-Tab Mockup. Bewusst mit dem
+   existierenden Design-System (Farben, Radien, Schatten) gebaut.
+   ========================================================= */
+
+/* CLM-spezifische Breiten-Erweiterung für die dunkelbraune Story-
+   Section. Nur .station-story--wide (auf der CLM-Seite gesetzt) wird
+   angehoben — die anderen Station-Story-Sections (z.B. Station 03)
+   bleiben unverändert. Der linke Rand des Textes rutscht dadurch auf
+   dieselbe Container-Kante wie auf der Cloud-ERP-Seite (1080px). */
+.station-story--wide .container {
+  max-width: 1080px;
+}
+
+.station-insight {
+  background: var(--c-paper);
+  color: var(--fg);
+  padding: 90px 0 100px;
+}
+.station-insight .container {
+  max-width: 1080px;
+}
+.station-insight h2 {
+  font-size: clamp(1.8rem, 2vw + 0.8rem, 2.4rem);
+  margin: 0 0 8px;
+}
+/* Zwei-Spalten-Layout — Text/Bild-Spalten haben die gleiche Breite, damit
+   die Textblöcke exakt an ihrer ursprünglichen Position sitzen und NICHT
+   nach rechts rutschen, um dem Bild Platz zu machen. Vergrößert und
+   ausgestellt wird stattdessen jeweils NUR das Mockup — über negative
+   Margins/vergrößerte Breite, sodass es visuell über den Container- bzw.
+   Viewport-Rand hinausragt (nach außen, insbesondere links). */
+.insight-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  /* Kein extra Abstand mehr zwischen H2 und erstem Block — nur der
+     Margin-Bottom der H2 (20px) trennt Überschrift und Text. Zwischen
+     zwei aufeinanderfolgenden Blöcken bleibt großzügiger Abstand. */
+  margin-top: 0;
+}
+.insight-block + .insight-block { margin-top: 80px; }
+.insight-block.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+.insight-block.reverse .insight-copy { order: 2; }
+.insight-block.reverse .insight-media { order: 1; }
+.insight-copy p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--fg);
+  margin: 0 0 16px;
+}
+/* Kein weißer Kasten mehr um das Mockup — Bild sitzt frei im Layout.
+   Seitenverhältnis wird über width:100% + height:auto erhalten. */
+.insight-media {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  padding: 0;
+}
+.insight-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+/* DLD (Default-Block): Mockup steht rechts vom Text und wird nach RECHTS
+   über den Container hinausgeschoben, damit die Inhalte lesbar sind.
+   Text bleibt an seiner Position. */
+.insight-block:not(.reverse) .insight-media {
+  width: calc(100% + 10vw);
+  margin-right: -10vw;
+}
+
+/* Reverse-Block (README-Tab-Mockup): Mockup steht links vom Text.
+   Es wird deutlich vergrößert und nach LINKS über den Seitenrand
+   hinausgeschoben — der Text auf der rechten Seite behält seine
+   ursprüngliche Position. Ein negatives margin-left verschiebt die
+   Grafik über die linke Container-Kante hinaus; body:overflow-x:hidden
+   sorgt dafür, dass der Überstand sauber am Viewport-Rand abgeschnitten
+   wird. */
+.insight-block.reverse .insight-media {
+  width: calc(100% + 14vw);
+  margin-left: -14vw;
+}
+
+@media (max-width: 900px) {
+  .insight-block,
+  .insight-block.reverse {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .insight-block.reverse .insight-copy { order: 1; }
+  .insight-block.reverse .insight-media { order: 2; }
+  /* Auf schmalen Screens keine seitlichen Überhänge — Mockup normal im
+     Content-Flow, sonst würde es die Textbreite sprengen. */
+  .insight-block:not(.reverse) .insight-media,
+  .insight-block.reverse .insight-media {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .station-insight { padding: 60px 0 70px; }
+}
+
+/* Ultrawide (≥ 2400px): About-Intro Portrait und Dekorationen hochskalieren */
+@media (min-width: 2400px) {
+  .about-intro-photo { width: clamp(600px, 32vw, 900px); }
+  .about-intro-photo .portrait-plant { width: 620px; left: -260px; bottom: -220px; }
+  .about-intro-text { max-width: 700px; }
+  .about-intro-text h1 { font-size: clamp(3rem, 4.5vw, 5.5rem); }
+  .about-intro-text p { font-size: 1.12rem; }
+  .station-role { padding: 140px 0 150px; min-height: 760px; }
+  .station-role .role-copy { max-width: 580px; }
+  .station-insight { padding: 110px 0 120px; }
+  .insight-block { gap: 80px; }
+}
+

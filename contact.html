@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Contact &middot; Alesia Katharina Kirstein</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Sacramento&family=Send+Flowers&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="stylesheet" href="assets/css/contact.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="AK Alesia Katharina Kirstein" /></a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="work-sap.html">Work at SAP</a></li>
+          <li><a href="work-dhbw.html">Work at DHBW</a></li>
+          <li><a href="contact.html" class="is-active">Contacts</a></li>
+          <li class="lang-switch">
+            <button class="lang-btn" type="button" aria-label="Switch language / Sprache wechseln">
+              <span class="lang-opt" data-lang="en">EN</span>
+              <span class="lang-sep" aria-hidden="true">/</span>
+              <span class="lang-opt" data-lang="de">DE</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-toggle"><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="contact-hero-text">
+        <span class="eyebrow reveal">04 · Contacts</span>
+        <h1 class="reveal">Good things start <br><span class="script">with a conversation.</span></h1>
+        <p class="lead reveal">
+          Whether it&rsquo;s a brief message, a coffee corner meeting, or a question about
+          what comes next after my studies. I look forward to any honest exchange &mdash; let&rsquo;s talk!
+        </p>
+      </div>
+      <div class="contact-hero-portrait reveal">
+        <span class="bubble bubble--1"></span>
+        <span class="bubble bubble--2"></span>
+        <span class="bubble bubble--3"></span>
+        <span class="bubble bubble--4"></span>
+        <span class="bubble bubble--5"></span>
+        <span class="bubble bubble--6"></span>
+        <span class="bubble bubble--7"></span>
+        <div class="portrait-blob">
+          <img src="assets/img/Bild5.svg" alt="Alesia Katharina Kirstein" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT METHODS ==================== -->
+  <section class="contact-methods">
+    <div class="container">
+      <h2 class="reveal">How to <strong><span class="script">reach</span></strong> me</h2>
+      <p class="methods-subtitle reveal">Pick whichever feels right &mdash; I&rsquo;ll get back to you soon.</p>
+
+      <div class="methods-grid">
+        <a class="method-card reveal" href="mailto:alesia.kirstein@sap.com">
+          <div class="method-ico">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7 l9 6 9-6"/></svg>
+          </div>
+          <h3>Email</h3>
+          <span class="method-detail">alesia.kirstein@sap.com</span>
+        </a>
+
+        <a class="method-card reveal" href="https://teams.microsoft.com/l/chat/0/0?users=alesia.kirstein@sap.com" target="_blank" rel="noopener">
+          <div class="method-ico">
+            <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="2.5"/><path d="M2 19v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/><circle cx="17.5" cy="8.5" r="2"/><path d="M22 19v-1.5a4 4 0 0 0-3-3.85"/></svg>
+          </div>
+          <h3>Microsoft Teams</h3>
+          <span class="method-detail">Quick chat during work hours</span>
+        </a>
+
+        <a class="method-card reveal" href="https://www.linkedin.com/in/alesia-katharina-kirstein-914929327/" target="_blank" rel="noopener">
+          <div class="method-ico">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <h3>LinkedIn</h3>
+          <span class="method-detail">Let&rsquo;s connect professionally</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FORM ==================== -->
+  <section class="contact-form-section">
+    <div class="container">
+      <h2 class="reveal">Send me a <span class="script">message</span></h2>
+
+
+      <form class="contact-form-card reveal" onsubmit="event.preventDefault(); alert('Thank you! This form is a placeholder — email integration coming soon.');">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What&rsquo;s this about?" />
+        </div>
+        <div class="form-group">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" placeholder="Tell me what&rsquo;s on your mind&hellip;" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="brand"><img src="assets/img/logo.png" alt="AK Alesia Katharina Kirstein" /></span>
+    <p>&copy; <span id="year"></span> Alesia Katharina Kirstein &middot; <span class="foot-tag">designed with care</span></p>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>
+dy>
+</html>

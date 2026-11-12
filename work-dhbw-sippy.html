@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Sippy Water Tracker · Personal macOS Project · Alesia Katharina Kirstein</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Sacramento&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/timeline.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+  <link rel="stylesheet" href="assets/css/sippy.css" />
+</head>
+<body class="sippy">
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="AK Alesia Katharina Kirstein" /></a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="about.html">About me</a></li>
+          <li><a href="work-sap.html">Work at SAP</a></li>
+          <li><a href="work-dhbw.html" class="is-active">Work at DHBW</a></li>
+          <li><a href="contact.html">Contacts</a></li>
+          <li class="lang-switch">
+            <button class="lang-btn" type="button" aria-label="Switch language / Sprache wechseln">
+              <span class="lang-opt" data-lang="en">EN</span>
+              <span class="lang-sep" aria-hidden="true">/</span>
+              <span class="lang-opt" data-lang="de">DE</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <button class="nav-toggle"><span></span></button>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="sippy-hero">
+    <!-- background blob -->
+    <div class="sippy-hero-blob" aria-hidden="true"></div>
+
+    <!-- floating water drops -->
+    <div class="sippy-drop d1" aria-hidden="true"></div>
+    <div class="sippy-drop d2" aria-hidden="true"></div>
+    <div class="sippy-drop d3" aria-hidden="true"></div>
+    <div class="sippy-drop d4" aria-hidden="true"></div>
+
+    <!-- softly rising bubbles -->
+    <div class="sippy-bubbles" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- otter mascot -->
+    <div class="sippy-hero-mascot" aria-hidden="true">
+      <img src="assets/img/sippy/otter-1.jpg" alt="" />
+    </div>
+
+    <div class="container">
+      <span class="eyebrow reveal">Personal Project · macOS App</span>
+      <h1 class="reveal">Sippy <span class="script">Water Tracker</span></h1>
+      <p class="sippy-lead reveal">
+        A native macOS menu-bar app that lives quietly in your menu bar and gently
+        nudges you to drink water throughout the day — with hourly reminders,
+        a friendly otter mascot, and a satisfying daily dashboard.
+      </p>
+      <span class="sippy-claim reveal">Stay hydrated, stay happy.</span>
+
+      <div class="sippy-meta reveal">
+        <span><strong>Type:</strong> Personal Project</span>
+        <span><strong>Tech:</strong> Swift 6 · SwiftUI · macOS 14+</span>
+        <span><strong>Focus:</strong> Habit Building · Health · UX Design</span>
+      </div>
+
+      <a href="work-dhbw.html" class="btn btn-outline reveal" style="margin-top: 34px;">← Back to Work at DHBW</a>
+    </div>
+  </section>
+
+  <!-- ==================== 01 · THE IDEA ==================== -->
+  <section class="sippy-section beige">
+    <div class="container">
+      <span class="section-kicker reveal">01 · The Idea</span>
+      <h2 class="reveal">Why Sippy?</h2>
+      <div class="reveal">
+        <p>
+          Drinking enough water every day sounds simple — but it's surprisingly easy to forget when
+          you're deep in focus mode. Most hydration apps are either too complex, too loud, or feel
+          like chores. <strong>Sippy</strong> takes a different approach: a lightweight menu-bar app
+          that never interrupts your workflow, just gently reminds you to take a sip.
+        </p>
+        <p>
+          The idea was to build a truly <strong>native macOS experience</strong> — no Electron, no
+          web wrappers — that feels at home on the desktop. Every hourly reminder, every tap of the
+          menu-bar icon reveals a clean popover with your progress for the day. And accompanying you
+          throughout is a little <strong>otter mascot</strong> whose mood changes depending on how
+          well-hydrated you've kept yourself: sleepy when you've forgotten, cheerful when you're
+          on track, and absolutely delighted when you hit your goal.
+        </p>
+      </div>
+
+      <div class="sippy-values reveal">
+        <span class="chip">habit building</span>
+        <span class="chip">macOS native</span>
+        <span class="chip">SwiftUI</span>
+        <span class="chip">gamification</span>
+        <span class="chip">menu-bar app</span>
+        <span class="chip">local-first</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 02 · FEATURES ==================== -->
+  <section class="sippy-section">
+    <div class="container">
+      <span class="section-kicker reveal">02 · Features</span>
+      <h2 class="reveal">What Sippy Can Do</h2>
+
+      <div class="sippy-features">
+
+        <!-- Hourly Reminders -->
+        <article class="sippy-feat reveal">
+          <div class="sippy-feat-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2 C12 2 7 8 7 13 A5 5 0 0 0 17 13 C17 8 12 2 12 2 Z"/>
+              <path d="M8.5 13.5 C8.5 11 10 9 12 8"/>
+            </svg>
+          </div>
+          <h3>Hourly Reminders</h3>
+          <p>
+            Context-aware notifications fire quietly at the top of each hour, keeping you
+            on track without derailing your focus. Snooze or log a glass in one click —
+            directly from the notification.
+          </p>
+        </article>
+
+        <!-- Today Dashboard -->
+        <article class="sippy-feat reveal">
+          <div class="sippy-feat-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7 L12 12 L15.5 14"/>
+              <path d="M7 12 A5 5 0 0 1 12 7"/>
+            </svg>
+          </div>
+          <h3>Today Dashboard</h3>
+          <p>
+            The popover shows an animated water glass filling up as the day progresses,
+            a clean progress bar toward your daily goal, and quick-add buttons for
+            50 ml to 500 ml — one tap and you're back to work.
+          </p>
+        </article>
+
+        <!-- Month Overview -->
+        <article class="sippy-feat reveal">
+          <div class="sippy-feat-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="17" rx="3"/>
+              <path d="M3 9 L21 9"/>
+              <path d="M8 2 L8 6"/>
+              <path d="M16 2 L16 6"/>
+              <circle cx="8"  cy="14" r="1.5"/>
+              <circle cx="12" cy="14" r="1.5"/>
+              <circle cx="16" cy="14" r="1.5"/>
+            </svg>
+          </div>
+          <h3>Month Overview</h3>
+          <p>
+            A calendar grid gives you a bird's-eye view of the whole month. Each day
+            renders a small circular progress ring — green when you hit your goal, blue
+            when you were close, and empty when you missed it entirely.
+          </p>
+        </article>
+
+        <!-- Otter Mascot -->
+        <article class="sippy-feat reveal">
+          <div class="sippy-feat-ico">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="11" r="5"/>
+              <circle cx="9.5"  cy="9.5" r="1" fill="currentColor" stroke="none"/>
+              <circle cx="14.5" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+              <path d="M9.5 13 Q12 15 14.5 13"/>
+              <path d="M7 7 Q5 4 3 6"/>
+              <path d="M17 7 Q19 4 21 6"/>
+              <path d="M8 19 Q12 22 16 19 Q14 16 10 16 Z"/>
+            </svg>
+          </div>
+          <h3>Otter Mascot</h3>
+          <p>
+            Five distinct moods, an idle breathing animation, and occasional blinks make
+            the otter feel alive. Entirely vector-based — drawn with SwiftUI
+            <code>Shape</code> and <code>Canvas</code> — no external assets required.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 · SCREENSHOTS ==================== -->
+  <section class="sippy-section beige">
+    <div class="container">
+      <span class="section-kicker reveal">03 · Screenshots</span>
+      <h2 class="reveal">The App in Action</h2>
+
+      <div class="sippy-screens">
+
+        <figure class="sippy-screen-card reveal">
+          <div class="sippy-window">
+            <div class="sippy-window-bar">
+              <i></i><i></i><i></i>
+              <span class="sippy-window-title">Sippy</span>
+            </div>
+            <img class="sippy-shot" src="assets/img/sippy/popover-ask.png"
+                 alt="Sippy menu-bar popover asking how much water you drank, with +200 ml and -200 ml quick-add buttons and the otter mascot beside an empty glass" loading="lazy" />
+          </div>
+          <figcaption>
+            <strong>Quick add</strong> — log a sip in one click, Sippy cheers you on
+          </figcaption>
+        </figure>
+
+        <figure class="sippy-screen-card reveal">
+          <div class="sippy-window">
+            <div class="sippy-window-bar">
+              <i></i><i></i><i></i>
+              <span class="sippy-window-title">Sippy</span>
+            </div>
+            <img class="sippy-shot" src="assets/img/sippy/popover-done.png"
+                 alt="Sippy popover celebrating a reached goal with a full glass of water and a happy otter splashing in the water" loading="lazy" />
+          </div>
+          <figcaption>
+            <strong>Goal reached</strong> — the otter celebrates your progress
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 04 · UNDER THE HOOD ==================== -->
+  <section class="sippy-section blue">
+    <div class="container">
+      <span class="section-kicker reveal">04 · Under the Hood</span>
+      <h2 class="reveal">Technical Details</h2>
+      <div class="reveal">
+        <p>
+          Sippy is written entirely in <strong>Swift 6</strong> with <strong>SwiftUI</strong>,
+          targeting <strong>macOS 14+</strong>. The persistent menu-bar presence is powered by
+          <code>MenuBarExtra</code> — Apple's modern, declarative API for menu-bar apps introduced
+          in macOS 13. All data stays on-device: intake entries and preferences are stored as
+          <strong>JSON via UserDefaults</strong>, keeping the app lightweight and
+          completely <strong>privacy-first</strong> with no network calls whatsoever.
+        </p>
+        <p>
+          The otter mascot is drawn entirely with SwiftUI's <strong>vector graphics APIs</strong>:
+          <code>Canvas</code>, <code>Path</code>, and custom <code>Shape</code> conformances.
+          Mood transitions animate via <code>withAnimation</code> and
+          <code>matchedGeometryEffect</code>, while the idle breathing loop uses a repeating
+          <code>Animation.easeInOut</code>. High-resolution export for App Store screenshots
+          is handled by <code>ImageRenderer</code>.
+        </p>
+      </div>
+
+      <div class="sippy-values reveal">
+        <span class="chip">Swift 6</span>
+        <span class="chip">SwiftUI</span>
+        <span class="chip">macOS 14+</span>
+        <span class="chip">MenuBarExtra</span>
+        <span class="chip">UserDefaults</span>
+        <span class="chip">UNNotification</span>
+        <span class="chip">vector graphics</span>
+        <span class="chip">privacy-first</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="sippy-bottom-back" style="text-align:center;padding:48px 0 0;">
+    <a href="work-dhbw.html" class="btn btn-outline">← Back to Work at DHBW</a>
+  </div>
+
+  <footer class="site-footer">
+    <span class="brand"><img src="assets/img/logo.png" alt="AK Alesia Katharina Kirstein" /></span>
+    <p>© <span id="year"></span> Alesia Katharina Kirstein · <span class="foot-tag">designed with care</span></p>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/i18n.js"></script>
+</body>
+</html>

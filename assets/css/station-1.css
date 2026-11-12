@@ -1,0 +1,227 @@
+/* =========================================================
+   Station 1 — Cloud ERP Design Concepts Team
+   Project-specific styles (mirrors DHBW project pattern)
+   ========================================================= */
+
+:root {
+  --s1-sand:     #e8d9c8;
+  --s1-brown:    #6b3f2a;
+  --s1-brown-lt: #a06040;
+  --s1-cream:    #faf6f2;
+  --s1-rose:     #c87082;
+  --s1-ink:      #2a1e1a;
+}
+
+/* ————— Hero: gradient background + particles ————— */
+.station-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(75% 75% at 85% 0%,  rgba(200,112,130,0.15) 0%, transparent 55%),
+    radial-gradient(60% 60% at 5%  20%, rgba(107,63,42,0.10)  0%, transparent 55%),
+    linear-gradient(180deg, #faf6f2 0%, #f3ebe1 100%);
+}
+
+.s1-particles { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.s1-particles span {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,112,130,0.3), transparent 70%);
+  animation: s1-float 10s ease-in-out infinite;
+}
+.s1-particles span:nth-child(1) { width: 90px;  height: 90px;  right: 10%; top: 20%; animation-delay: 0s; }
+.s1-particles span:nth-child(2) { width: 45px;  height: 45px;  right: 25%; top: 55%; animation-delay: 2.5s; opacity: 0.5; }
+.s1-particles span:nth-child(3) { width: 130px; height: 130px; right: 3%;  top: 60%; animation-delay: 1.2s; opacity: 0.25; }
+.s1-particles span:nth-child(4) { width: 22px;  height: 22px;  right: 32%; top: 15%; animation-delay: 3.8s; opacity: 0.6; }
+.s1-particles span:nth-child(5) { width: 60px;  height: 60px;  left: 8%;   top: 70%; animation-delay: 5s;   opacity: 0.2; }
+
+@keyframes s1-float {
+  0%, 100% { transform: translateY(0);      opacity: var(--_o, 1); }
+  50%      { transform: translateY(-20px);   opacity: calc(var(--_o, 1) * 0.7); }
+}
+
+.station-hero .container { position: relative; z-index: 1; }
+
+/* ————— Hero title: mixed font ————— */
+.station-hero h1 .script {
+  font-family: 'Send Flowers', var(--font-script);
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1.1em;
+}
+
+/* ————— Hero brand claim ————— */
+.s1-claim {
+  display: inline-block;
+  margin-top: 28px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.5vw + 0.5rem, 1.6rem);
+  color: var(--s1-brown);
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+}
+
+/* ————— Section kickers ————— */
+.s1-kicker {
+  display: block;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.station-role .s1-kicker { color: rgba(247,242,238,0.5); }
+
+/* ————— Big-idea statement ————— */
+.s1-big-idea {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 2.2vw + 0.5rem, 2.4rem);
+  line-height: 1.15;
+  color: var(--c-paper);
+  margin: 0 0 48px;
+  max-width: 720px;
+}
+.s1-big-idea .s1-accent { color: var(--accent-soft); }
+
+/* ————— Role badge grid ————— */
+.s1-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.s1-role-badges { display: grid; gap: 14px; }
+
+.s1-badge {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(247,242,238,0.07);
+  border-radius: 16px;
+  padding: 18px 20px;
+  border: 1px solid rgba(247,242,238,0.10);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.s1-badge:hover {
+  background: rgba(247,242,238,0.12);
+  border-color: rgba(247,242,238,0.2);
+}
+
+.s1-badge-ico {
+  flex: 0 0 auto;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown));
+  color: var(--c-paper);
+  font-size: 1.1rem;
+}
+.s1-badge:nth-child(2) .s1-badge-ico { background: linear-gradient(135deg, var(--c-brown), var(--c-tan)); }
+.s1-badge:nth-child(3) .s1-badge-ico { background: linear-gradient(135deg, var(--c-rose, #d4838f), var(--accent)); }
+
+.s1-badge h3 { font-size: 1rem; margin: 0 0 4px; color: var(--c-paper); font-family: var(--font-serif); }
+.s1-badge p  { font-size: 0.88rem; line-height: 1.55; margin: 0; color: rgba(247,242,238,0.7); }
+
+.s1-role-copy p { font-size: 1.05rem; line-height: 1.8; color: rgba(247,242,238,0.9); margin: 0; }
+
+.s1-highlight {
+  margin-top: 24px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--accent);
+  background: rgba(200,112,130,0.10);
+  border-radius: 0 14px 14px 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(247,242,238,0.85);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* ————— Gradient skill chips ————— */
+.s1-chips-section {
+  background:
+    radial-gradient(80% 90% at 100% 0%, rgba(200,112,130,0.10) 0%, transparent 55%),
+    linear-gradient(180deg, #f3ebe1 0%, #e8d9c8 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+.s1-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+.s1-chips .chip {
+  padding: 11px 24px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--s1-brown));
+  box-shadow: 0 10px 24px -14px rgba(107,63,42,0.45);
+}
+.s1-chips .chip:nth-child(2n) { background: linear-gradient(135deg, var(--s1-brown), var(--c-rose, #d4838f)); }
+.s1-chips .chip:nth-child(3n) { background: linear-gradient(135deg, var(--c-tan), var(--s1-brown-lt)); }
+
+/* ————— Decorative feedback quote ————— */
+.station-feedback { position: relative; }
+
+.s1-quote {
+  position: relative;
+  z-index: 1;
+  background: rgba(247,242,238,0.04);
+  border: 1px solid rgba(247,242,238,0.10);
+  border-radius: 20px;
+  padding: 44px 40px 36px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.s1-quote-mark {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  line-height: 0.6;
+  color: var(--accent);
+  opacity: 0.45;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.s1-quote p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(247,242,238,0.9);
+  font-style: italic;
+  margin: 0;
+}
+
+.s1-quote footer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.s1-quote cite {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--c-paper);
+}
+.s1-quote-role {
+  font-size: 0.82rem;
+  color: rgba(247,242,238,0.5);
+  letter-spacing: 0.02em;
+}
+
+/* ————— Responsive ————— */
+@media (max-width: 900px) {
+  .s1-role-grid { grid-template-columns: 1fr; }
+  .s1-particles span:nth-child(3) { display: none; }
+}
