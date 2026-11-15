@@ -1027,8 +1027,8 @@ main, .page-body, .content-section {
 }
 .station-branding .branding-lead {
   max-width: none;
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: var(--fg);
   margin: 0 0 20px;
 }

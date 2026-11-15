@@ -71,7 +71,6 @@
 
       <div class="sippy-meta reveal">
         <span><strong>Type:</strong> Personal Project</span>
-        <span><strong>Tech:</strong> Swift 6 · SwiftUI · macOS 14+</span>
         <span><strong>Focus:</strong> Habit Building · Health · UX Design</span>
       </div>
 
@@ -104,10 +103,8 @@
       <div class="sippy-values reveal">
         <span class="chip">habit building</span>
         <span class="chip">macOS native</span>
-        <span class="chip">SwiftUI</span>
+        <span class="chip">UX Design</span>
         <span class="chip">gamification</span>
-        <span class="chip">menu-bar app</span>
-        <span class="chip">local-first</span>
       </div>
     </div>
   </section>
@@ -199,84 +196,145 @@
     </div>
   </section>
 
-  <!-- ==================== 03 · SCREENSHOTS ==================== -->
+  <!-- ==================== 03 · SIPPY IN ACTION ==================== -->
   <section class="sippy-section beige">
     <div class="container">
       <span class="section-kicker reveal">03 · Screenshots</span>
-      <h2 class="reveal">The App in Action</h2>
+      <h2 class="reveal">Sippy in Action</h2>
 
       <div class="sippy-screens">
-
         <figure class="sippy-screen-card reveal">
           <div class="sippy-window">
             <div class="sippy-window-bar">
               <i></i><i></i><i></i>
               <span class="sippy-window-title">Sippy</span>
             </div>
-            <img class="sippy-shot" src="assets/img/sippy/popover-ask.png"
-                 alt="Sippy menu-bar popover asking how much water you drank, with +200 ml and -200 ml quick-add buttons and the otter mascot beside an empty glass" loading="lazy" />
+            <img class="sippy-shot" src="assets/img/sippy/sippy-in-action-1.png" alt="Sippy in action — the app in daily use" loading="lazy" />
           </div>
-          <figcaption>
-            <strong>Quick add</strong> — log a sip in one click, Sippy cheers you on
-          </figcaption>
+          <figcaption><strong>Daily use</strong> — the popover living in your menu bar</figcaption>
         </figure>
-
         <figure class="sippy-screen-card reveal">
           <div class="sippy-window">
             <div class="sippy-window-bar">
               <i></i><i></i><i></i>
               <span class="sippy-window-title">Sippy</span>
             </div>
-            <img class="sippy-shot" src="assets/img/sippy/popover-done.png"
-                 alt="Sippy popover celebrating a reached goal with a full glass of water and a happy otter splashing in the water" loading="lazy" />
+            <img class="sippy-shot" src="assets/img/sippy/sippy-in-action-2.png" alt="Sippy in action — otter mascot and hydration tracking" loading="lazy" />
           </div>
-          <figcaption>
-            <strong>Goal reached</strong> — the otter celebrates your progress
-          </figcaption>
+          <figcaption><strong>Hydration tracking</strong> — the otter reacts to your progress</figcaption>
         </figure>
-
       </div>
     </div>
   </section>
 
-  <!-- ==================== 04 · UNDER THE HOOD ==================== -->
-  <section class="sippy-section blue">
+  <!-- ==================== 04 · BRAND & VISUAL IDENTITY ==================== -->
+  <section class="sippy-section">
     <div class="container">
-      <span class="section-kicker reveal">04 · Under the Hood</span>
-      <h2 class="reveal">Technical Details</h2>
-      <div class="reveal">
-        <p>
-          Sippy is written entirely in <strong>Swift 6</strong> with <strong>SwiftUI</strong>,
-          targeting <strong>macOS 14+</strong>. The persistent menu-bar presence is powered by
-          <code>MenuBarExtra</code> — Apple's modern, declarative API for menu-bar apps introduced
-          in macOS 13. All data stays on-device: intake entries and preferences are stored as
-          <strong>JSON via UserDefaults</strong>, keeping the app lightweight and
-          completely <strong>privacy-first</strong> with no network calls whatsoever.
-        </p>
-        <p>
-          The otter mascot is drawn entirely with SwiftUI's <strong>vector graphics APIs</strong>:
-          <code>Canvas</code>, <code>Path</code>, and custom <code>Shape</code> conformances.
-          Mood transitions animate via <code>withAnimation</code> and
-          <code>matchedGeometryEffect</code>, while the idle breathing loop uses a repeating
-          <code>Animation.easeInOut</code>. High-resolution export for App Store screenshots
-          is handled by <code>ImageRenderer</code>.
-        </p>
-      </div>
-
-      <div class="sippy-values reveal">
-        <span class="chip">Swift 6</span>
-        <span class="chip">SwiftUI</span>
-        <span class="chip">macOS 14+</span>
-        <span class="chip">MenuBarExtra</span>
-        <span class="chip">UserDefaults</span>
-        <span class="chip">UNNotification</span>
-        <span class="chip">vector graphics</span>
-        <span class="chip">privacy-first</span>
+      <span class="section-kicker reveal">04 · Brand &amp; Visual Identity</span>
+      <h2 class="reveal">A Brand Built on Calm &amp; Comfort</h2>
+      <div class="logo-showcase">
+        <div class="logo-stage reveal">
+          <img src="assets/img/sippy/otter-1.jpg" alt="Sippy otter mascot — the friendly companion of the app" loading="lazy" />
+        </div>
+        <div class="logo-notes reveal">
+          <h3>Warm, playful &amp; hydrating</h3>
+          <p>
+            The Sippy otter mascot is the emotional heart of the brand. Five distinct moods —
+            from sleepy when you've forgotten to drink, to delighted when you hit your goal —
+            make it feel alive. Entirely vector-based, drawn with SwiftUI
+            <code>Shape</code> and <code>Canvas</code>, it needs no external assets.
+          </p>
+          <p>
+            The color system pairs a calming <strong>water blue</strong> with a soft
+            <strong>dusty pink</strong> and warm <strong>beige tones</strong>, bridging
+            trust and playfulness. The result is an interface that feels cosy, not clinical.
+          </p>
+          <div class="palette">
+            <span class="swatch sp-blue">Water Blue</span>
+            <span class="swatch sp-sky">Sky</span>
+            <span class="swatch sp-pink">Dusty Pink</span>
+            <span class="swatch sp-beige">Warm Beige</span>
+            <span class="swatch sp-brown">Espresso</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="sippy-bottom-back" style="text-align:center;padding:48px 0 0;">
+  <!-- ==================== 05 · MY ROLE ==================== -->
+  <section class="sippy-section beige">
+    <div class="container">
+      <span class="section-kicker reveal">05 · My Role</span>
+      <h2 class="reveal">Concept, Design &amp; Development</h2>
+      <div class="sippy-role-grid">
+        <div class="role-lead reveal">
+          <p>
+            Sippy is a solo project — I designed and built every part of it myself.
+            What started as a personal itch — forgetting to drink water during deep work —
+            became a complete product exercise: from problem definition through branding
+            to a shipping macOS app.
+          </p>
+          <div class="role-highlight">
+            The project proved that a tiny bit of personality — a sleepy otter, a cheerful animation —
+            can turn a mundane daily habit into something you genuinely look forward to.
+          </div>
+        </div>
+        <div class="role-badges reveal">
+          <div class="role-badge">
+            <span class="role-ico">UX</span>
+            <div>
+              <h3>UX Concept &amp; Interaction</h3>
+              <p>Interaction flow, information architecture, and the full popover experience.</p>
+            </div>
+          </div>
+          <div class="role-badge">
+            <span class="role-ico">VI</span>
+            <div>
+              <h3>Visual Design</h3>
+              <p>Every screen, the color palette, typography, and the mascot's five mood states.</p>
+            </div>
+          </div>
+          <div class="role-badge">
+            <span class="role-ico">DE</span>
+            <div>
+              <h3>Swift Development</h3>
+              <p>Menu-bar integration, notification scheduling, and local-first data persistence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 06 · FAZIT ==================== -->
+  <section class="sippy-fazit">
+    <div class="container">
+      <span class="section-kicker reveal">06 · Fazit</span>
+      <p class="fazit-claim reveal">What I take away from this project.</p>
+      <p class="reveal">
+        Sippy taught me that the best personal tools are the ones you actually enjoy using.
+        Building it end-to-end — from the first sketch to a polished app — showed me how
+        UX thinking, visual design, and technical craft come together when one person owns
+        every layer.
+      </p>
+      <p class="reveal">
+        Most importantly, the project showed me that a tiny bit of personality — a sleepy
+        otter, a cheerful animation — can transform a mundane daily habit into something
+        that feels genuinely delightful. That insight now guides every design decision I make.
+      </p>
+
+      <div class="sippy-tags reveal">
+        <span class="tag">UX Design</span>
+        <span class="tag">Visual Design</span>
+        <span class="tag">Mascot Design</span>
+        <span class="tag">SwiftUI</span>
+        <span class="tag">macOS App</span>
+        <span class="tag">Interaction Design</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="sippy-bottom-back">
     <a href="work-dhbw.html" class="btn btn-outline">← Back to Work at DHBW</a>
   </div>
 

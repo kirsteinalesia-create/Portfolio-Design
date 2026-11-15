@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="assets/css/pages.css" />
   <link rel="stylesheet" href="assets/css/sap-stations.css" />
 </head>
-<body>
+<body class="station-tokyo">
 
   <header class="site-header">
     <div class="container">
@@ -39,8 +39,8 @@
   </header>
 
   <section class="page-hero station-hero">
-    <div class="st-particles" aria-hidden="true">
-      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <div class="tokyo-glow" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
     <div class="container">
       <span class="eyebrow reveal">Station 04 · Work at SAP</span>
@@ -76,7 +76,7 @@
        ============================================= -->
   <section class="station-story station-story--wide">
     <div class="container">
-      <span class="st-kicker" style="color: rgba(247,242,238,0.5);">01 · My role</span>
+      <span class="st-kicker" style="color: #FEADC8;">01 · My role</span>
       <h2>My role in the team</h2>
       <p>
         For my fourth practical phase, I joined the <strong>CS Japan Growth Office</strong> in
@@ -105,42 +105,49 @@
        What I worked on – light insight section
        ============================================= -->
   <section class="station-insight">
-    <div class="container">
+    <div class="container" style="text-align: center;">
       <span class="st-kicker reveal">02 · Projects</span>
       <h2 class="reveal">What I worked on</h2>
+      <p class="reveal" style="max-width: 680px; margin-left: auto; margin-right: auto; margin-top: 1.5rem; font-size: 1.05rem; line-height: 1.8;">
+        One of my main tasks was creating a consistent visual identity for the team's communication.
+        This included designing a <strong>PowerPoint template</strong> for customer presentations
+        and internal meetings, as well as a matching <strong>email banner</strong>. A key project
+        was the <strong>SAP Experience Center Tokyo slide deck</strong>, designed for two audiences:
+        an immersive customer-facing version inspired by Tokyo's neon aesthetics and Japanese cultural
+        elements, and a clean, information-focused version for internal employees.
+      </p>
+    </div>
 
-      <div class="insight-block reveal">
-        <div class="insight-copy">
-          <p>
-            One of my main tasks was designing a <strong>PowerPoint template</strong> for the team —
-            a reusable, branded foundation for presentations used in customer meetings and internal
-            communication. I also created an <strong>email banner</strong> to give the team a
-            consistent and professional visual identity across their outgoing communications.
-          </p>
+    <div class="img-carousel logo-carousel reveal" data-carousel data-interval="4000" aria-roledescription="carousel" aria-label="Tokyo impressions">
+        <button class="carousel-arrow prev" type="button" aria-label="Previous image" data-carousel-prev>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="carousel-viewport">
+          <ul class="carousel-track" data-carousel-track>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-1.png" alt="Impression from Tokyo 1" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-2.png" alt="Impression from Tokyo 2" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-3.png" alt="Impression from Tokyo 3" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-4.png" alt="Impression from Tokyo 4" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-5.png" alt="Impression from Tokyo 5" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-6.png" alt="Impression from Tokyo 6" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-7.png" alt="Impression from Tokyo 7" loading="lazy" /></li>
+            <li class="carousel-slide"><img src="assets/img/japan/carousel-8.png" alt="Impression from Tokyo 8" loading="lazy" /></li>
+          </ul>
         </div>
-        <div class="insight-media">
-          <img src="assets/img/japan/team-photo-1.jpg" alt="SAP Experience Center team in Tokyo" />
-        </div>
+        <button class="carousel-arrow next" type="button" aria-label="Next image" data-carousel-next>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
       </div>
 
-      <div class="insight-block reverse reveal">
-        <div class="insight-copy">
-          <p>
-            A key project was the <strong>SAP Experience Center Tokyo slide deck</strong> — a
-            <strong>dual-purpose presentation</strong> designed to work for two audiences from a
-            single source. For customers, the deck delivers an immersive, visually rich experience
-            inspired by Tokyo's neon aesthetics and Japanese cultural elements. For internal employees,
-            the same deck switches to a clean, information-focused layout. One design system, two
-            communication modes.
-          </p>
-        </div>
-        <div class="insight-media">
-          <img src="assets/img/japan/team-photo-2.jpg" alt="Working at the SAP office in Tokyo" />
-        </div>
-      </div>
+    <div class="container">
 
-      <div class="insight-block reveal" style="grid-template-columns: 1fr;">
-        <div class="insight-copy">
+      <div class="insight-block reveal" style="grid-template-columns: 1fr; text-align: center;">
+        <div class="insight-copy" style="max-width: 680px; margin-left: auto; margin-right: auto;">
           <p>
             Beyond creating materials, I had the opportunity to <strong>participate in real customer
             meetings</strong> — experiencing first-hand how Presales conversations work, how customers
@@ -149,16 +156,48 @@
         </div>
       </div>
 
+      <div class="insight-block reverse reveal">
+        <div class="insight-copy">
+          <p>
+            One of my key projects was designing the <strong>Autonomous Enterprise presentation</strong>
+            for SAP's Immersive Experience Room in Tokyo. I developed visual concepts tailored to the
+            room's 360° LED environment, combining bold typography, ambient gradients and dynamic
+            layouts. The presentation covered a range of topics, from Joule to external data
+            integration, bringing SAP's vision of the Autonomous Enterprise to life through an
+            immersive visual experience.
+          </p>
+        </div>
+        <div class="insight-media" style="width: calc(100% + 18vw); margin-left: -10vw;">
+          <img src="assets/img/japan/ixr-title.jpeg" alt="Autonomous Enterprise title slide projected in the Immersive Experience Room" style="clip-path: inset(0 3cm 0 0);" />
+        </div>
+      </div>
+
+      <div class="insight-block reveal">
+        <div class="insight-copy" style="max-width: none;">
+          <p>
+            The presentation in action during a live customer tour at SAP's Immersive Experience
+            Room in Tokyo. Projected across floor-to-ceiling LED walls, the visuals created an
+            immersive environment for introducing customers to SAP's vision of the Autonomous Enterprise.
+          </p>
+        </div>
+        <div class="insight-media" style="width: calc(100% + 10vw); margin-right: -10vw;">
+          <img src="assets/img/japan/ixr-room.jpeg" alt="Customers experiencing the Autonomous Enterprise presentation in the 360° Immersive Experience Room at SAP Tokyo" style="border-radius: 0; clip-path: inset(2cm 0 0 0);" />
+        </div>
+      </div>
+
       <div class="st-chips reveal">
         <span class="chip">Presales</span>
         <span class="chip">Experience Center</span>
         <span class="chip">Dual-Purpose Deck</span>
         <span class="chip">Visual Communication</span>
+        <span class="chip">Immersive Experience Room</span>
         <span class="chip">Tokyo, Japan</span>
         <span class="chip">PowerPoint</span>
       </div>
     </div>
   </section>
+
+  <div style="height: 80px; background: #3d1228;"></div>
 
   <section class="station-fazit">
     <div class="container">

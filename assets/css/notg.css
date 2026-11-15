@@ -107,19 +107,18 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
 
 /* the net floor sits in the lower blue half of the hero */
 .notg-hero .notg-netz {
-  height: 52%;
-  transform: translateX(-50%) perspective(340px) rotateX(70deg);
+  height: 90%;
+  transform: translateX(-50%) perspective(500px) rotateX(65deg);
   background-image:
-    linear-gradient(to right, rgba(42,48,104,0.62) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(42,48,104,0.62) 1px, transparent 1px);
-  background-size: 58px 58px;
-  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 38%, transparent 94%);
-          mask-image: linear-gradient(to top, #000 0%, #000 38%, transparent 94%);
+    linear-gradient(to right, rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 80px 80px;
+  background-repeat: repeat;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, #000 50%, transparent 90%);
+          mask-image: linear-gradient(to top, #000 0%, #000 50%, transparent 90%);
 }
 .notg-hero .notg-horizon {
-  bottom: 52%;
-  opacity: 1;
-  box-shadow: 0 0 26px 5px rgba(205,212,245,0.7);
+  display: none;
 }
 /* warm floating nodes drift in the upper beige part */
 .notg-hero .notg-nodes span { z-index: 2; }
@@ -180,6 +179,7 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
 .notg-section { position: relative; padding: 92px 0; overflow: hidden; }
 .notg-section .container { position: relative; z-index: 2; max-width: 1100px; }
 .notg-section.cream { background: var(--notg-cream); }
+.notg-section p { font-size: 1.05rem; line-height: 1.8; }
 
 .section-kicker {
   font-family: var(--font-sans);
@@ -207,7 +207,7 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
   align-items: start;
 }
 .notg-intro-grid p {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   color: var(--notg-ink);
   margin-bottom: 18px;
@@ -291,8 +291,8 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
   text-shadow: 0 0 24px rgba(170,178,234,0.5);
 }
 .notg-idea p {
-  font-size: 1.06rem;
-  line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: rgba(247,242,238,0.88);
   max-width: 680px;
   margin: 0 auto;
@@ -335,7 +335,7 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
 .role-badge p { font-size: 0.92rem; line-height: 1.55; margin: 0; color: var(--notg-ink); opacity: 0.85; }
 
 .role-lead p {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   color: var(--notg-ink);
   margin-bottom: 18px;
@@ -394,7 +394,7 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
 /* show the full artwork / mockup, no cropping */
 .notg-mockup-frame img { width: 100%; height: auto; display: block; }
 
-/* Poster mockups: crop ~2cm from each edge and display larger */
+/* Poster mockups: crop sides and display much larger */
 .mockup-block--poster .notg-mockup-duo {
   max-width: 100%;
   gap: 32px;
@@ -403,12 +403,14 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
   overflow: hidden;
 }
 .mockup-block--poster .notg-mockup-frame img {
-  transform: scale(1.22);
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* make mockup images larger by widening the duo grid */
 .notg-mockup-duo {
-  max-width: 1000px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -438,7 +440,7 @@ body.notg { background: var(--notg-paper); color: var(--notg-ink); }
   color: var(--notg-paper);
 }
 .notg-fazit p:not(.fazit-claim) {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   line-height: 1.8;
   color: rgba(247,242,238,0.88);
   margin-bottom: 18px;

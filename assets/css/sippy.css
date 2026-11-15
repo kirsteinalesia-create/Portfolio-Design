@@ -334,23 +334,155 @@ body.sippy .site-header.is-scrolled { background: rgba(250,247,244,0.9); }
 }
 
 /* =========================================================
-   TECH STACK — chips
+   VALUE CHIPS — gradient pills (Lutra pattern)
    ========================================================= */
 .sippy-values {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 32px;
+  gap: 14px;
+  margin-top: 36px;
 }
 .sippy-values .chip {
-  padding: 6px 18px;
+  padding: 11px 22px;
   border-radius: 999px;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  background: var(--sp-blue-lt);
-  color: var(--sp-brown);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, var(--sp-blue), #3a8ac4);
+  color: #fff;
+  box-shadow: 0 14px 30px -18px rgba(74,43,33,0.6);
+}
+.sippy-values .chip:nth-child(2) { background: linear-gradient(135deg, #3a8ac4, var(--sp-pink)); }
+.sippy-values .chip:nth-child(3) { background: linear-gradient(135deg, var(--sp-pink), var(--sp-brown-md)); }
+.sippy-values .chip:nth-child(4) { background: linear-gradient(135deg, var(--sp-blue), var(--sp-pink)); }
+
+/* =========================================================
+   BRAND — logo showcase (Lutra pattern)
+   ========================================================= */
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 44px;
+  align-items: center;
+  margin-top: 20px;
+}
+.logo-stage {
+  border-radius: 26px;
+  padding: 48px;
+  background:
+    radial-gradient(70% 70% at 30% 25%, var(--sp-blue-pale) 0%, transparent 60%),
+    linear-gradient(150deg, #fff 0%, var(--sp-beige) 100%);
+  box-shadow: 0 30px 60px -34px rgba(74,43,33,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-stage img {
+  width: 62%; max-width: 260px;
+  border-radius: 50%;
+  filter: drop-shadow(0 20px 34px rgba(74,43,33,0.25));
+}
+.logo-notes h3 { font-size: 1.3rem; margin-bottom: 14px; }
+.logo-notes p { font-size: 1rem; line-height: 1.75; }
+
+/* palette swatches — ::before squares (Lutra pattern) */
+.palette { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.swatch {
+  display: flex; flex-direction: column; gap: 6px; align-items: center;
+  font-size: 0.72rem; letter-spacing: 0.04em; color: var(--sp-brown-md);
+}
+.swatch::before {
+  content: "";
+  width: 54px; height: 54px; border-radius: 16px;
+  box-shadow: 0 12px 26px -14px rgba(74,43,33,0.5);
+}
+.swatch.sp-blue::before  { background: var(--sp-blue); }
+.swatch.sp-sky::before   { background: var(--sp-blue-lt); }
+.swatch.sp-pink::before  { background: var(--sp-pink); }
+.swatch.sp-beige::before { background: var(--sp-beige); border: 1px solid rgba(74,43,33,0.12); }
+.swatch.sp-brown::before { background: var(--sp-brown); }
+
+/* =========================================================
+   MY ROLE — grid with badges (Lutra pattern)
+   ========================================================= */
+.sippy-role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px;
+  align-items: start;
+}
+.role-badges { display: grid; gap: 20px; }
+.role-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--sp-paper);
+  border-radius: 20px;
+  padding: 24px 28px;
+  border: 1px solid rgba(74,43,33,0.12);
+  box-shadow: 0 24px 50px -36px rgba(74,43,33,0.45);
+}
+.role-badge .role-ico {
+  flex: 0 0 auto;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--sp-blue), #3a8ac4);
+  color: #fff;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.role-badge:nth-child(2) .role-ico { background: linear-gradient(135deg, #3a8ac4, var(--sp-pink)); }
+.role-badge:nth-child(3) .role-ico { background: linear-gradient(135deg, var(--sp-pink), var(--sp-brown-md)); }
+.role-badge h3 { font-size: 1.15rem; margin: 0 0 4px; }
+.role-badge p { font-size: 0.92rem; line-height: 1.55; margin: 0; color: var(--sp-brown-md); }
+
+.role-lead p { font-size: 1.05rem; line-height: 1.8; }
+.role-lead .role-highlight {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--sp-pink);
+  background: var(--sp-blue-pale);
+  border-radius: 0 16px 16px 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FAZIT — centered, gradient bg (Lutra pattern)
+   ========================================================= */
+.sippy-fazit {
+  text-align: center;
+  background: linear-gradient(180deg, var(--sp-blue-pale) 0%, var(--sp-paper) 100%);
+  padding: 100px 0;
+}
+.sippy-fazit .container { max-width: 760px; }
+.sippy-fazit .section-kicker {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sp-blue);
+  margin-bottom: 14px;
   font-weight: 500;
 }
+.sippy-fazit p { font-size: 1.12rem; line-height: 1.85; }
+.sippy-fazit .fazit-claim {
+  font-family: var(--font-serif); font-style: italic; font-weight: 700;
+  font-size: clamp(1.5rem, 3vw + 0.5rem, 2.4rem);
+  color: var(--sp-blue); margin: 30px 0;
+}
+
+.sippy-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 40px; }
+.sippy-tags .tag {
+  padding: 8px 18px; border-radius: 999px;
+  background: var(--sp-blue-lt); color: var(--sp-brown);
+  font-size: 0.85rem;
+}
+.sippy-tags .tag:nth-child(3n+2) { background: var(--sp-pink-lt); color: var(--sp-brown-md); }
+.sippy-tags .tag:nth-child(3n)   { background: var(--sp-blue); color: #fff; }
+
+.sippy-bottom-back { text-align: center; padding: 50px 0 20px; }
 
 /* =========================================================
    RESPONSIVE
@@ -369,4 +501,6 @@ body.sippy .site-header.is-scrolled { background: rgba(250,247,244,0.9); }
   .sippy-bubbles { display: none; }
   .sippy-screens { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
   .sippy-features { grid-template-columns: 1fr; }
+  .logo-showcase { grid-template-columns: 1fr; gap: 30px; }
+  .sippy-role-grid { grid-template-columns: 1fr; gap: 28px; }
 }

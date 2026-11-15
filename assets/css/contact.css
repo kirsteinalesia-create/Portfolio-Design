@@ -212,7 +212,8 @@
 .methods-subtitle {
   text-align: center;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
   margin-bottom: 50px;
 }
 

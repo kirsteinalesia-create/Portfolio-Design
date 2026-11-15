@@ -489,7 +489,7 @@ body.lutra .btn-outline:hover { background: var(--lu-navy); color: #fff; }
   border-radius: 32px;
 }
 .mockup-split-text h3 { font-size: 1.4rem; margin-bottom: 14px; }
-.mockup-split-text p { font-size: 1.02rem; line-height: 1.8; }
+.mockup-split-text p { font-size: 1.05rem; line-height: 1.8; }
 .mockup-split-text p + p { margin-top: 14px; }
 
 /* =========================================================
