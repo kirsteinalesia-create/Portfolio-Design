@@ -1,0 +1,149 @@
+/* =========================================================
+   Station 3 — Custom Enhancements
+   Stats bar, process steps, prominent carousel
+   ========================================================= */
+
+/* ————— Stats Highlight Bar ————— */
+.st3-stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(24px, 5vw, 64px);
+  padding: 48px 20px;
+  text-align: center;
+}
+.st3-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.st3-stat-number {
+  font-family: 'Playfair Display', var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(2.8rem, 5vw + 0.5rem, 4.5rem);
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.st3-stat-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  max-width: 140px;
+}
+
+/* ————— Process Steps ————— */
+.st3-process {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+  padding: 40px 0 48px;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+}
+.st3-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  position: relative;
+  padding: 0 8px;
+}
+.st3-step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--c-brown));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 6px 20px -8px rgba(107,63,42,0.4);
+}
+.st3-step:nth-child(2) .st3-step-icon { background: linear-gradient(135deg, var(--c-brown), var(--c-rose)); }
+.st3-step:nth-child(3) .st3-step-icon { background: linear-gradient(135deg, var(--c-rose), var(--accent)); }
+.st3-step:nth-child(4) .st3-step-icon { background: linear-gradient(135deg, var(--c-tan), #a06040); }
+.st3-step-title {
+  font-weight: 600;
+  font-size: 0.82rem;
+  margin-top: 12px;
+  color: var(--fg);
+  line-height: 1.35;
+}
+/* connector line between steps */
+.st3-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  left: calc(50% + 30px);
+  width: calc(100% - 60px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--c-tan), var(--accent-soft));
+  z-index: 1;
+}
+
+/* ————— Reduce gap between h2 and content ————— */
+.station-insight h2 + .st3-text-carousel,
+.station-insight h2 + * + .st3-text-carousel {
+  margin-top: -4px;
+}
+
+/* ————— Text + Carousel Side-by-Side ————— */
+.st3-text-carousel {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: clamp(16px, 2vw, 32px);
+  align-items: start;
+  padding: 24px 0 60px;
+}
+.st3-text-side p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--fg);
+  margin: 0 0 16px;
+}
+.st3-text-side p:last-child {
+  margin-bottom: 0;
+}
+.st3-carousel-side {
+  margin-right: -80px;
+  margin-top: -40px;
+}
+.st3-carousel-side .img-carousel {
+  width: 100%;
+}
+
+/* ————— Responsive ————— */
+@media (max-width: 900px) {
+  .st3-text-carousel {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 700px) {
+  .st3-stats {
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+  }
+  .st3-process {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .st3-step:not(:last-child)::after {
+    display: none;
+  }
+}

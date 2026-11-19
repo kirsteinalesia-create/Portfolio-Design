@@ -343,6 +343,13 @@ body.station-tokyo {
   --c-rose:       #71014B;
 }
 
+/* Keep site header in default rosa, not Tokyo magenta */
+body.station-tokyo .site-header .site-nav a.is-active,
+body.station-tokyo .site-header .site-nav a:hover { color: #c87082; }
+body.station-tokyo .site-header .site-nav a.is-active::after { background: #c87082; }
+body.station-tokyo .site-header .lang-btn .lang-opt.is-active { color: #c87082; }
+body.station-tokyo .site-header .lang-btn:hover { border-color: #c87082; }
+
 /* Hero: light base with visible raspberry radials */
 body.station-tokyo .station-hero {
   background:

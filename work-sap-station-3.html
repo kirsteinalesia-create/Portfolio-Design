@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="assets/css/timeline.css" />
   <link rel="stylesheet" href="assets/css/pages.css" />
   <link rel="stylesheet" href="assets/css/sap-stations.css" />
+  <link rel="stylesheet" href="assets/css/station-3.css?v=2" />
 </head>
 <body>
 
@@ -43,7 +44,7 @@
       <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
     </div>
     <div class="container">
-      <span class="eyebrow reveal">Station 03 · Work at SAP</span>
+      <span class="eyebrow reveal">Rotation 03 · Work at SAP</span>
       <h1 class="reveal">Customer Experience <span class="script">Cross Team</span></h1>
       <p class="reveal" style="max-width: 640px; margin-top: 20px; font-size: 1.1rem; line-height: 1.7;">
         Designing the future of user research — analyzing SAP's Research LAB and creating an AI-powered prototype that reimagines how researchers work.
@@ -79,10 +80,10 @@
       <span class="st-kicker">01 · Context</span>
       <h2>The Research LAB</h2>
       <p>
-        My team, <strong>CX Cross</strong>, develops and maintains the <strong>Research LAB</strong> —
+        My team, CX Cross, develops and maintains the Research LAB —
         an internal platform at SAP that supports user researchers in planning, conducting and
         documenting their studies. During this practical phase, I had the opportunity to write my
-        <strong>second project paper (Project Paper 2)</strong> about this very tool: I analyzed the
+        second project paper (Project Paper 2) about this very tool: I analyzed the
         existing Research LAB, explored how Artificial Intelligence could enhance its workflows, and
         developed a concrete concept to integrate AI into the research process.
       </p>
@@ -103,57 +104,75 @@
   </div>
 
   <!-- =============================================
-       From research to prototype – approach & outcome
+       Stats highlight bar
+       ============================================= -->
+  <div class="st3-stats reveal">
+    <div class="st3-stat">
+      <span class="st3-stat-number">28,840</span>
+      <span class="st3-stat-label">h/week on AI-automatable routine tasks</span>
+    </div>
+    <div class="st3-stat">
+      <span class="st3-stat-number">6+</span>
+      <span class="st3-stat-label">Expert Interviews</span>
+    </div>
+    <div class="st3-stat">
+      <span class="st3-stat-number">5</span>
+      <span class="st3-stat-label">AI Tools Compared</span>
+    </div>
+    <div class="st3-stat">
+      <span class="st3-stat-number">1</span>
+      <span class="st3-stat-label">AI Synthesis Template</span>
+    </div>
+  </div>
+
+  <!-- =============================================
+       Process – approach & outcome
        ============================================= -->
   <section class="station-insight">
     <div class="container">
       <span class="st-kicker reveal">02 · Process</span>
-      <h2 class="reveal">From research to prototype</h2>
+      <h2 class="reveal">From analysis to AI template</h2>
 
-      <div class="insight-block reveal">
-        <div class="insight-copy">
-          <p>
-            I started by conducting <strong>expert interviews</strong> with researchers across SAP to
-            understand how the Research LAB was being used, what worked well, and where the biggest pain
-            points were. This gave me a clear picture of the status quo and helped me define the
-            requirements for an AI-supported solution.
-          </p>
-          <p>
-            In parallel, I carried out a <strong>structured comparison of different AI research tools</strong>,
-            evaluating them against criteria like usefulness, ease of integration and data privacy — a
-            critical factor when dealing with user research data at SAP.
-          </p>
-        </div>
-        <div class="insight-media">
-          <img src="assets/img/cx-cross/mock-research-lab-1.png" alt="Research LAB homepage — central functions for quick access" />
-        </div>
-      </div>
 
-      <div class="insight-block reverse reveal">
-        <div class="insight-copy">
-          <p>
-            The Research LAB brings together all workspaces, an integrated <strong>Joule assistant</strong>
-            for context-specific questions, and a dedicated chat for broader research inquiries —
-            everything researchers need in one place.
-          </p>
-        </div>
-        <div class="insight-media">
-          <img src="assets/img/cx-cross/mock-research-lab-3.png" alt="Joule AI assistant integrated into the Research LAB workspace" />
-        </div>
-      </div>
 
-      <div class="insight-block reveal">
-        <div class="insight-copy">
+      <div class="st3-text-carousel reveal">
+        <div class="st3-text-side">
           <p>
-            Based on my findings, I designed an <strong>AI-supported research report template</strong>
-            that automates parts of the documentation process and helps researchers structure their
-            insights more efficiently. The template was integrated into a <strong>working prototype</strong>
-            within the existing Research LAB, complete with a feedback loop involving the user research team
-            to validate and refine the concept.
+            I started with <strong>expert interviews</strong> across SAP to understand how the Research LAB was used, identify pain points and define requirements for an AI-supported solution.
+          </p>
+          <p>
+            In parallel, I compared different <strong>AI research tools</strong>, evaluating their usefulness, integration potential and data privacy.
+          </p>
+          <p>
+            The Research LAB combines all workspaces with an integrated <strong>Joule assistant</strong> for context-specific questions and a dedicated chat for broader research inquiries.
+          </p>
+          <p>
+            Based on my findings, I developed an <strong>AI-powered synthesis template</strong> to help researchers structure and document insights more efficiently. It was integrated into the existing Research LAB and refined through feedback from the user research team.
           </p>
         </div>
-        <div class="insight-media">
-          <img src="assets/img/cx-cross/mock-research-lab-5.png" alt="Template library with standardized research report templates" />
+        <div class="st3-carousel-side">
+          <div class="img-carousel logo-carousel" data-carousel data-interval="4500" aria-roledescription="carousel" aria-label="Research LAB screens">
+            <button class="carousel-arrow prev" type="button" aria-label="Previous image" data-carousel-prev>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="carousel-viewport">
+              <ul class="carousel-track" data-carousel-track>
+                <li class="carousel-slide"><img src="assets/img/cx-cross/frame-1.png" alt="Research LAB — Joule sidebar with navigation and workspaces" loading="lazy" /></li>
+                <li class="carousel-slide"><img src="assets/img/cx-cross/frame-2.png" alt="Research LAB — Joule assistant creating a new research project" loading="lazy" /></li>
+                <li class="carousel-slide"><img src="assets/img/cx-cross/frame-3.png" alt="Research LAB — Homepage with Templates, Legal Framework and Activity Feed" loading="lazy" /></li>
+                <li class="carousel-slide"><img src="assets/img/cx-cross/frame-4.png" alt="Research LAB — A/B Testing workspace with Joule, Figma and Templates" loading="lazy" /></li>
+                <li class="carousel-slide"><img src="assets/img/cx-cross/frame-5.png" alt="Research LAB — Joule AI synthesis conversation" loading="lazy" /></li>
+              </ul>
+            </div>
+            <button class="carousel-arrow next" type="button" aria-label="Next image" data-carousel-next>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+          </div>
         </div>
       </div>
 
@@ -164,6 +183,19 @@
         <span class="chip">Prototyping</span>
         <span class="chip">Project Paper 2</span>
         <span class="chip">Expert Interviews</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="st3-video-section">
+    <div class="container" style="max-width: 900px; text-align: center; padding: 60px 20px;">
+      <span class="st-kicker reveal">Project Presentation</span>
+      <h2 class="reveal" style="margin-bottom: 32px;">See it in Action</h2>
+      <div class="reveal">
+        <video controls playsinline preload="metadata" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px -15px rgba(42,30,26,0.25);">
+          <source src="assets/img/cx-cross/verteidigung.mp4" type="video/mp4">
+        </video>
+        <p style="margin-top: 14px; font-size: 0.85rem; font-style: italic; color: var(--muted);">This video is available in German only.</p>
       </div>
     </div>
   </section>
