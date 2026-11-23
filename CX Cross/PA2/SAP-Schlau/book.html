@@ -1,0 +1,2501 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>SAP-Schlau · Persönliches Lernbuch</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<section class="cover">
+  <div class="brand">Persönliches Lernbuch · 2026 Edition</div>
+  <h1>SAP&nbsp;Schlau.</h1>
+  <div class="subtitle">Das SAP-Ökosystem verstehen — Produkte, Prozesse, Presales und Praxis in einem Buch.</div>
+  <div class="tagline">
+    Vom Grundlagenwissen bis zum souveränen Fachgespräch:<br/>
+    Was ist es? Wofür ist es da? Welches Problem löst es? Wie hängt es zusammen?
+  </div>
+  <div class="badges">
+    <span class="badge">🟢 Must Know</span>
+    <span class="badge">🔵 Business</span>
+    <span class="badge">🟣 Presales</span>
+    <span class="badge">🔴 Technical</span>
+  </div>
+  <div class="footer-cover">
+    <div>Stand: 2026 · Ausgabe 1.0</div>
+    <div>SAP · S/4HANA · BTP · Business AI · Joule · BDC</div>
+  </div>
+</section>
+
+<!-- ================= VORWORT ================= -->
+<section>
+  <h1 class="chapter"><span class="num">·</span>Wie du dieses Buch liest</h1>
+  <p class="chapter-lead">
+    Dieses Buch ist kein Handbuch — es ist ein <strong>mentales Landkartenwerk</strong>.
+    Nach dem Lesen sollst du bei einem SAP-Begriff nicht nur wissen, dass er existiert,
+    sondern <em>verstehen, was er bedeutet, warum er relevant ist und wo er im Ökosystem einzuordnen ist</em>.
+  </p>
+
+  <h2>Die vier Level</h2>
+  <p>Jeder Begriff ist gekennzeichnet, damit du sofort weißt, wie tief du einsteigen musst:</p>
+  <table>
+    <tr>
+      <th style="width:22%">Level</th>
+      <th>Für wen?</th>
+      <th>Beispiel-Begriffe</th>
+    </tr>
+    <tr>
+      <td><span class="lvl must">🟢 Must Know</span></td>
+      <td>Jeder bei SAP. Absolute Basis für jedes Gespräch.</td>
+      <td>SAP, ERP, S/4HANA, BTP, Cloud, Fiori</td>
+    </tr>
+    <tr>
+      <td><span class="lvl biz">🔵 Business</span></td>
+      <td>Sales, Consulting, Marketing, Management</td>
+      <td>ARR, TCO, Business Case, Discovery, Value</td>
+    </tr>
+    <tr>
+      <td><span class="lvl pre">🟣 Presales</span></td>
+      <td>Presales, Solution Advisors, Architects</td>
+      <td>Solution Architecture, PoV, Demo Story, RFP</td>
+    </tr>
+    <tr>
+      <td><span class="lvl tech">🔴 Technical</span></td>
+      <td>Developer, Architects, Basis, DevOps</td>
+      <td>RAP, ABAP Cloud, gCTS, OData, Event Mesh</td>
+    </tr>
+  </table>
+
+  <h2>Der Aufbau eines Begriffs-Blocks</h2>
+  <div class="term">
+    <h3>Beispiel-Begriff <span class="lvl must">🟢 Must Know</span></h3>
+    <div class="row"><span class="k">Was ist es?</span><span class="v">Eine kompakte, alltagstaugliche Erklärung — kein Marketing-Text.</span></div>
+    <div class="row"><span class="k">Wofür?</span><span class="v">Welches konkrete Problem im Unternehmen wird gelöst?</span></div>
+    <div class="row"><span class="k">Beispiel</span><span class="v">Ein einfaches Unternehmens-Szenario, damit du es dir bildlich vorstellen kannst.</span></div>
+    <div class="row"><span class="k">SAP-Kontext</span><span class="v">Wie hängt der Begriff mit anderen SAP-Lösungen zusammen?</span></div>
+    <div class="mem"><strong>Merksatz:</strong> Ein Satz, den du dir auf ewig merkst.</div>
+    <div class="nv"><strong>Nicht verwechseln mit:</strong> Der häufigste Fehler in Gesprächen.</div>
+  </div>
+
+  <div class="box tip">
+    <div class="title">💡 Lese-Empfehlung</div>
+    <p>Lies Kapitel 1–2 chronologisch — das gibt dir das Grundgerüst. Danach kannst du die weiteren Kapitel als <strong>Nachschlagewerk</strong> nutzen. Kapitel 9 (<em>Nicht verwechseln</em>) und Kapitel 10 (<em>Praxisfälle</em>) sind Gold für Kundenmeetings.</p>
+  </div>
+</section>
+
+<!-- ================= TOC ================= -->
+<section class="toc">
+  <h1>Inhalt</h1>
+  <ul>
+    <li><span><span class="num">1</span><span class="title">SAP-Grundlagen — Was ist SAP, ERP, ein Geschäftsprozess?</span></span></li>
+    <li class="h2"><span><span class="num">1.1</span>Was ist SAP?</span></li>
+    <li class="h2"><span><span class="num">1.2</span>Was ist ERP?</span></li>
+    <li class="h2"><span><span class="num">1.3</span>Wie funktioniert ein Unternehmen?</span></li>
+    <li class="h2"><span><span class="num">1.4</span>End-to-End-Prozesse und ihre Zusammenhänge</span></li>
+    <li class="h2"><span><span class="num">1.5</span>Cloud vs. On-Premise · Public vs. Private</span></li>
+    <li class="h2"><span><span class="num">1.6</span>Ein Beispielunternehmen: „NordLicht Möbel GmbH"</span></li>
+
+    <li><span><span class="num">2</span><span class="title">SAP-Produkte & Portfolio</span></span></li>
+    <li class="h2"><span><span class="num">2.1</span>ERP-Welt: S/4HANA, RISE, GROW, Clean Core</span></li>
+    <li class="h2"><span><span class="num">2.2</span>SAP Business Technology Platform (BTP)</span></li>
+    <li class="h2"><span><span class="num">2.3</span>SAP Business AI, Joule &amp; AI Agents</span></li>
+    <li class="h2"><span><span class="num">2.4</span>Data &amp; Analytics — Business Data Cloud, Datasphere, SAC</span></li>
+    <li class="h2"><span><span class="num">2.5</span>HR — SuccessFactors &amp; HXM</span></li>
+    <li class="h2"><span><span class="num">2.6</span>Procurement / Spend — Ariba, Concur, Fieldglass</span></li>
+    <li class="h2"><span><span class="num">2.7</span>Supply Chain &amp; Manufacturing</span></li>
+    <li class="h2"><span><span class="num">2.8</span>Customer Experience (CX)</span></li>
+    <li class="h2"><span><span class="num">2.9</span>Business Transformation — Signavio &amp; LeanIX</span></li>
+    <li class="h2"><span><span class="num">2.10</span>SAP Business Network</span></li>
+    <li class="h2"><span><span class="num">2.11</span>Sustainability</span></li>
+    <li class="h2"><span><span class="num">2.12</span>Security &amp; Identity</span></li>
+
+    <li><span><span class="num">3</span><span class="title">Technology &amp; Development</span></span></li>
+    <li><span><span class="num">4</span><span class="title">UX &amp; Design — Fiori, UI5, Fiori Elements</span></span></li>
+    <li><span><span class="num">5</span><span class="title">Sales-Begriffe</span></span></li>
+    <li><span><span class="num">6</span><span class="title">Presales — Vom Pain Point zum Deal</span></span></li>
+    <li><span><span class="num">7</span><span class="title">Cloud &amp; Integration</span></span></li>
+    <li><span><span class="num">8</span><span class="title">Projektbegriffe</span></span></li>
+    <li><span><span class="num">9</span><span class="title">Nicht verwechseln</span></span></li>
+    <li><span><span class="num">10</span><span class="title">Praxisfälle: 5 End-to-End-Szenarien</span></span></li>
+    <li><span><span class="num">A</span><span class="title">Anhang: SAP in 30 Minuten</span></span></li>
+    <li><span><span class="num">B</span><span class="title">Anhang: Die 100 wichtigsten SAP-Begriffe</span></span></li>
+    <li><span><span class="num">C</span><span class="title">Anhang: SAP-Ökosystem auf einer Seite</span></span></li>
+    <li><span><span class="num">D</span><span class="title">Anhang: 30 Verständnisfragen mit Lösungen</span></span></li>
+  </ul>
+</section>
+
+<!-- ================= KAPITEL 1 ================= -->
+<section>
+<h1 class="chapter"><span class="num">01</span>SAP-Grundlagen</h1>
+<p class="chapter-lead">
+  Bevor du auch nur ein einziges SAP-Produkt einordnen kannst, brauchst du das Fundament:
+  Was tut ein Unternehmen den ganzen Tag? Wie hängen die Abteilungen zusammen? Warum gibt es überhaupt eine Software wie SAP?
+  Dieses Kapitel baut dir dieses mentale Modell auf.
+</p>
+
+<h2>1.1 &nbsp;Was ist SAP?</h2>
+<p>
+  <strong>SAP</strong> ist ein deutsches Softwareunternehmen (gegründet 1972 in Walldorf) und der Weltmarktführer für <strong>Unternehmenssoftware</strong>.
+  Das Kürzel steht ursprünglich für <em>„Systeme, Anwendungen und Produkte in der Datenverarbeitung"</em>. Heute ist „SAP" primär eine <strong>Marke</strong> — man verwendet sie fast wie ein Eigenwort.
+</p>
+<p>
+  SAP-Software läuft in ca. 87% der weltweit größten Unternehmen. Wenn Adidas Schuhe verkauft, Nestlé einen Container losschickt, Siemens einen Mitarbeitenden einstellt oder BMW eine Rechnung stellt — sehr wahrscheinlich passiert das in einem SAP-System.
+</p>
+
+<div class="box tip">
+  <div class="title">💡 Kernidee</div>
+  <p>SAP liefert die <strong>digitale Nervenzentrale</strong> eines Unternehmens. Alle Kern-Prozesse — Finanzen, Einkauf, Lager, Produktion, Verkauf, HR — laufen in einer <strong>gemeinsamen Datenbasis</strong> zusammen. Kein Excel-Chaos, sondern <em>eine Wahrheit</em>.</p>
+</div>
+
+<h3>Was verkauft SAP eigentlich?</h3>
+<ul>
+  <li><strong>ERP-Systeme</strong> (S/4HANA, Cloud ERP) — das Kernsystem eines Unternehmens</li>
+  <li><strong>Cloud-Plattformen</strong> (BTP) — zum Erweitern, Integrieren, KI nutzen</li>
+  <li><strong>Fachlösungen</strong> für HR, Einkauf, Reisen, Kundenkontakt, Lieferkette, Nachhaltigkeit</li>
+  <li><strong>KI &amp; Datenprodukte</strong> (Joule, Business AI, Business Data Cloud)</li>
+  <li><strong>Business-Netzwerke</strong> (Ariba Network, Business Network) — B2B-Marktplätze</li>
+</ul>
+
+<h2>1.2 &nbsp;Was ist ERP?</h2>
+<p>
+  <strong>ERP</strong> steht für <em>Enterprise Resource Planning</em> — auf Deutsch etwa „Ressourcenplanung im Unternehmen".
+  Der Begriff klingt sperrig, das Konzept ist aber einfach: <strong>Ein Softwaresystem, das alle geschäftskritischen Abläufe verbindet</strong> — vom Auftrag bis zur Buchhaltung, vom Einkauf bis zur Auslieferung.
+</p>
+
+<div class="box example">
+  <div class="title">🏭 Ohne ERP</div>
+  <p>Der Vertrieb erfasst Aufträge in Excel. Das Lager pflegt eine Access-Datenbank. Die Buchhaltung tippt Rechnungen in DATEV. Der Einkauf mailt Bestellungen an Lieferanten. → <strong>Fünf Wahrheiten, kein Überblick, keine Echtzeit.</strong></p>
+</div>
+<div class="box ok">
+  <div class="title">✅ Mit ERP</div>
+  <p>Der Kundenauftrag löst automatisch Materialentnahme im Lager, Nachbestellung beim Lieferanten, Produktionsauftrag in der Fabrik, Rechnung an den Kunden und Buchung im Hauptbuch aus. → <strong>Eine Wahrheit, in Echtzeit, überall.</strong></p>
+</div>
+
+<h3>Die klassischen ERP-Module (fachlich)</h3>
+<table>
+  <tr><th>Modul</th><th>Was macht es?</th><th>SAP-Begriff</th></tr>
+  <tr><td>Finance</td><td>Buchhaltung, Bilanz, Reporting, Steuern</td><td>FI, CO</td></tr>
+  <tr><td>Procurement</td><td>Einkauf, Bestellungen, Lieferanten</td><td>MM (Materials Management)</td></tr>
+  <tr><td>Sales</td><td>Kundenaufträge, Angebote, Fakturierung</td><td>SD (Sales &amp; Distribution)</td></tr>
+  <tr><td>Manufacturing</td><td>Produktionsplanung, Fertigungsaufträge</td><td>PP (Production Planning)</td></tr>
+  <tr><td>Logistics</td><td>Lager, Versand, Bestandsführung</td><td>WM, EWM</td></tr>
+  <tr><td>HR</td><td>Personal, Gehaltsabrechnung, Zeitwirtschaft</td><td>HCM / heute SuccessFactors</td></tr>
+</table>
+
+<h2>1.3 &nbsp;Wie funktioniert ein Unternehmen grundsätzlich?</h2>
+<p>Jedes produzierende oder handelnde Unternehmen tut im Kern immer dasselbe — nur in unterschiedlichen Farben.</p>
+
+<div class="arch">
+  <div class="layer gold"><div class="lbl">Nachfrage</div>Ein Kunde bestellt ein Produkt oder Service (Sales / CX).</div>
+  <div class="layer blue"><div class="lbl">Beschaffung</div>Rohmaterial &amp; Zukaufteile werden bei Lieferanten geordert (Procurement / Ariba).</div>
+  <div class="layer purple"><div class="lbl">Produktion</div>Aus Rohstoffen wird ein fertiges Produkt gefertigt (Manufacturing / Digital Manufacturing).</div>
+  <div class="layer teal"><div class="lbl">Lager &amp; Logistik</div>Produkte werden gelagert, verpackt, ausgeliefert (EWM, TM).</div>
+  <div class="layer green"><div class="lbl">Verkauf &amp; Rechnung</div>Kunde bekommt Ware und Rechnung (Sales, Finance).</div>
+  <div class="layer gray"><div class="lbl">Auswertung</div>Alle Zahlen fließen zusammen: Bilanz, KPIs, Forecast (Finance, Analytics, BDC).</div>
+</div>
+
+<p>Und quer über all das:</p>
+<ul>
+  <li><strong>HR</strong> — die Mitarbeitenden, die alles bedienen (Recruiting, Payroll, Skills)</li>
+  <li><strong>Finance</strong> — die zentrale Buchhaltung, in der jeder Schritt einen Beleg erzeugt</li>
+  <li><strong>IT</strong> — die Systeme, die alles am Laufen halten</li>
+  <li><strong>Compliance &amp; Nachhaltigkeit</strong> — Regeln, Steuern, ESG-Berichte</li>
+</ul>
+
+<h2>1.4 &nbsp;End-to-End-Prozesse: Wie hängt alles zusammen?</h2>
+<p>In der SAP-Welt spricht man ständig von <strong>„End-to-End-Prozessen"</strong> (E2E). Das sind ganze Wertschöpfungsketten, die mehrere Abteilungen umspannen. Wenn du diese fünf kennst, verstehst du 80% aller Kundengespräche:</p>
+
+<div class="grid-2">
+  <div class="term">
+    <h3>Lead-to-Cash <span class="lvl must">🟢</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">erstem Kundenkontakt</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">Zahlungseingang</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">CX (Sales/Service Cloud), S/4HANA (SD, FI)</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Vom Interesse zum Geld."</div>
+  </div>
+  <div class="term">
+    <h3>Source-to-Pay <span class="lvl must">🟢</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">Lieferantensuche</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">bezahlter Rechnung</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">Ariba, S/4HANA (MM, FI), Business Network</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Von der Bedarfsmeldung zum Zahlungsausgang."</div>
+  </div>
+  <div class="term">
+    <h3>Plan-to-Produce <span class="lvl must">🟢</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">Absatzplanung</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">fertiges Produkt im Lager</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">IBP, S/4HANA (PP), Digital Manufacturing</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Vom Plan zur produzierten Palette."</div>
+  </div>
+  <div class="term">
+    <h3>Hire-to-Retire <span class="lvl must">🟢</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">Bewerbung</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">Austritt</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">SuccessFactors (Recruiting, EC, LMS)</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Vom ersten Bewerbungsklick bis zum Ruhestand."</div>
+  </div>
+  <div class="term">
+    <h3>Record-to-Report <span class="lvl biz">🔵</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">Einzelbuchung</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">Konzernabschluss</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">S/4HANA Finance, SAC, Group Reporting</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Vom Buchungsbeleg zum Geschäftsbericht."</div>
+  </div>
+  <div class="term">
+    <h3>Design-to-Operate <span class="lvl biz">🔵</span></h3>
+    <div class="row"><span class="k">Von</span><span class="v">Produktentwicklung</span></div>
+    <div class="row"><span class="k">Bis</span><span class="v">Servicebetrieb im Feld</span></div>
+    <div class="row"><span class="k">Beteiligt</span><span class="v">PLM, EWM, Asset Management, Service Cloud</span></div>
+    <div class="mem"><strong>Merksatz:</strong> „Vom CAD-Modell bis zur Wartung beim Kunden."</div>
+  </div>
+</div>
+
+<div class="box mem">
+  <div class="title">🎯 Diese sechs Prozesse sind das Rückgrat</div>
+  <p>Jede SAP-Lösung, die dir begegnet, unterstützt <strong>einen oder mehrere</strong> dieser E2E-Prozesse. Wenn du in einem Gespräch nicht mehr weiterweißt, frag dich: <em>„Welchen E2E-Prozess unterstützt das gerade?"</em></p>
+</div>
+
+<h2>1.5 &nbsp;Cloud vs. On-Premise · Public vs. Private</h2>
+
+<h3>On-Premise vs. Cloud — die Grundunterscheidung</h3>
+<table class="compare">
+  <tr><th></th><th>On-Premise</th><th>Cloud</th></tr>
+  <tr><td>Wo läuft es?</td><td>Server im eigenen Rechenzentrum</td><td>Rechenzentrum von SAP / Hyperscaler</td></tr>
+  <tr><td>Wer betreibt es?</td><td>Kunde &amp; sein IT-Team</td><td>SAP (bzw. Partner)</td></tr>
+  <tr><td>Wer aktualisiert?</td><td>Der Kunde — meist alle 1–3 Jahre</td><td>SAP — regelmäßig (Quartals-/Halbjahresrelease)</td></tr>
+  <tr><td>Vertrag</td><td>Einmal Lizenz + jährliche Wartung</td><td>Subscription (jährliche Abo-Gebühr)</td></tr>
+  <tr><td>Anpassung</td><td>Nahezu unbegrenzt (auch tief im Code)</td><td>Nur über definierte Erweiterungspunkte</td></tr>
+</table>
+
+<h3>Public Cloud vs. Private Cloud (bei SAP wichtig!)</h3>
+<table class="compare">
+  <tr><th></th><th>Public Cloud</th><th>Private Cloud</th></tr>
+  <tr><td>System-Instanz</td><td>Multi-Tenant: eine Software für viele Kunden</td><td>Single-Tenant: eigene Instanz nur für einen Kunden</td></tr>
+  <tr><td>Anpassbarkeit</td><td>Gering — Standard-Prozesse („Fit-to-Standard")</td><td>Hoch — auch Custom Code (aber Clean Core empfohlen)</td></tr>
+  <tr><td>Release-Zyklus</td><td>2× jährlich, automatisch, alle Kunden gleichzeitig</td><td>Jährlich, Kunde wählt Zeitfenster</td></tr>
+  <tr><td>SAP-Produkt</td><td><strong>SAP Cloud ERP (Public Edition)</strong> — via <em>GROW with SAP</em></td><td><strong>SAP Cloud ERP (Private Edition)</strong> — via <em>RISE with SAP</em></td></tr>
+  <tr><td>Zielgruppe</td><td>Wachsende Mittelständler, Neukunden</td><td>ECC-Bestandskunden, komplexe Prozesse</td></tr>
+</table>
+
+<div class="box tip">
+  <div class="title">💡 SAP-Wording 2026</div>
+  <p>SAP hat 2024/25 die Namensgebung geschärft: Das Produkt heißt jetzt <strong>„SAP Cloud ERP"</strong> mit den Editionen <em>Public</em> und <em>Private</em>. „S/4HANA Cloud" hörst du zwar noch, es ist aber das gleiche Produktbündel. On-Premise-S/4HANA gibt es weiterhin für Kunden mit dedizierter IT-Strategie.</p>
+</div>
+
+<h2>1.6 &nbsp;Beispielunternehmen: „NordLicht Möbel GmbH"</h2>
+<p class="section-intro">Dieses fiktive Unternehmen begleitet uns durch das ganze Buch. Merke es dir — jedes SAP-Produkt bekommt gleich ein Gesicht.</p>
+
+<div class="box example">
+  <div class="title">🪑 NordLicht Möbel GmbH</div>
+  <p><strong>Sitz:</strong> Hamburg · <strong>Mitarbeitende:</strong> 850 · <strong>Umsatz:</strong> 220 Mio €<br/>
+  <strong>Geschäft:</strong> Designermöbel für Büro und Home Office, verkauft an Einzelhandel (B2B) und über eigenen Onlineshop (B2C). Produktion in Polen, Rohholz aus Skandinavien, Metallbeschläge aus Italien.</p>
+</div>
+
+<h3>Wie NordLicht mit SAP arbeitet</h3>
+<div class="vflow">
+  <div class="step"><strong>Absatzplanung (IBP):</strong> „Wie viele Stühle verkaufen wir nächsten Winter?" — Prognose basierend auf Vorjahr, Trends, Wetter.</div>
+  <div class="step"><strong>Beschaffung (Ariba + Business Network):</strong> Auf Basis der Planung werden Holz, Stoffe, Beschläge über den Ariba Network Marktplatz eingekauft.</div>
+  <div class="step"><strong>Produktion (Digital Manufacturing):</strong> Die polnische Fabrik erhält Fertigungsaufträge, Maschinen melden Fortschritt in Echtzeit.</div>
+  <div class="step"><strong>Lager &amp; Versand (EWM + TM):</strong> Fertige Möbel wandern ins Zentrallager, werden für den Versand kommissioniert.</div>
+  <div class="step"><strong>Verkauf (Commerce Cloud + Sales Cloud):</strong> Onlineshop nimmt Bestellungen entgegen, Außendienst pflegt B2B-Kunden.</div>
+  <div class="step"><strong>Finanzen (S/4HANA Finance):</strong> Jede Buchung fließt automatisch in Hauptbuch, USt-Meldung, Konzernabschluss.</div>
+  <div class="step"><strong>Personal (SuccessFactors):</strong> 850 Mitarbeitende — Payroll, Weiterbildung, Zielvereinbarungen.</div>
+  <div class="step"><strong>Analyse (SAC + BDC):</strong> Vorstand sieht in einem Dashboard: „Wie war der Winter im Vergleich zum Plan?"</div>
+  <div class="step"><strong>KI (Joule):</strong> Einkäuferin fragt: <em>„Zeig mir alle Bestellungen &gt; 50k € letzten Monat, sortiert nach Lieferverzug"</em> — Antwort in Sekunden.</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🧠 Der wichtigste Satz aus Kapitel 1</div>
+  <p>SAP verkauft keine Software — SAP verkauft <strong>End-to-End-Geschäftsprozesse</strong> in digitaler Form. Jedes Produkt, das dir begegnet, ist ein Puzzleteil eines dieser Prozesse.</p>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 2 ================= -->
+<section>
+<h1 class="chapter"><span class="num">02</span>SAP-Produkte &amp; Portfolio</h1>
+<p class="chapter-lead">
+  Das SAP-Portfolio wirkt auf den ersten Blick riesig — es sind hunderte Produkte, ständig neue Namen, ständige Umbenennungen.
+  Der Trick: Alles lässt sich in <strong>elf klare Domänen</strong> gliedern. Wenn du diese Domänen kennst, kannst du jedes neue Produkt in Sekunden zuordnen.
+</p>
+
+<h2>2.1 &nbsp;Die ERP-Welt: S/4HANA, RISE, GROW &amp; Clean Core</h2>
+<p class="section-intro">Das ERP-Kernsystem ist das Herz jeder SAP-Landschaft. Hier fließen alle Prozesse zusammen.</p>
+
+<div class="term">
+  <h3>SAP HANA <span class="lvl must">🟢 Must Know</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>In-Memory-Datenbank</strong> von SAP. „In-Memory" heißt: Daten liegen im Arbeitsspeicher, nicht auf der Festplatte — deshalb superschnell.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Speichern und Auswerten großer Datenmengen in Millisekunden. HANA ist der Motor, der unter S/4HANA arbeitet.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Finanz-Report über 300 Mio. Belege, der früher 4 Stunden dauerte, läuft in HANA in 3 Sekunden.</span></div>
+  <div class="row"><span class="k">SAP-Kontext</span><span class="v">Grundlage für S/4HANA, BW/4HANA, Datasphere, HANA Cloud.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> HANA ist die <em>Datenbank</em>. S/4HANA ist das <em>ERP-System</em>, das darauf läuft.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> S/4HANA (das ist das ERP, HANA ist die Datenbank).</div>
+</div>
+
+<div class="term">
+  <h3>SAP HANA Cloud <span class="lvl biz">🔵</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die <strong>Cloud-Version</strong> der HANA-Datenbank. Managed Service auf BTP.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Als Datenbank für eigene Anwendungen auf BTP, als Backend für Analytics, als Datenschicht für Datasphere.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Eine Erweiterungs-App auf BTP speichert Daten in HANA Cloud — hochverfügbar, ohne dass NordLicht eigene Server betreiben muss.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> HANA als <em>Service</em> — bezahlt, betrieben, skaliert von SAP.</div>
+</div>
+
+<div class="term">
+  <h3>SAP ECC (SAP ERP 6.0) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der <strong>Vorgänger</strong> von S/4HANA. Das klassische SAP-ERP, das seit 2004 im Einsatz ist. Läuft auf verschiedenen Datenbanken (Oracle, DB2, HANA).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Historisch das Rückgrat tausender Konzerne. Wird zunehmend durch S/4HANA abgelöst.</span></div>
+  <div class="row"><span class="k">Wartung</span><span class="v">SAP-Standardwartung läuft <strong>Ende 2027 aus</strong> (Extended Maintenance bis 2030 gegen Aufpreis). Deshalb der Migrationsdruck.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> ECC ist die „alte Welt", S/4HANA die „neue Welt".</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> „SAP Business Suite" — das war der Marketingname der Produktfamilie um ECC (inkl. CRM, SCM, SRM).</div>
+</div>
+
+<div class="term">
+  <h3>SAP Business Suite <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Historischer Sammelname für das Paket aus SAP ECC + CRM + SCM + SRM + PLM. Seit 2015 durch S/4HANA abgelöst.</span></div>
+  <div class="row"><span class="k">2026-Update</span><span class="v">Der Name „Business Suite" wurde 2024/25 wiederbelebt als <strong>„SAP Business Suite" (neu)</strong> — ein Bündel aus S/4HANA + BTP + BDC + Joule als integriertes „Suite-Angebot". Immer nachfragen, welche Bedeutung gemeint ist!</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Alter Begriff = altes ECC-Bündel; neuer Begriff = SAP-Cloud-Bundle 2025+.</div>
+</div>
+
+<div class="term">
+  <h3>SAP S/4HANA <span class="lvl must">🟢 Must Know</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das aktuelle <strong>Kern-ERP</strong> von SAP. „S/4" steht für „Suite 4 HANA" — es läuft ausschließlich auf HANA.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Führt alle Kernprozesse in einem System: Finance, Logistik, Produktion, Vertrieb, Einkauf. Deutlich schneller, moderner, mit Fiori-UI und eingebauter KI.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht bucht eine Kundenrechnung — die USt wird berechnet, das Hauptbuch gebucht, die Provision im HR-System vorgemerkt und der Bestand aktualisiert. Alles in einem System, in Echtzeit.</span></div>
+  <div class="row"><span class="k">SAP-Kontext</span><span class="v">Zentraler Kern; alle anderen SAP-Lösungen (Ariba, SuccessFactors, CX, BDC) docken an S/4HANA an.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> S/4HANA ist das <em>digitale Rückgrat</em> — jedes andere SAP-Produkt ist Fleisch drumherum.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> HANA (Datenbank) und mit ECC (Vorgänger).</div>
+</div>
+
+<div class="term">
+  <h3>SAP Cloud ERP <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der neue Sammelname für S/4HANA in der Cloud (seit 2024). Zwei Editionen: <strong>Public</strong> und <strong>Private</strong>.</span></div>
+  <div class="row"><span class="k">Public Edition</span><span class="v">Multi-Tenant, standardisiert, halbjährliche Releases. Zielgruppe: Wachstums-Mittelstand. Vertrieben unter <strong>GROW with SAP</strong>.</span></div>
+  <div class="row"><span class="k">Private Edition</span><span class="v">Single-Tenant, viel Flexibilität, jährliche Releases. Zielgruppe: Große Bestandskunden. Vertrieben unter <strong>RISE with SAP</strong>.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Cloud ERP = S/4HANA in der Cloud, Public = Standard, Private = Enterprise.</div>
+</div>
+
+<div class="term">
+  <h3>RISE with SAP <span class="lvl must">🟢</span> <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>Kommerzangebot</strong> (kein Produkt!). Ein Bundle aus S/4HANA Cloud (Private Edition) + BTP-Credits + Business Network + Migration Tools, aus einer Hand, ein Vertrag.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Bestandskunden aus ECC oder On-Premise-S/4HANA sollen in die Cloud kommen — ohne 5 verschiedene Verträge zu managen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht war 15 Jahre auf ECC. Mit RISE wechseln sie zu S/4HANA Private Cloud — SAP übernimmt Infrastruktur, Betrieb, Basis-Migration.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> RISE = „Ich habe schon SAP und will in die Cloud."</div>
+</div>
+
+<div class="term">
+  <h3>GROW with SAP <span class="lvl must">🟢</span> <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das RISE-Pendant für <strong>Mittelstand und Neukunden</strong>. Bundle rund um S/4HANA Cloud Public Edition mit Best-Practice-Prozessen, schneller Einführung, geringen Anpassungen.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">„Fit-to-Standard"-Einführung: in wenigen Monaten produktiv statt in Jahren.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein neuer Elektronik-Startup mit 200 Mitarbeitenden führt GROW ein — in 4 Monaten sind Finanz, Einkauf und Vertrieb live.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> GROW = „Ich starte frisch oder wachse — gib mir Standard-SAP."</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> RISE (Private Cloud, für Bestandskunden mit komplexen Prozessen).</div>
+</div>
+
+<div class="term">
+  <h3>Clean Core <span class="lvl pre">🟣 Presales</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>Architekturprinzip</strong>: Das ERP-System bleibt <em>im Standard</em>. Alle Erweiterungen und Anpassungen liegen <em>außerhalb</em> — auf BTP, in Extensions, in eigenen Services.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Damit Updates schmerzfrei möglich sind. Ein modifiziertes ECC-System bei einem Upgrade zu retten, war ein Alptraum. Clean Core löst das.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht braucht eine Sonderfunktion für Provisionsberechnung. Statt in S/4HANA Code zu ändern, bauen sie eine BTP-App, die per Event/API mit S/4HANA spricht.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Modifikationen sind out, Extensions sind in — „Keep the core clean."</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> „Vanilla" (bedeutet gar keine Anpassung — Clean Core erlaubt Anpassungen, aber außerhalb).</div>
+</div>
+
+<div class="term">
+  <h3>Fit-to-Standard <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>Einführungsphilosophie</strong>: Man passt die Prozesse des Unternehmens an das SAP-Standard-Modell an — nicht umgekehrt.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Schneller, günstiger, updatefähiger. Voraussetzung für Public Cloud.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht hatte 12 verschiedene Rechnungslayouts. Bei Fit-to-Standard entscheidet man sich für 2 Standard-Layouts. Deutlich weniger Aufwand, alle sind zufrieden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „SAP hat gute Prozesse — passen wir uns diesen an, statt sie zu verbiegen."</div>
+</div>
+
+<h2>2.2 &nbsp;SAP Business Technology Platform (BTP)</h2>
+<p class="section-intro">Wenn S/4HANA das Rückgrat ist, ist BTP das <strong>Nervensystem drumherum</strong>: die Cloud-Plattform, auf der du erweiterst, integrierst, analysierst und mit KI arbeitest.</p>
+
+<div class="term">
+  <h3>SAP BTP <span class="lvl must">🟢 Must Know</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die <strong>zentrale Cloud-Plattform</strong> von SAP. Eine Sammlung von Diensten für App-Entwicklung, Datenintegration, Analytics, KI, Identity, Workflow.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Erweitern, integrieren, innovieren — <em>ohne</em> dabei das S/4HANA-System anzufassen (Stichwort Clean Core).</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht braucht ein Portal, in dem Lieferanten ihre Zertifikate hochladen. Sie bauen es auf BTP — mit Anbindung an Ariba und S/4HANA.</span></div>
+  <div class="row"><span class="k">Bestandteile</span><span class="v">Integration Suite, Build, HANA Cloud, SAC, AI Core, Datasphere, Identity Services, Event Mesh, ABAP Cloud u.v.m.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> BTP ist der <em>Werkzeugkasten</em>, mit dem du SAP-Landschaften baust und veredelst.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> S/4HANA (BTP ist die Plattform, S/4HANA ist das ERP).</div>
+</div>
+
+<h3>BTP Architektur — vereinfachte Sicht</h3>
+<div class="arch">
+  <div class="layer gray"><div class="lbl">Endanwender</div>Fiori Apps · Work Zone · Joule · Mobile · WhatsApp/Teams-Bots</div>
+  <div class="layer blue"><div class="lbl">Application Layer (Build)</div>Build Apps (Low-Code) · Build Process Automation · Build Work Zone · Custom SAPUI5-Apps</div>
+  <div class="layer purple"><div class="lbl">AI Layer</div>Generative AI Hub · AI Core · Joule Foundation · AI Launchpad</div>
+  <div class="layer teal"><div class="lbl">Integration Layer</div>Integration Suite (CPI) · API Management · Event Mesh · Business Connectivity</div>
+  <div class="layer gold"><div class="lbl">Data Layer</div>Datasphere · HANA Cloud · Analytics Cloud · Business Data Cloud</div>
+  <div class="layer green"><div class="lbl">Foundation</div>Cloud Foundry Runtime · Kyma (Kubernetes) · ABAP Environment · Identity Services · Audit Logs</div>
+</div>
+
+<div class="grid-2">
+<div class="term">
+  <h3>SAP Build <span class="lvl biz">🔵</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die Marken-Klammer über allen Low-Code-Werkzeugen von SAP.</span></div>
+  <div class="row"><span class="k">Enthält</span><span class="v">Build Apps, Build Process Automation, Build Work Zone, Build Code (für Pro-Developer).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Build" = SAP für Business-Entwickler und Bürger-Coder.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Build Apps <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Low-Code-Werkzeug: Apps per Drag-and-Drop bauen, mit direktem Zugriff auf S/4HANA-Daten.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Der Betriebsrat baut in einem Tag eine Kantinen-Feedback-App — ohne Programmierkenntnisse.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der Nachfolger von <em>SAP AppGyver</em>.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Build Process Automation <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Werkzeug für <strong>Workflows</strong> und <strong>RPA</strong> (Robotic Process Automation).</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Genehmigungs-Workflow für Investitionsanträge über 50k € automatisch von Abteilungsleiter → Bereichsleiter → CFO.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Klick statt Code für Freigabeprozesse.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Build Work Zone <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>digitales Arbeitsportal</strong>: alle Anwendungen, News, Aufgaben, KI-Assistent (Joule) an einer Stelle.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Der Einkäufer öffnet morgens Work Zone und sieht: „5 Bestellungen zur Genehmigung", „Ariba-Angebot XY läuft ab", News aus dem Unternehmen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der Nachfolger des Fiori Launchpads — ein „Windows für die SAP-Welt".</div>
+</div>
+</div>
+
+<div class="term">
+  <h3>SAP Integration Suite <span class="lvl must">🟢</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAPs zentrales <strong>Integrationsprodukt</strong>. Verbindet SAP-Systeme mit SAP-Systemen — und mit Nicht-SAP-Systemen (Salesforce, Shopify, Legacy).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Datenflüsse zwischen Anwendungen orchestrieren: „Auftrag aus Shopify → S/4HANA", „Rechnung aus Ariba → Concur".</span></div>
+  <div class="row"><span class="k">Bestandteile</span><span class="v">Cloud Integration (CPI), API Management, Open Connectors, Trading Partner Management, Event Mesh.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der <em>Postbote</em> im SAP-Ökosystem.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> „API" (das ist eine Schnittstelle; Integration Suite ist das Werkzeug, um viele APIs zu orchestrieren).</div>
+</div>
+
+<div class="term">
+  <h3>SAP API Management <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Teil der Integration Suite. Verwaltet APIs zentral: Autorisierung, Rate Limits, Versionierung, Analytics.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Externer Partner soll auf NordLicht-Bestellinfo zugreifen — kontrolliert, mit Quotas, mit Logging.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Türsteher für alle Schnittstellen.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Event Mesh <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>Event-Broker</strong> — Systeme reden per „Ereignis": „Bestellung erstellt", „Rechnung bezahlt".</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Statt regelmäßig zu fragen („polling"), reagieren Systeme <em>reaktiv</em>. Skalierbar, entkoppelt.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Sobald S/4HANA eine Lieferung als „versandt" markiert, feuert ein Event. Die CX-Cloud sendet automatisch die Sendungsverfolgung an den Kunden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Push statt Pull" — Systeme rufen sich nicht ständig an, sondern rufen laut, wenn etwas passiert.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Cloud Foundry <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>Runtime</strong> auf BTP: dort laufen selbstentwickelte Anwendungen (Java, Node.js, Python) in Containern.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Eigene Apps hosten, skalieren, mit BTP-Services verbinden — ohne eigene Server.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der „Motor", auf dem BTP-Apps laufen.</div>
+</div>
+
+<div class="term">
+  <h3>ABAP Cloud (ABAP Environment) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Laufzeit- und Entwicklungs-Environment auf BTP für <strong>ABAP</strong>-Code — aber mit strengen Regeln (nur freigegebene APIs, keine SAP-internen Objekte).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">ABAP-Entwickler können weiter ABAP schreiben, aber „Cloud-fähig" und „Clean-Core-tauglich".</span></div>
+  <div class="mem"><strong>Merksatz:</strong> ABAP für die Cloud-Ära — mit Leitplanken.</div>
+</div>
+
+<h2>2.3 &nbsp;SAP Business AI, Joule &amp; AI Agents</h2>
+<p class="section-intro">Der KI-Bereich wächst 2025/26 rasant. SAP hat ein klares Prinzip: <strong>KI kommt zur Arbeit</strong> — nicht als Insel, sondern integriert in bestehende Prozesse.</p>
+
+<div class="term">
+  <h3>SAP Business AI <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der <strong>Markenbegriff</strong> für alle KI-Angebote von SAP. Keine einzelne Software, sondern eine Strategie und Produktfamilie.</span></div>
+  <div class="row"><span class="k">Prinzipien</span><span class="v"><strong>Business-relevant, verlässlich, verantwortungsvoll</strong> — 3 R's: Relevant, Reliable, Responsible.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> KI, die im echten Geschäftskontext arbeitet — mit deinen Daten, deinen Regeln.</div>
+</div>
+
+<div class="term">
+  <h3>Joule <span class="lvl must">🟢 Must Know</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAPs <strong>generativer KI-Copilot</strong>. Über alle SAP-Anwendungen hinweg: S/4HANA, SuccessFactors, Ariba, SAC.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Natürliche Sprache statt Klick-Marathon. Berichte generieren, Aufgaben delegieren, Muster erkennen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v"><em>„Joule, zeig mir alle offenen Rechnungen &gt; 100k € mit Zahlungsverzug &gt; 30 Tagen. Fasse zusammen und schreib einen Entwurf für die Mahnung."</em></span></div>
+  <div class="mem"><strong>Merksatz:</strong> Joule ist das <em>Gesicht</em> von SAPs KI-Strategie — ein Assistent überall.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> AI Core (das ist die technische Plattform, Joule ist der Endanwender-Copilot).</div>
+</div>
+
+<div class="term">
+  <h3>Joule Agents (AI Agents) <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v"><strong>Autonome KI-Agenten</strong> auf Basis von Joule. Führen mehrstufige Aufgaben aus — ohne dass ein Mensch jeden Schritt anstößt.</span></div>
+  <div class="row"><span class="k">Beispiele 2026</span><span class="v"><em>Sales Agent</em> (bereitet Termine vor), <em>Dispute Agent</em> (klärt Rechnungsstreitigkeiten), <em>Q&amp;A Agent</em>, <em>Learning Recommendation Agent</em>.</span></div>
+  <div class="row"><span class="k">Wie unterschied.</span><span class="v">Ein „Assistent" reagiert auf jede Frage. Ein „Agent" hat ein <em>Ziel</em> und arbeitet über Schritte hinweg selbstständig — z.B. „Kläre diesen Zahlungsstreit mit Kunde X".</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Agent = Assistent + Ziel + Werkzeuge + Autonomie.</div>
+</div>
+
+<div class="term">
+  <h3>Generative AI Hub <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Teil von SAP AI Core. Ein <strong>zentraler Zugang</strong> zu großen Sprachmodellen (LLMs) verschiedener Anbieter (OpenAI, Anthropic, Google, Mistral, Meta …).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Entwickler können Modelle austauschen ohne den Code anzupassen. Enterprise-Kontrollen: Kostenlimits, Prompt-Logging, DSGVO-konform.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein „App-Store" für LLMs im Enterprise-Kontext.</div>
+</div>
+
+<div class="term">
+  <h3>SAP AI Core <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die <strong>technische Plattform</strong>, auf der KI-Modelle bei SAP laufen: Training, Inferenz, Lifecycle-Management, Skalierung, Governance.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Für Data Scientists und Entwickler: eigene ML-Modelle deployen und operationalisieren.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Die „Motorenhalle" der SAP-KI — hier laufen die Modelle physisch.</div>
+</div>
+
+<div class="term">
+  <h3>SAP AI Launchpad <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das Web-UI für AI Core: Modelle verwalten, deployen, monitoren.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Cockpit" für den KI-Betrieb.</div>
+</div>
+
+<div class="term">
+  <h3>LLM (Large Language Model) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein KI-Modell, das mit Milliarden Wörtern trainiert wurde und Text versteht &amp; erzeugt (GPT, Claude, Gemini, Mistral).</span></div>
+  <div class="row"><span class="k">SAP-Kontext</span><span class="v">Steckt hinter Joule und den Agents — SAP wählt je nach Aufgabe das passende Modell aus dem AI Hub.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein „Wortmodell", das statistisch das nächste Wort vorhersagt — und daraus entsteht scheinbar Intelligenz.</div>
+</div>
+
+<div class="term">
+  <h3>RAG (Retrieval-Augmented Generation) <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine Technik, bei der ein LLM <strong>zuerst</strong> in einer Wissensdatenbank sucht und dann mit diesem Kontext antwortet.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">LLMs kennen keine Unternehmens-internen Daten. RAG holt sie zur Laufzeit dazu — Antworten werden präziser, aktueller, nachvollziehbar.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Joule beantwortet die Frage <em>„Was steht in Vertrag XY?"</em> — es holt aktive Klauseln aus dem Contract-Store, dann generiert das LLM die Antwort.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Erst nachlesen, dann antworten.</div>
+</div>
+
+<div class="term">
+  <h3>Embeddings &amp; Vector Search <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Text wird in <strong>Zahlenvektoren</strong> übersetzt (Embeddings). Ähnliche Inhalte liegen im „Vektorraum" nahe beieinander. Suche funktioniert nach <em>Bedeutung</em>, nicht nach Wörtern.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Grundlage für RAG. In HANA Cloud gibt es dafür die <em>Vector Engine</em>.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Klug suchen" statt Stichwort-Bingo.</div>
+</div>
+
+<div class="term">
+  <h3>Grounding &amp; Business Context <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v"><strong>Grounding</strong> = das LLM auf reale Fakten (Belege, Verträge, Stammdaten) „festbinden".<br/><strong>Business Context</strong> = das Wissen um Rollen, Berechtigungen, Prozesse in den Kontext einbringen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Einkäufer fragt Joule etwas — die Antwort berücksichtigt seine Rolle, Region, Berechtigungen, Firmen-Policies.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> KI-Antworten mit <em>Wahrheitsanker</em>. Kein Halluzinieren.</div>
+</div>
+
+<div class="term">
+  <h3>AI Governance <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Regeln, Prozesse und Werkzeuge, um KI verantwortungsvoll einzusetzen: Datenschutz, Nachvollziehbarkeit, Verzerrung, EU AI Act.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „KI kann viel — aber nicht alles, was sie kann, soll sie auch tun."</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🧭 Wie hängt SAPs KI-Welt zusammen?</div>
+  <div class="arch" style="margin-top:6pt">
+    <div class="layer gray"><div class="lbl">User</div>Joule (Copilot) · Joule Agents (autonom)</div>
+    <div class="layer purple"><div class="lbl">KI-Fabrik</div>Generative AI Hub · Grounding · RAG · Business Context</div>
+    <div class="layer blue"><div class="lbl">Plattform</div>SAP AI Core · AI Launchpad</div>
+    <div class="layer gold"><div class="lbl">Daten</div>Business Data Cloud · HANA Cloud (Vector) · Datasphere</div>
+  </div>
+</div>
+
+<h2>2.4 &nbsp;Data &amp; Analytics — BDC, Datasphere, SAC</h2>
+<p class="section-intro">Ohne Daten keine KI und kein gutes Reporting. SAP hat 2024–26 sein Datenportfolio grundlegend neu geordnet.</p>
+
+<div class="term">
+  <h3>SAP Business Data Cloud (BDC) <span class="lvl must">🟢</span> <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der <strong>neue strategische Data-Layer</strong> von SAP (2025 gelauncht). Bündelt Daten aus S/4HANA, SuccessFactors, Ariba u.v.m. — <em>semantisch angereichert, harmonisiert, mit Business-Kontext</em>. Nutzt intern Databricks-Technologie für offene Datenformate.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Grundlage für Analytics, Planung und KI: Alle SAP-Daten in einem konsistenten, offen zugänglichen Format.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht möchte Umsatz nach Region + Produktkategorie + Marketing-Kampagne aus 5 Systemen kombinieren — in der BDC ist das ein einziges Datenmodell.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Alle SAP-Daten, jederzeit auswertbar, mit Business-Bedeutung."</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> Datasphere (das ist ein technisches Data-Fabric-Werkzeug, BDC ist der ganzheitliche Datenprodukt-Ansatz).</div>
+</div>
+
+<div class="term">
+  <h3>SAP Datasphere <span class="lvl biz">🔵</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Data-Warehouse- und <strong>Data-Fabric</strong>-Lösung auf BTP. Verbindet Daten aus vielen Quellen (SAP + Nicht-SAP), ohne sie zu duplizieren.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">„Single Source of Truth" für Analytics: Modellierung, Governance, Semantik.</span></div>
+  <div class="row"><span class="k">Verhältnis BDC</span><span class="v">Datasphere ist einer der <em>technischen Bausteine</em> der Business Data Cloud.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Nachfolger von SAP Data Warehouse Cloud (DWC).</div>
+</div>
+
+<div class="term">
+  <h3>SAP Analytics Cloud (SAC) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAPs <strong>BI-Plattform in der Cloud</strong>: Dashboards, Reporting, Planung, Predictive Analytics, alles in einer App.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Der Vorstand sieht Umsätze und Trends, die Fachabteilung plant Budgets, der Analyst baut Reports.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht plant den Umsatz 2027 in SAC — SAP-KI schlägt Werte basierend auf 3 Jahren Historie vor, Planer korrigieren.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein Werkzeug für <em>BI + Planung + Prognose</em>.</div>
+</div>
+
+<div class="term">
+  <h3>SAP BW / BW/4HANA <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das klassische SAP Business Warehouse. <strong>BW/4HANA</strong> ist die moderne Version, exklusiv auf HANA.</span></div>
+  <div class="row"><span class="k">Rolle 2026</span><span class="v">Für viele Bestandskunden weiter zentrales Data-Warehouse. Strategisch wandert die Welt zu Datasphere / BDC.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Die klassische DWH-Welt, evolutionär modernisiert.</div>
+</div>
+
+<div class="term">
+  <h3>Data Warehouse vs. Data Lake vs. Data Fabric <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Data Warehouse</span><span class="v">Strukturierte, aufbereitete Daten. Für Reporting. Zeilen &amp; Spalten. Ordentlich.</span></div>
+  <div class="row"><span class="k">Data Lake</span><span class="v">Rohe Daten aller Art (Videos, Logs, JSON, PDFs) — Sammel-Reservoir für Data Science.</span></div>
+  <div class="row"><span class="k">Data Fabric</span><span class="v">Ein Konzept: verteilte Daten <em>logisch verbinden</em>, ohne physisch zu kopieren. Modernes Muster.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Warehouse = geordnetes Lager · Lake = Rohmateriallager · Fabric = Adressbuch aller Lager.</div>
+</div>
+
+<div class="term">
+  <h3>Master Data &amp; Data Governance <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Master Data</span><span class="v">Stammdaten: Kunden, Lieferanten, Produkte, Mitarbeitende. Die „Wahrheiten" hinter allen Belegen.</span></div>
+  <div class="row"><span class="k">Data Governance</span><span class="v">Regeln, wer Daten pflegen darf, wie sie geprüft werden, wie Qualität sichergestellt wird.</span></div>
+  <div class="row"><span class="k">SAP-Produkt</span><span class="v">SAP Master Data Governance (MDG) — im S/4HANA oder als Cloud-Service.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Garbage in, garbage out" — schlechte Stammdaten machen jedes KI-Projekt kaputt.</div>
+</div>
+
+<h2>2.5 &nbsp;HR: SuccessFactors &amp; HXM</h2>
+<p class="section-intro">Der Bereich Personal umfasst den gesamten „Hire-to-Retire"-Prozess. SAPs Cloud-Suite dafür heißt <strong>SuccessFactors</strong>.</p>
+
+<div class="term">
+  <h3>SAP SuccessFactors (HXM Suite) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAPs Cloud-Lösung für Personalmanagement. Zusammenspiel mehrerer Module.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Recruiting, Onboarding, Personalakte, Weiterbildung, Ziele, Vergütung — der komplette Mitarbeiter-Lifecycle.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Wenn es um Mitarbeitende geht, ist es SuccessFactors.</div>
+</div>
+
+<div class="term">
+  <h3>HXM (Human Experience Management) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Konzept: HR-Software soll nicht nur die HR-Abteilung bedienen, sondern die <strong>Erfahrung</strong> der Mitarbeitenden verbessern.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> HXM = HR + „gute Employee Experience".</div>
+</div>
+
+<h3>Die SuccessFactors-Module im Überblick</h3>
+<table>
+  <tr><th>Modul</th><th>Wofür?</th><th>Beispiel</th></tr>
+  <tr><td>Employee Central (EC)</td><td>Digitale Personalakte, Stammdaten, Struktur — das Rückgrat</td><td>Adressänderung, Vertragsdaten, Position</td></tr>
+  <tr><td>Recruiting</td><td>Stellenmanagement, Bewerbungen, Kandidaten</td><td>Neue Stelle „Produktdesignerin" ausschreiben</td></tr>
+  <tr><td>Onboarding</td><td>Neuer Mitarbeitender wird eingeplant, Zugänge, Aufgaben</td><td>Laptop, Zugang, Willkommenspaket</td></tr>
+  <tr><td>Learning (LMS)</td><td>Weiterbildung, Trainings, Zertifikate</td><td>Compliance-Training „DSGVO", Skill-Kurse</td></tr>
+  <tr><td>Performance &amp; Goals</td><td>Zielvereinbarungen, Beurteilungen</td><td>Jahresziele, Mid-Year-Review</td></tr>
+  <tr><td>Compensation</td><td>Gehaltsplanung, Bonus, Aktien</td><td>Jährliche Merit-Runde</td></tr>
+  <tr><td>Workforce Analytics</td><td>KPI-Analysen zur Belegschaft</td><td>Fluktuation nach Region</td></tr>
+  <tr><td>Payroll</td><td>Gehaltsabrechnung (in mehreren Ländern)</td><td>Deutsche Payroll für 850 Mitarbeitende</td></tr>
+</table>
+
+<div class="box example">
+  <div class="title">🪑 Hire-to-Retire bei NordLicht</div>
+  <p><strong>Anna bewirbt sich</strong> → Recruiting.<br/>
+  <strong>Anna wird eingestellt</strong> → Onboarding + Employee Central.<br/>
+  <strong>Anna lernt SAP-Fiori-Design</strong> → Learning.<br/>
+  <strong>Anna vereinbart Jahresziele</strong> → Performance &amp; Goals.<br/>
+  <strong>Anna bekommt Bonus</strong> → Compensation.<br/>
+  <strong>HR analysiert Fluktuation</strong> → Workforce Analytics.</p>
+</div>
+
+<h2>2.6 &nbsp;Procurement / Spend: Ariba, Concur, Fieldglass</h2>
+<p class="section-intro">Alles, was ein Unternehmen einkauft, fällt unter „Spend Management". SAP unterteilt sauber nach Art des Einkaufs.</p>
+
+<div class="term">
+  <h3>SAP Ariba <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-Suite für <strong>indirekten und direkten Einkauf</strong>: Sourcing, Verträge, Bestellabwicklung, Rechnungen.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Vom Bedarf über Anbieter-Auswahl, Vertrag, Bestellung bis zur Rechnung — <strong>Source-to-Pay</strong> digital.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht braucht 200 neue Bürostühle. Ariba schreibt aus, drei Lieferanten bieten, der günstigste bekommt den Zuschlag.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Wenn <em>Materialien, Dienstleistungen, Verträge</em> gekauft werden → Ariba.</div>
+</div>
+
+<div class="term">
+  <h3>Ariba Buying / Sourcing / Contracts <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Buying</span><span class="v">Katalog-Einkauf: Mitarbeiter bestellt im „Amazon-Style" aus Firmenkatalogen.</span></div>
+  <div class="row"><span class="k">Sourcing</span><span class="v">Ausschreibungen und Auktionen für größere Mengen / neue Lieferanten.</span></div>
+  <div class="row"><span class="k">Contracts</span><span class="v">Lifecycle von Verträgen: erstellen, verhandeln, unterschreiben, überwachen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Drei Alltagsschritte im Einkauf — je nach Reifegrad.</div>
+</div>
+
+<div class="term">
+  <h3>Ariba Network <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Weltgrößtes B2B-<strong>Business-Netzwerk</strong>: 6+ Mio Unternehmen tauschen Bestellungen, Rechnungen, Bestätigungen aus.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht schickt Bestellung an italienischen Beschlaghersteller — direkt im Netzwerk, ohne E-Mail-Anhang, ohne PDF.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ariba Network ist heute Teil des <em>SAP Business Network</em>.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Concur <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-Lösung für <strong>Reisen, Spesen, Rechnungen</strong> von Einzelpersonen.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Der Vertriebler bucht Flug + Hotel, scannt die Belege, macht die Abrechnung — alles in einer App.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLichts Außendienst reist zum Kunden — Concur bucht die Reise über Firmenkonditionen und rechnet die Spesen automatisch ab.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Der Reise-Kollege" — Concur = Travel + Expense + Invoice.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> Ariba (Ariba kauft Waren/Dienstleistungen ein, Concur verwaltet Reisen &amp; Spesen).</div>
+</div>
+
+<div class="term">
+  <h3>SAP Fieldglass <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud für <strong>externe Arbeitskräfte</strong>: Zeitarbeit, Freelancer, Berater, Werkverträge.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Ausschreiben, vergeben, Stunden freigeben, bezahlen — alles außerhalb der Payroll.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht braucht 3 Monate lang einen SAP-Berater. Fieldglass steuert Anfrage, Auswahl, Timesheet, Rechnung.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Für „Contingent Workforce" — externe Kräfte, die nicht angestellt sind.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> SuccessFactors (interne Mitarbeitende) oder Ariba (Waren/Services allgemein).</div>
+</div>
+
+<h2>2.7 &nbsp;Supply Chain &amp; Manufacturing</h2>
+<p class="section-intro">Die <em>physische Wertschöpfung</em> — von der Planung bis zur Auslieferung. SAP hat hier eine sehr breite Produktpalette.</p>
+
+<div class="term">
+  <h3>SAP Integrated Business Planning (IBP) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-Lösung für <strong>Absatz-, Bedarfs-, Produktions- und Netzplanung</strong>. Nachfolger von SAP APO.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Was verkaufen wir? Was müssen wir produzieren? Welche Kapazitäten brauchen wir?</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht plant Absatz 2027 — IBP simuliert 3 Szenarien: normale Nachfrage, Boom, Recession.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Das „Kristallkugel"-Werkzeug für die Supply Chain.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Digital Manufacturing (Cloud) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-<strong>MES</strong> (Manufacturing Execution System): steuert die Produktion in Echtzeit, verbindet Maschinen mit S/4HANA.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Fräs-Roboter meldet Fortschritt, Ausschuss, Werkzeugverschleiß — alles in Digital Manufacturing sichtbar.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Die „Produktionsleitstelle" in der Cloud.</div>
+</div>
+
+<div class="term">
+  <h3>SAP EWM (Extended Warehouse Management) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Modernes <strong>Lagerverwaltungssystem</strong>. Teil von S/4HANA (embedded) oder als eigene Instanz.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Bestände, Wareneingang, Kommissionierung, Versand, Roboter-Steuerung im Lager.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLichts Zentrallager: EWM sagt dem Kommissionierer optimalen Weg, verwaltet 20.000 Palettenplätze.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der „Chef im Lager" — moderner Nachfolger von SAP WM.</div>
+</div>
+
+<div class="term">
+  <h3>SAP TM (Transportation Management) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Planung und Ausführung von Transporten: LKW, See, Luft, Schiene.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht bündelt Lieferungen an norddeutsche Händler zu einer Tour — TM optimiert Route und Kosten.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Was EWM im Lager tut, tut TM auf der Straße.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Asset Management &amp; APM <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v"><strong>EAM</strong> (Enterprise Asset Management) = klassische Instandhaltung: Wartung, Inspektion, Reparatur. <br/><strong>APM</strong> (Asset Performance Management) = Cloud-Ergänzung mit KI, IoT, Predictive Maintenance.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Eine CNC-Maschine in Polen meldet Vibrationsdaten. APM erkennt Muster, sagt Ausfall in 12 Tagen voraus, EAM plant Wartung.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Maschinen &amp; Anlagen im Blick — reaktiv (EAM) und vorausschauend (APM).</div>
+</div>
+
+<div class="term">
+  <h3>SAP PLM (Product Lifecycle Management) <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Verwaltung des Produkts von der Idee über Entwicklung, Produktion, Service bis zum End-of-Life.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht entwickelt einen neuen Bürostuhl — Zeichnungen, Materialien, Genehmigungen, Kosten in PLM.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Von der Skizze bis zur Verschrottung."</div>
+</div>
+
+<h2>2.8 &nbsp;Customer Experience (CX)</h2>
+<p class="section-intro">Alles rund um den Kunden — vor, während und nach dem Kauf. Das Portfolio hieß früher „C/4HANA", heute einfach <strong>SAP CX</strong>.</p>
+
+<div class="term">
+  <h3>SAP CX (Customer Experience) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Sammelbegriff für SAPs <strong>Front-Office-Cloud</strong>: Sales, Service, Commerce, CDC, Emarsys, CPQ.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Alle Kundenkontaktpunkte digital abbilden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Alles, was der Kunde sieht oder erlebt."</div>
+</div>
+
+<table>
+  <tr><th>Produkt</th><th>Wofür?</th><th>Beispiel</th></tr>
+  <tr><td>Sales Cloud</td><td>CRM für den Vertrieb: Leads, Opportunities, Pipeline</td><td>B2B-Kundenakquise durch Außendienst</td></tr>
+  <tr><td>Service Cloud</td><td>Kundenservice: Tickets, Fälle, Wissensdatenbank</td><td>Reklamation zu einem Stuhl bearbeiten</td></tr>
+  <tr><td>Commerce Cloud</td><td>E-Commerce-Plattform B2B/B2C</td><td>NordLicht-Onlineshop</td></tr>
+  <tr><td>Customer Data Cloud (CDC)</td><td>Login, Consent, Profile, DSGVO</td><td>Shop-Login mit Consent Management</td></tr>
+  <tr><td>Emarsys</td><td>Multichannel-Marketing: Kampagnen, Personalisierung, KI</td><td>Automatisierte Winter-Kampagne</td></tr>
+  <tr><td>CPQ (Configure, Price, Quote)</td><td>Konfigurator + Angebotserstellung</td><td>Kunde konfiguriert Konferenztisch, bekommt Preis</td></tr>
+</table>
+
+<div class="term">
+  <h3>SAP Sales Cloud <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Klassisches <strong>CRM</strong>: Kunden, Ansprechpartner, Opportunities, Aktivitäten. Mobile-first.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Außendienstler pflegt Termin beim Möbelhändler, plant Nachfassaktion.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „SAPs Antwort auf Salesforce Sales Cloud."</div>
+</div>
+
+<div class="term">
+  <h3>SAP Emarsys <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Marketing-Automation-Plattform (2020 dazugekauft). Sehr stark im Handel/B2C.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Kunde kauft Bürostuhl → nach 2 Wochen automatisierte E-Mail mit passender Fußstütze.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Der Kampagnen-Motor" von SAP CX.</div>
+</div>
+
+<h2>2.9 &nbsp;Business Transformation: Signavio &amp; LeanIX</h2>
+<p class="section-intro">Bevor man ein System einführt, muss man <em>verstehen</em>, was man tut. Und man muss verstehen, wie die IT-Landschaft aussieht. Genau dafür hat SAP zwei Zukäufe integriert.</p>
+
+<div class="term">
+  <h3>SAP Signavio <span class="lvl must">🟢</span> <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Suite für <strong>Business Process Management</strong>: Prozesse modellieren, analysieren, verbessern.</span></div>
+  <div class="row"><span class="k">Enthält</span><span class="v">Process Manager (Modeling), Process Intelligence (Mining), Process Insights, Process Collaboration Hub.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht bereitet S/4HANA-Einführung vor: Signavio zeigt echte Prozesse aus ECC (Process Mining) und vergleicht mit dem SAP-Standard (Fit-Gap).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Das „Röntgen-Gerät" für Geschäftsprozesse.</div>
+</div>
+
+<div class="term">
+  <h3>Process Mining vs. Process Modeling <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Process Mining</span><span class="v"><strong>Ist-Analyse</strong>: Wie laufen Prozesse <em>wirklich</em>? — auf Basis von Ereignis-Logs aus dem ERP.</span></div>
+  <div class="row"><span class="k">Process Modeling</span><span class="v"><strong>Soll-Design</strong>: Wie soll ein Prozess aussehen? — visuell modelliert (BPMN).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Mining = „Was ist?" · Modeling = „Was soll?"</div>
+</div>
+
+<div class="term">
+  <h3>SAP LeanIX <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-Lösung für <strong>Enterprise Architecture</strong>: die IT-Landschaft eines Unternehmens dokumentieren, analysieren, planen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht hat 300+ Anwendungen. LeanIX zeigt: Welche Systeme reden miteinander? Welche sind veraltet? Welche kann man ablösen?</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Google Maps für die IT-Landschaft."</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> Signavio (Prozesse → LeanIX = Anwendungen &amp; IT-Architektur).</div>
+</div>
+
+<div class="term">
+  <h3>SAP WalkMe <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v"><strong>Digital Adoption Platform</strong> (2024 zugekauft). Legt sich als Overlay über bestehende Software und führt Nutzer Schritt für Schritt.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Neuer Mitarbeitender öffnet SAP zum ersten Mal — WalkMe zeigt: „Klick hier, jetzt hier, fertig!"</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der „Navi" für Software-Nutzung.</div>
+</div>
+
+<h2>2.10 &nbsp;SAP Business Network</h2>
+<p class="section-intro">Unternehmen wickeln immer mehr über <strong>Netzwerke</strong> ab. SAP Business Network ist das größte B2B-Netzwerk der Welt — mit über 6 Mio. verbundenen Unternehmen.</p>
+
+<div class="term">
+  <h3>SAP Business Network <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der Sammelname für <strong>drei B2B-Netzwerke</strong>: Procurement (Ariba), Logistics, Asset Collaboration.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Käufer und Verkäufer, Verlader und Frachtführer, Betreiber und Wartungspartner tauschen digital Dokumente aus.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht schickt Bestellung an Beschlag-Lieferant und teilt gleichzeitig Nachhaltigkeitsdaten (CO₂ pro Teil).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Das <em>„Facebook für Unternehmen"</em> — aber mit Bestellungen statt Katzen.</div>
+</div>
+
+<div class="grid-3">
+<div class="term">
+  <h3>Network for Procurement</h3>
+  <div class="row"><span class="k">Basiert auf</span><span class="v">Ariba Network</span></div>
+  <p class="small">Bestellungen, Rechnungen, Bestätigungen zwischen Käufer &amp; Lieferant.</p>
+</div>
+<div class="term">
+  <h3>Network for Logistics</h3>
+  <div class="row"><span class="k">Basiert auf</span><span class="v">SAP Logistics BN</span></div>
+  <p class="small">Verlader ↔ Carrier: Fracht, Track&amp;Trace, Frachtabrechnung.</p>
+</div>
+<div class="term">
+  <h3>Asset Collaboration</h3>
+  <div class="row"><span class="k">Basiert auf</span><span class="v">SAP Asset Intelligence</span></div>
+  <p class="small">Hersteller ↔ Betreiber: Maschinen-Infos, Ersatzteile, Wartungen.</p>
+</div>
+</div>
+
+<h2>2.11 &nbsp;Sustainability</h2>
+<p class="section-intro">Nachhaltigkeit ist 2026 <strong>Pflicht</strong>, nicht Kür — dank CSRD, EU-Taxonomie, CBAM. SAP hat eine eigene Produktlinie dafür.</p>
+
+<div class="term">
+  <h3>SAP Sustainability Control Tower <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Cloud-Reporting-Zentrale für ESG-Kennzahlen (Environmental, Social, Governance).</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht erstellt CSRD-Bericht — Emissionen, Diversität, Governance-KPIs in einem Cockpit.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Bilanz, aber nicht in Euro — in Tonnen CO₂ und Kennzahlen."</div>
+</div>
+
+<div class="term">
+  <h3>SAP Sustainability Footprint Management <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Berechnet den <strong>CO₂-Fußabdruck</strong> auf Produkt-, Bestellungs-, Transportebene.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Jeder Bürostuhl hat eine „Carbon-Rechnung": Holz aus Schweden (0.4 kg CO₂), Beschlag aus Italien (0.2 kg CO₂), Transport (0.8 kg CO₂) = 1.4 kg pro Stuhl.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Carbon Accounting" — wie Finance, aber für Treibhausgase.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Green Token <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Werkzeug für <strong>Rückverfolgbarkeit nachhaltiger Materialien</strong> in Lieferketten (z. B. recyceltes Plastik, nachhaltiger Kaffee).</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Konsumgüterhersteller kann nachweisen, wie viele „recycelte Kunststoff-Tokens" ein Produkt enthält.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein digitaler Nachhaltigkeits-Nachweis, ähnlich einem Zertifikat.</div>
+</div>
+
+<h2>2.12 &nbsp;Security &amp; Identity</h2>
+<p class="section-intro">Ohne Sicherheit kein Enterprise-Software-Vertrauen. Die zentralen Identity-Dienste laufen unter der Marke <strong>SAP Cloud Identity Services</strong>.</p>
+
+<div class="term">
+  <h3>SAP Cloud Identity Services <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Dachname für Identity-Dienste auf BTP — <strong>IAS</strong> (Authentication) und <strong>IPS</strong> (Provisioning).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Wer darf was — in einer SAP-Landschaft.</div>
+</div>
+
+<div class="term">
+  <h3>IAS (Identity Authentication Service) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAP-eigener <strong>Login-Service</strong>: SSO, MFA, Passwörter, Social Login, SAML/OIDC.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Wer bist du?" — Authentication.</div>
+</div>
+
+<div class="term">
+  <h3>IPS (Identity Provisioning Service) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Synchronisiert <strong>Benutzer und Rollen</strong> zwischen Systemen: SuccessFactors → S/4HANA → BTP.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Wer soll wo einen Account bekommen?" — Automatisierung von User-Lifecycle.</div>
+</div>
+
+<div class="term">
+  <h3>Authentication vs. Authorization <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Authentication</span><span class="v">Prüft <strong>wer</strong> du bist. Login, Passwort, MFA.</span></div>
+  <div class="row"><span class="k">Authorization</span><span class="v">Prüft <strong>was</strong> du darfst. Rollen, Berechtigungen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Erst Ausweis (Auth-n), dann Türsteher (Auth-z)."</div>
+</div>
+
+<div class="term">
+  <h3>SSO (Single Sign-On) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Login für viele Anwendungen. Einmal einloggen, überall drin.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht-Anna loggt sich morgens in Fiori ein — automatisch auch in SuccessFactors, Concur, Ariba angemeldet.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein Schlüssel für viele Türen.</div>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 3: TECHNOLOGY & DEVELOPMENT ================= -->
+<section>
+<h1 class="chapter"><span class="num">03</span>Technology &amp; Development</h1>
+<p class="chapter-lead">
+  Jetzt wird's technisch — aber nur so weit, dass du in einem Gespräch mit Entwicklern mitreden kannst.
+  Ziel dieses Kapitels: Du weißt, was hinter Wörtern wie <em>ABAP, Fiori, RAP, OData, gCTS</em> steckt und wie sie zusammenhängen.
+</p>
+
+<h2>3.1 &nbsp;ABAP &amp; ABAP Cloud</h2>
+
+<div class="term">
+  <h3>ABAP <span class="lvl must">🟢</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v"><strong>Advanced Business Application Programming</strong>. SAPs eigene Programmiersprache, seit den 80ern. Alles klassische SAP ist in ABAP geschrieben.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Custom-Anwendungen und Erweiterungen im SAP-System. Sieht aus wie „Cobol trifft Pascal", ist aber sehr eng mit der SAP-Datenbank verzahnt.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein ABAP-Report zieht offene Rechnungen mit Zahlungsverzug &gt; 30 Tagen und mailt sie an den Vertrieb.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> ABAP ist die „Muttersprache" von SAP.</div>
+</div>
+
+<div class="term">
+  <h3>ABAP Cloud <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>modernes ABAP-Programmiermodell</strong> mit strengen Regeln — nur freigegebene, stabile APIs sind erlaubt. Läuft im BTP <em>ABAP Environment</em> oder als Extension-Modell in S/4HANA.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Ermöglicht <strong>Clean Core</strong>: Entwicklung, ohne den Standard zu modifizieren, updatefähig.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> ABAP mit Leitplanken für die Cloud-Ära.</div>
+</div>
+
+<h2>3.2 &nbsp;RAP, CAP &amp; Fiori-Frontends</h2>
+
+<div class="term">
+  <h3>RAP (RESTful ABAP Programming Model) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das <strong>moderne ABAP-Programmiermodell</strong>: Entwickler beschreiben ein Business-Objekt (Kunde, Bestellung) deklarativ — Framework generiert automatisch APIs, Berechtigungen, UI.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Backend-Services für Fiori-Apps und OData-Schnittstellen effizient bauen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Wenig Code, viel Standard-Funktionalität."</div>
+</div>
+
+<div class="term">
+  <h3>CAP (Cloud Application Programming Model) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das RAP-Pendant außerhalb von ABAP: JavaScript / TypeScript / Java. Läuft auf BTP (Cloud Foundry oder Kyma).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Cloud-Native Apps auf BTP entwickeln, ohne ABAP.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „RAP für Node/Java" — offener, moderner Tech-Stack.</div>
+  <div class="nv"><strong>Nicht verwechseln mit:</strong> RAP (ABAP-Welt). Auswahl je nach Team-Skills und Ziel-Runtime.</div>
+</div>
+
+<div class="term">
+  <h3>SAPUI5 <span class="lvl must">🟢</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>JavaScript-Framework</strong> zur Entwicklung von Business-Web-Anwendungen mit Fiori-Design.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Der technische Unterbau für alle Fiori-Apps.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> UI5 ist die <em>Technologie</em>, Fiori ist die <em>Designsprache</em>.</div>
+</div>
+
+<div class="term">
+  <h3>Fiori Elements <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Ansatz, bei dem Fiori-Apps <strong>weitgehend generiert</strong> werden — aus einer OData-Service-Beschreibung und CDS-Annotationen. Der Entwickler schreibt kaum JavaScript.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Standard-Apps (Listen, Detailansicht) schnell und konsistent bauen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „App-Fließband": Metadata rein, fertige App raus.</div>
+</div>
+
+<h2>3.3 &nbsp;APIs &amp; Datenformate</h2>
+
+<div class="term">
+  <h3>API (Application Programming Interface) <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>definierte Schnittstelle</strong>, über die zwei Systeme reden. Regeln: „Ich frage so, du antwortest so."</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Onlineshop ruft die S/4HANA-API auf: „Ist Artikel 12345 verfügbar?" — Antwort: „Ja, 342 Stück im Lager Hamburg."</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Die Speisekarte für Software."</div>
+</div>
+
+<div class="term">
+  <h3>REST API <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der <strong>De-facto-Standard</strong> für Web-APIs. Ressourcen (Kunden, Bestellungen) werden über HTTP-Verben angesprochen: GET, POST, PUT, DELETE.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Wie ein Restaurant: <em>GET /kunden/42</em> = „Bring mir Kunde 42."</div>
+</div>
+
+<div class="term">
+  <h3>OData <span class="lvl must">🟢</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>Erweiterung von REST</strong>, speziell für Business-Daten. Erlaubt Filter, Sortierung, Paging direkt in der URL. SAPs Standard-Protokoll für Datenzugriff.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v"><code>GET /rechnungen?$filter=betrag gt 10000&amp;$orderby=datum desc</code></span></div>
+  <div class="mem"><strong>Merksatz:</strong> „REST + SQL-Denken" — für Enterprise-Daten optimiert.</div>
+</div>
+
+<div class="term">
+  <h3>JSON vs. XML <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">JSON</span><span class="v">Leichtgewichtiges Format: <code>{"name":"NordLicht","umsatz":220}</code>. Standard für moderne APIs.</span></div>
+  <div class="row"><span class="k">XML</span><span class="v">Ältere Auszeichnungssprache: <code>&lt;kunde&gt;&lt;name&gt;NordLicht&lt;/name&gt;&lt;/kunde&gt;</code>. In SAP viele klassische Integrationen (PI/PO, IDoc).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> JSON = modern, kompakt. XML = klassisch, ausführlich.</div>
+</div>
+
+<h2>3.4 &nbsp;Git, Deployment &amp; DevOps</h2>
+
+<div class="term">
+  <h3>Git &amp; Repository <span class="lvl must">🟢</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Git</span><span class="v">Ein <strong>Versionskontrollsystem</strong>. Speichert jede Codeänderung mit Autor, Zeitpunkt, Grund.</span></div>
+  <div class="row"><span class="k">Repository</span><span class="v">Ein „Ordner" mit Git-Historie. Enthält den Code und die komplette Änderungshistorie.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Undo für den ganzen Team-Code."</div>
+</div>
+
+<div class="term">
+  <h3>Branch, Commit, Merge <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Branch</span><span class="v">Ein Zweig — parallele Entwicklungslinie. „Feature X" wird in einem eigenen Branch entwickelt.</span></div>
+  <div class="row"><span class="k">Commit</span><span class="v">Eine gespeicherte Änderung mit Beschreibung.</span></div>
+  <div class="row"><span class="k">Merge</span><span class="v">Ein Branch fließt zurück in den Hauptzweig (Main/Master).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Branch = Ast · Commit = Speicherpunkt · Merge = Zusammenführen.</div>
+</div>
+
+<div class="term">
+  <h3>CI/CD (Continuous Integration / Delivery) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Prozess: jeder Code-Commit läuft <strong>automatisch</strong> durch Tests, Build, Deployment.</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">Weniger manuelle Fehler, schnellere Auslieferung, verlässlichere Software.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Vom Commit zum Live in Minuten — automatisch."</div>
+</div>
+
+<div class="term">
+  <h3>gCTS (git-enabled Change and Transport System) <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das <strong>Git-basierte Nachfolgeprinzip</strong> für das klassische SAP-Transportsystem (Dev → Test → Prod).</span></div>
+  <div class="row"><span class="k">Wofür?</span><span class="v">SAP-ABAP-Änderungen wie moderne Software behandeln: Branches, Pull Requests, CI/CD.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „SAP-Transporte, aber mit modernem Git-Workflow."</div>
+</div>
+
+<div class="term">
+  <h3>Deployment vs. Runtime <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Deployment</span><span class="v">Der Vorgang, Software auf ein Zielsystem zu bringen.</span></div>
+  <div class="row"><span class="k">Runtime</span><span class="v">Die Umgebung, in der die Software läuft (Cloud Foundry, Kyma, ABAP Environment).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Deployment = Einzug · Runtime = Wohnung.</div>
+</div>
+
+<h2>3.5 &nbsp;Systemlandschaft &amp; Erweiterungen</h2>
+
+<div class="term">
+  <h3>Extension vs. Customization vs. Configuration vs. Modification <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Configuration</span><span class="v">Standard-Einstellungen anpassen (Nummernkreise, Firmennamen, Formulare). <em>Keine Programmierung.</em></span></div>
+  <div class="row"><span class="k">Customization</span><span class="v">Anpassung durch <em>Entwicklung im Standard</em> — meist noch ohne Modifikation, mit erlaubten Methoden (BAdI, Enhancement).</span></div>
+  <div class="row"><span class="k">Extension</span><span class="v">Neue Funktionalität <em>außerhalb</em> des Kerns, z. B. als BTP-App. Clean-Core-konform.</span></div>
+  <div class="row"><span class="k">Modification</span><span class="v"><strong>Änderung im SAP-Standard-Code</strong>. Bricht Updates, sollte vermieden werden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Config → Custom → Extension = safe. Modification = 🚨.</div>
+</div>
+
+<div class="term">
+  <h3>Transport &amp; Systemlandschaft <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein „Transport" bündelt Änderungen (Code, Konfiguration) und wandert durch die Systemlandschaft: <strong>Dev → Test → Prod</strong>.</span></div>
+  <div class="row"><span class="k">Warum drei Systeme?</span><span class="v">Fehler entwickeln (Dev), sauber testen (Test), sicher produktiv gehen (Prod). Nie live testen!</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „3 Systeme, 1 Wahrheit — Änderungen wandern nach oben."</div>
+</div>
+
+<div class="term">
+  <h3>Tenant vs. Instance <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Tenant</span><span class="v">Eine <strong>logische Mandantentrennung</strong> in einer Multi-Tenant-Cloud (NordLicht sieht seine Daten, andere Kunden sehen ihre).</span></div>
+  <div class="row"><span class="k">Instance</span><span class="v">Eine <strong>physische Installation</strong> einer Anwendung.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Instance = Haus · Tenant = Wohnung im Haus.</div>
+</div>
+
+<div class="term">
+  <h3>Microservices <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Architekturstil: Software wird in <strong>kleine, unabhängige Services</strong> zerlegt, die je eine Aufgabe erfüllen und über APIs kommunizieren.</span></div>
+  <div class="row"><span class="k">Vorteile</span><span class="v">Skalierbar, unabhängig deploybar, Fehler bleiben lokal.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Statt „Monolith" viele kleine Legos.</div>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 4: UX & DESIGN ================= -->
+<section>
+<h1 class="chapter"><span class="num">04</span>UX &amp; Design</h1>
+<p class="chapter-lead">
+  Die Frage <em>„Fiori, SAPUI5 oder Fiori Elements?"</em> kommt in fast jedem technischen Meeting. Nach diesem Kapitel weißt du sie kalt zu beantworten.
+</p>
+
+<h2>4.1 &nbsp;Fiori vs. SAPUI5 vs. Fiori Elements — der Klassiker</h2>
+
+<div class="box tip">
+  <div class="title">🎯 Die 30-Sekunden-Antwort</div>
+  <p><strong>Fiori</strong> = Designsprache (das <em>Was</em> und <em>Wie es aussehen soll</em>).<br/>
+     <strong>SAPUI5</strong> = Technisches Framework (die <em>Werkzeuge zum Bauen</em>).<br/>
+     <strong>Fiori Elements</strong> = Ein Bau-Ansatz auf UI5, bei dem die App aus Metadaten generiert wird — statt manuell programmiert.</p>
+</div>
+
+<table class="compare">
+  <tr>
+    <th></th>
+    <th>Fiori</th>
+    <th>SAPUI5</th>
+    <th>Fiori Elements</th>
+  </tr>
+  <tr>
+    <td>Was ist es?</td>
+    <td>Designsprache &amp; Prinzipien</td>
+    <td>JavaScript-Framework</td>
+    <td>Metadata-getriebener App-Baustil</td>
+  </tr>
+  <tr>
+    <td>Zielgruppe</td>
+    <td>Designer, PM, User Research</td>
+    <td>Entwickler (Freestyle)</td>
+    <td>Entwickler (Standard-Apps)</td>
+  </tr>
+  <tr>
+    <td>Beispiel</td>
+    <td>„Cards, Colors, Grid, Accessibility"</td>
+    <td>Codiere JavaScript-Views &amp; Controller</td>
+    <td>Definiere OData + Annotations → App entsteht</td>
+  </tr>
+  <tr>
+    <td>Analogie</td>
+    <td>Der <em>Baustil</em> eines Hauses</td>
+    <td>Der <em>Werkzeugkasten</em> des Handwerkers</td>
+    <td>Der <em>Fertighaus-Bauplan</em></td>
+  </tr>
+</table>
+
+<h2>4.2 &nbsp;SAP Horizon — das aktuelle Designsystem</h2>
+
+<div class="term">
+  <h3>SAP Horizon <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Das <strong>aktuelle Fiori-Designtheme</strong> (seit 2022). Klarer, ruhiger, moderner als das ältere „Belize"-Theme.</span></div>
+  <div class="row"><span class="k">Neu</span><span class="v">Design Tokens, Dark Mode, verbesserte Accessibility, ruhigere Farben (blau-grau statt gold).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Wenn eine Fiori-App heute „aufgeräumt und ruhig" aussieht → Horizon.</div>
+</div>
+
+<div class="term">
+  <h3>Design Tokens <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Variablen für Farben, Abstände, Schriftgrößen, die überall im Designsystem gleich genutzt werden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein Token für „SAP-Blau" — an 500 Stellen konsistent.</div>
+</div>
+
+<div class="term">
+  <h3>Components &amp; Patterns <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Components</span><span class="v">Wiederverwendbare Bausteine (Button, Table, Card).</span></div>
+  <div class="row"><span class="k">Patterns</span><span class="v">Wiederkehrende Layouts (List Report, Object Page, Analytical Table).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Legosteine" (Components) und „Bauanleitungen" (Patterns).</div>
+</div>
+
+<h2>4.3 &nbsp;UX-Prinzipien</h2>
+
+<div class="grid-2">
+<div class="term">
+  <h3>Role-based UX <span class="lvl pre">🟣</span></h3>
+  <p>Jede Fiori-App ist auf eine <strong>Nutzerrolle</strong> zugeschnitten (Einkäufer, Manager, HR-Business Partner). Nur das, was ich brauche.</p>
+</div>
+<div class="term">
+  <h3>Task-based UX <span class="lvl pre">🟣</span></h3>
+  <p>Statt „Modul → Transaktion" jetzt „Ich will X tun". Apps sind auf einzelne Aufgaben zugeschnitten.</p>
+</div>
+<div class="term">
+  <h3>Responsive Design <span class="lvl tech">🔴</span></h3>
+  <p>Gleiche App auf Desktop, Tablet, Handy — passt sich automatisch an.</p>
+</div>
+<div class="term">
+  <h3>Accessibility <span class="lvl pre">🟣</span></h3>
+  <p>Barrierefreiheit: Tastatur-Bedienung, Screen-Reader, Kontraste, Farbenblind-tauglich. Rechtlich in vielen Ländern Pflicht (BFSG, WCAG).</p>
+</div>
+</div>
+
+<div class="term">
+  <h3>Persona &amp; User Journey <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Persona</span><span class="v">Eine fiktive, aber typische Nutzerin: „Anna, 34, Einkäuferin bei NordLicht, arbeitet mobil, hat 15 Min am Stück".</span></div>
+  <div class="row"><span class="k">User Journey</span><span class="v">Der Weg, den diese Person durch einen Prozess nimmt: „Anna öffnet Mail → sieht Bestellanforderung → freigibt in App → Push zurück".</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Persona = Wer? · Journey = Wie?</div>
+</div>
+
+<div class="term">
+  <h3>Enterprise UX vs. Consumer UX <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Enterprise</span><span class="v">Nutzer erledigt eine Arbeit. Effizienz, Konsistenz, Verlässlichkeit zählen.</span></div>
+  <div class="row"><span class="k">Consumer</span><span class="v">Nutzer will kaufen/entertained werden. Emotion, Verführung, Sofortbelohnung.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „SAP-User will fertig werden — nicht bespaßt werden."</div>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 5: SALES-BEGRIFFE ================= -->
+<section>
+<h1 class="chapter"><span class="num">05</span>Sales-Begriffe</h1>
+<p class="chapter-lead">
+  Im Vertrieb wird viel Englisch gesprochen. Hier findest du die 25 wichtigsten Begriffe — mit B2B-Beispielen aus dem SAP-Kontext.
+</p>
+
+<h2>5.1 &nbsp;Von Lead zum Kunden</h2>
+
+<div class="vflow">
+  <div class="step"><strong>Lead:</strong> „Jemand hat sich für unser Whitepaper eingetragen." — noch kein qualifizierter Interessent.</div>
+  <div class="step"><strong>Prospect:</strong> „Jemand hat Interesse und passt zu unserem Angebot." — qualifizierter Interessent.</div>
+  <div class="step"><strong>Opportunity:</strong> „Konkretes Verkaufsprojekt mit Chance auf Abschluss."</div>
+  <div class="step"><strong>Customer:</strong> „Zahlender Kunde." Nach Abschluss.</div>
+  <div class="step"><strong>Account:</strong> Die Firma als Ganzes (Sammelbegriff über alle Opportunities und Kontakte).</div>
+</div>
+
+<div class="term">
+  <h3>Lead <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein erster Kontakt, der Interesse gezeigt hat.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Auf der SAP TechEd hat jemand eine Visitenkarte am NordLicht-Stand hinterlassen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein Lead ist eine Spur — noch kein Deal.</div>
+</div>
+
+<div class="term">
+  <h3>Prospect <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein Lead, der <em>qualifiziert</em> wurde: passendes Budget, Bedarf, Zeitpunkt.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Lead mit BANT (Budget, Authority, Need, Timing) = Prospect.</div>
+</div>
+
+<div class="term">
+  <h3>Opportunity <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>konkretes Verkaufsprojekt</strong> mit Volumen, Erwartungsdatum, Wahrscheinlichkeit.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">„Hansa GmbH — 240k € — Q2 2027 — 60% Wahrscheinlichkeit — RISE-Migration".</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Eine Opportunity hat immer einen Zahlenwert.</div>
+</div>
+
+<div class="term">
+  <h3>Pipeline &amp; Forecast <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Pipeline</span><span class="v">Die Summe aller offenen Opportunities eines Vertrieblers/Teams.</span></div>
+  <div class="row"><span class="k">Forecast</span><span class="v">Die Prognose, wie viel davon <strong>tatsächlich</strong> geschlossen wird.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Pipeline = Potenzial · Forecast = realistische Erwartung.</div>
+</div>
+
+<div class="term">
+  <h3>Sales Cycle <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die typische Zeit von erster Berührung bis zum Vertragsabschluss.</span></div>
+  <div class="row"><span class="k">SAP-Realität</span><span class="v">Bei Großdeals gerne 12–24 Monate.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Enterprise-Deals dauern lang. Geduld ist Verkäufer-Tugend.</div>
+</div>
+
+<h2>5.2 &nbsp;Stakeholder-Rollen</h2>
+
+<div class="term">
+  <h3>Decision Maker, Buyer, Influencer <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Decision Maker</span><span class="v">Entscheidet endgültig (oft CFO/CIO/CEO).</span></div>
+  <div class="row"><span class="k">Buyer</span><span class="v">Verhandelt den Vertrag (Einkauf, Procurement).</span></div>
+  <div class="row"><span class="k">Influencer</span><span class="v">Beeinflusst die Entscheidung (Fach-User, Architekten, Berater).</span></div>
+  <div class="row"><span class="k">Champion</span><span class="v">Interner Fürsprecher, verkauft intern für dich mit.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ein Deal wird nicht mit einer Person geschlossen — sondern mit dem <em>Buying Center</em>.</div>
+</div>
+
+<h2>5.3 &nbsp;RFI, RFP, RFQ &amp; Angebote</h2>
+
+<table>
+  <tr><th>Begriff</th><th>Was ist es?</th><th>Wann?</th></tr>
+  <tr><td><strong>RFI</strong> (Request for Information)</td><td>„Was kannst du?"</td><td>Frühe Phase — Anbieterliste einschätzen</td></tr>
+  <tr><td><strong>RFP</strong> (Request for Proposal)</td><td>„Wie würdest du unser Problem lösen?"</td><td>Konzeptphase — Lösungen vergleichen</td></tr>
+  <tr><td><strong>RFQ</strong> (Request for Quote)</td><td>„Was kostet es?"</td><td>Preis-/Vertragsphase</td></tr>
+  <tr><td><strong>Tender</strong></td><td>Öffentliche Ausschreibung</td><td>Behörden, Konzerne mit Compliance-Pflicht</td></tr>
+  <tr><td><strong>Proposal</strong></td><td>Angebot (schriftlich) als Reaktion auf RFP</td><td>Nach RFP</td></tr>
+</table>
+
+<div class="box mem">
+  <div class="title">🧠 Merkregel für RFI/RFP/RFQ</div>
+  <p><strong>I</strong>nformation → <strong>P</strong>roposal → <strong>Q</strong>uote. In dieser Reihenfolge wird's konkreter (und teurer).</p>
+</div>
+
+<h2>5.4 &nbsp;Abschluss, Wachstum, KPIs</h2>
+
+<div class="grid-2">
+<div class="term">
+  <h3>Deal &amp; Closing <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Deal</span><span class="v">Erfolgreicher Vertragsabschluss.</span></div>
+  <div class="row"><span class="k">Closing</span><span class="v">Der letzte Schritt (Unterschrift, PO, Vertragsdokument).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Close" = das Rennen ist gewonnen.</div>
+</div>
+
+<div class="term">
+  <h3>Revenue, ARR, ACV <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Revenue</span><span class="v">Umsatz gesamt.</span></div>
+  <div class="row"><span class="k">ARR</span><span class="v"><strong>Annual Recurring Revenue</strong> — wiederkehrender Cloud-Umsatz pro Jahr.</span></div>
+  <div class="row"><span class="k">ACV</span><span class="v"><strong>Annual Contract Value</strong> — Jahreswert eines Vertrags.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Cloud-Firmen leben von ARR — Wiederholung ist alles.</div>
+</div>
+
+<div class="term">
+  <h3>Renewal <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Verlängerung eines Cloud-Abos.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Renewal &gt; Neu-Deal — bestehende Kunden zu halten ist 5× günstiger als neue zu gewinnen.</div>
+</div>
+
+<div class="term">
+  <h3>Upselling vs. Cross-Selling <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Upselling</span><span class="v"><em>Mehr vom Gleichen</em> verkaufen — von 100 Nutzern auf 200.</span></div>
+  <div class="row"><span class="k">Cross-Selling</span><span class="v"><em>Zusätzliche</em> Produkte — S/4HANA-Kunde bekommt SuccessFactors dazu.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Upsell = größer · Cross-sell = breiter.</div>
+</div>
+
+<div class="term">
+  <h3>Contract <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der schriftliche Vertrag. Bei SAP oft mehrere hundert Seiten (SLAs, Metriken, Pricing, Terms).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Der Deal ist erst zu, wenn beide unterschrieben haben."</div>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 6: PRESALES ================= -->
+<section>
+<h1 class="chapter"><span class="num">06</span>Presales — Vom Pain Point zum Deal</h1>
+<p class="chapter-lead">
+  Presales ist die Brücke zwischen <em>„der Kunde hat ein Problem"</em> und <em>„das ist die richtige SAP-Lösung dafür"</em>.
+  Es ist der wichtigste (und am meisten unterschätzte) Job im Enterprise-Software-Vertrieb. Dieses Kapitel zeigt dir Ablauf, Rollen und Werkzeuge.
+</p>
+
+<h2>6.1 &nbsp;Sales vs. Presales — der Unterschied</h2>
+
+<table class="compare">
+  <tr><th></th><th>Sales</th><th>Presales</th></tr>
+  <tr><td>Ziel</td><td>Deal abschließen, Zahlen erreichen</td><td>Kunden die Lösung <em>verstehbar</em> machen</td></tr>
+  <tr><td>Sprache</td><td>Business, Preis, Vertrag</td><td>Business + Technik + Value</td></tr>
+  <tr><td>Werkzeuge</td><td>Pipeline, Forecast, Angebote</td><td>Demos, Whiteboards, Business Cases</td></tr>
+  <tr><td>Typische Frage</td><td>„Wann können wir unterschreiben?"</td><td>„Wie löst SAP dieses Problem?"</td></tr>
+  <tr><td>Analogie</td><td>Autoverkäufer</td><td>Der Ingenieur, der auf der Probefahrt mitfährt</td></tr>
+</table>
+
+<div class="box tip">
+  <div class="title">💡 Presales-Motto</div>
+  <p><em>„Sales sells the promise. Presales makes it believable."</em> Presales ist der Grund, warum ein Kunde am Ende Vertrauen fasst — und dann Sales unterschreibt.</p>
+</div>
+
+<h2>6.2 &nbsp;Der typische Presales-Flow</h2>
+
+<div class="flow">
+  <div class="step gold">Customer Problem</div>
+  <div class="arrow">→</div>
+  <div class="step">Discovery</div>
+  <div class="arrow">→</div>
+  <div class="step">Requirements</div>
+  <div class="arrow">→</div>
+  <div class="step">Use Case</div>
+  <div class="arrow">→</div>
+  <div class="step alt">Solution</div>
+  <div class="arrow">→</div>
+  <div class="step alt">Demo</div>
+  <div class="arrow">→</div>
+  <div class="step green">Business Value / ROI</div>
+  <div class="arrow">→</div>
+  <div class="step green">Proposal</div>
+  <div class="arrow">→</div>
+  <div class="step green">Deal</div>
+</div>
+
+<h3>Die neun Stationen im Detail</h3>
+
+<div class="vflow">
+  <div class="step"><strong>① Customer Problem:</strong> Der Kunde <em>hat ein Schmerz</em>. Beispiel: „Wir kennen unseren Lagerbestand nicht in Echtzeit."</div>
+  <div class="step"><strong>② Discovery:</strong> Presales stellt Fragen. „Wie merkt ihr das im Alltag? Was kostet es? Welche Symptome habt ihr?"</div>
+  <div class="step"><strong>③ Requirements:</strong> Aus dem Schmerz werden Anforderungen. „Echtzeit-Sicht auf Bestand", „Mobile Erfassung im Lager".</div>
+  <div class="step"><strong>④ Use Case:</strong> Ein konkretes Nutzungsszenario. „Kommissionierer scannt Palette, System zeigt sofort neuen Bestand."</div>
+  <div class="step"><strong>⑤ Solution:</strong> Welche SAP-Lösung passt? „SAP EWM mit Fiori-App auf Handterminal, angebunden an S/4HANA."</div>
+  <div class="step"><strong>⑥ Demo:</strong> Presales <em>zeigt es</em> — in einer echten Systemumgebung, mit einer Story.</div>
+  <div class="step"><strong>⑦ Business Value / ROI:</strong> Was bringt das? „Bestandsgenauigkeit von 82% auf 99% → 3 Mio € weniger Kapitalbindung."</div>
+  <div class="step"><strong>⑧ Proposal:</strong> Formales Angebot mit Lösung, Aufwand, Preis.</div>
+  <div class="step"><strong>⑨ Deal:</strong> Vertrag wird unterzeichnet.</div>
+</div>
+
+<h2>6.3 &nbsp;Die wichtigsten Presales-Begriffe</h2>
+
+<div class="term">
+  <h3>Discovery (Workshop) <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein strukturiertes Gespräch mit dem Kunden, um <strong>Pain Points, Ziele, Kontext</strong> zu verstehen — bevor man auch nur eine Slide zeigt.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">2h Workshop mit NordLichts CFO, IT-Leiter, Einkaufsleiter. Fragen: „Was frustriert euch heute? Was wäre in 2 Jahren perfekt?"</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Erst zuhören, dann verkaufen." Das ist der wichtigste Presales-Skill.</div>
+</div>
+
+<div class="term">
+  <h3>Pain Point <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein konkretes <strong>Problem</strong>, das der Kunde spürt und lösen möchte.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">„Monatsabschluss dauert 15 Tage. Wir wollen ihn in 3 Tagen."</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ohne Pain Point kein Deal. Ohne Schmerz keine Änderungsbereitschaft.</div>
+</div>
+
+<div class="term">
+  <h3>Use Case <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein konkretes Anwendungsszenario, in dem eine Lösung Wert stiftet.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">„Kunde stornoiert Bestellung → System prüft automatisch Retouren-Regeln → Erstattung wird angestoßen."</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Use Case = Problem × Nutzer × System-Antwort.</div>
+</div>
+
+<div class="term">
+  <h3>Solution Architecture <span class="lvl pre">🟣</span> <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Ein <strong>architektonischer Bauplan</strong>, wie die Lösung technisch aussieht: welche SAP-Produkte, welche Datenflüsse, welche Integrationen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">NordLicht: S/4HANA Private Cloud (RISE) + BTP + Integration Suite zu Salesforce + Ariba Buying + SuccessFactors EC.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Wie das Puzzle zusammenpasst — visuell."</div>
+</div>
+
+<div class="term">
+  <h3>Value Proposition <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der <strong>Nutzenversprechen</strong> in einem Satz: Was gewinnt der Kunde konkret?</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">„Mit SAP IBP verkürzen Sie Ihren Planungszyklus von 4 Wochen auf 3 Tage — bei 30% besserer Forecast-Genauigkeit."</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Immer <em>Kunde</em> zuerst, dann <em>Ergebnis</em>, dann <em>Zahl</em>.</div>
+</div>
+
+<div class="term">
+  <h3>Business Case <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die <strong>wirtschaftliche Rechtfertigung</strong> eines Projekts: Kosten vs. Nutzen über X Jahre.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Investition 4 Mio € über 3 Jahre → Ersparnisse 12 Mio € durch bessere Bestände, Prozessautomatisierung, Analytics.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Zahlen, die den CFO überzeugen."</div>
+</div>
+
+<div class="term">
+  <h3>ROI vs. TCO <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">ROI</span><span class="v"><strong>Return on Investment</strong>: Wie viel <em>Rendite</em> hat die Investition gebracht? Formel: <code>(Nutzen − Kosten) / Kosten</code>.</span></div>
+  <div class="row"><span class="k">TCO</span><span class="v"><strong>Total Cost of Ownership</strong>: <em>Gesamtkosten</em> über die Nutzungszeit (Lizenz + Betrieb + Wartung + Personal + Migration).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> TCO = Kosten · ROI = Ergebnis. Erst TCO ehrlich rechnen, dann ROI zeigen.</div>
+</div>
+
+<div class="term">
+  <h3>Demo &amp; Demo Story <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Demo</span><span class="v">Vorführung des Systems.</span></div>
+  <div class="row"><span class="k">Demo Story</span><span class="v">Die <strong>Erzählung</strong> hinter der Demo: „Anna Kaufmann, Einkäuferin bei NordLicht, öffnet ihre Fiori-App…"</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Eine Demo ohne Story ist ein Klick-Tutorial. Eine Story ohne Demo ist Marketing. Zusammen: Presales-Gold.</div>
+</div>
+
+<div class="term">
+  <h3>PoC vs. PoV <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">PoC</span><span class="v"><strong>Proof of Concept</strong> — funktioniert das <em>technisch</em>? Kann ich Daten von A nach B bringen?</span></div>
+  <div class="row"><span class="k">PoV</span><span class="v"><strong>Proof of Value</strong> — lohnt es sich <em>wirtschaftlich</em>? Bringt es messbaren Nutzen?</span></div>
+  <div class="mem"><strong>Merksatz:</strong> PoC beweist <em>„geht"</em>, PoV beweist <em>„lohnt"</em>.</div>
+</div>
+
+<div class="term">
+  <h3>Objection Handling <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der Umgang mit <strong>Einwänden</strong>: „Ihre Cloud ist unsicher", „Das ist zu teuer", „Wir haben schon SAP".</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Einwände sind Kaufinteresse in Verkleidung — nicht ignorieren, sondern annehmen.</div>
+</div>
+
+<div class="term">
+  <h3>Executive Presentation vs. Technical Deep Dive <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Executive</span><span class="v">15 Min, Business-Sprache, ROI, Strategie. Für CFO/CIO.</span></div>
+  <div class="row"><span class="k">Deep Dive</span><span class="v">2 Std, technisch, Architekturen, Datenmodelle. Für Architekten &amp; IT-Teams.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Nie eine Deep-Dive dem CFO zeigen. Nie eine Business-Slide dem Architekten.</div>
+</div>
+
+<div class="term">
+  <h3>Design Thinking <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Eine <strong>Methode</strong>, um Kundenprobleme zu verstehen und Lösungen kreativ zu entwickeln. Nutzer-zentriert, iterativ, mit Prototypen.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v">Ein Design-Thinking-Workshop mit NordLicht bringt Einkäufer, Buchhaltung und IT an einen Tisch — sie skizzieren zusammen die ideale App.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Erst verstehen, dann Skizzen, dann Prototyp, dann Software."</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🎯 Die goldene Presales-Formel</div>
+  <p><strong>Pain × Value × Trust = Deal</strong><br/>
+  Ein Kunde kauft, wenn (1) er echten Schmerz hat, (2) den Nutzen glaubt und (3) dem Anbieter vertraut. Fehlt eines, gibt es keinen Deal.</p>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 7: CLOUD / INTEGRATION ================= -->
+<section>
+<h1 class="chapter"><span class="num">07</span>Cloud &amp; Integration</h1>
+<p class="chapter-lead">
+  „Cloud" ist heute selbstverständlich — aber die Wörter drumherum werden gerne durcheinandergeworfen: SaaS, PaaS, IaaS, Public, Private, Hybrid. Zeit für Ordnung.
+</p>
+
+<h2>7.1 &nbsp;Cloud Computing — Grundprinzipien</h2>
+
+<div class="term">
+  <h3>Cloud Computing <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">IT-Ressourcen (Rechenpower, Speicher, Software) werden <strong>über das Internet als Service</strong> genutzt — statt eigene Server zu kaufen.</span></div>
+  <div class="row"><span class="k">Bezahlung</span><span class="v">Nach Nutzung / im Abo (Subscription), nicht als Einmalkauf.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Strom aus der Steckdose — nicht Kraftwerk im Keller."</div>
+</div>
+
+<h3>Die drei Service-Modelle: IaaS, PaaS, SaaS</h3>
+
+<table class="compare">
+  <tr>
+    <th></th>
+    <th>IaaS</th>
+    <th>PaaS</th>
+    <th>SaaS</th>
+  </tr>
+  <tr>
+    <td>Was?</td>
+    <td><strong>Infrastructure as a Service</strong>: rohe Server, Speicher, Netz</td>
+    <td><strong>Platform as a Service</strong>: Plattform zum Entwickeln &amp; Deployen</td>
+    <td><strong>Software as a Service</strong>: fertige Anwendung</td>
+  </tr>
+  <tr>
+    <td>Nutzer</td>
+    <td>IT-Admins</td>
+    <td>Entwickler</td>
+    <td>Fachbereiche</td>
+  </tr>
+  <tr>
+    <td>SAP-Beispiel</td>
+    <td>AWS/Azure/GCP unter S/4HANA</td>
+    <td>SAP BTP</td>
+    <td>SuccessFactors, Concur, Ariba, S/4HANA Cloud</td>
+  </tr>
+  <tr>
+    <td>Analogie</td>
+    <td>Grundstück &amp; Werkzeug</td>
+    <td>Bauplatz mit Baumaschinen</td>
+    <td>Schlüsselfertige Wohnung</td>
+  </tr>
+</table>
+
+<div class="box mem">
+  <div class="title">🍕 Pizza-Analogie</div>
+  <p><strong>IaaS</strong>: Du kaufst Zutaten und Ofen. <strong>PaaS</strong>: Du kaufst Teig und Zutaten, Ofen ist da. <strong>SaaS</strong>: Du bestellst die fertige Pizza.</p>
+</div>
+
+<h2>7.2 &nbsp;Public, Private, Hybrid, Multi-Cloud</h2>
+
+<div class="grid-2">
+<div class="term">
+  <h3>Public Cloud <span class="lvl must">🟢</span></h3>
+  <p>Ressourcen werden <strong>geteilt</strong> zwischen vielen Kunden (Multi-Tenant). Standardisiert, günstig, schnell verfügbar.</p>
+  <p class="small">Beispiele: SAP Cloud ERP Public Edition, SuccessFactors.</p>
+</div>
+<div class="term">
+  <h3>Private Cloud <span class="lvl must">🟢</span></h3>
+  <p><strong>Dedizierte</strong> Umgebung nur für einen Kunden (Single-Tenant). Mehr Kontrolle, mehr Anpassung, mehr Kosten.</p>
+  <p class="small">Beispiele: SAP Cloud ERP Private Edition (RISE).</p>
+</div>
+<div class="term">
+  <h3>Hybrid Cloud <span class="lvl biz">🔵</span></h3>
+  <p><strong>Mischung</strong> aus On-Premise + Cloud. Sensible Systeme im eigenen RZ, unkritische in der Cloud.</p>
+  <p class="small">Typisch bei DAX-Konzernen und in regulierten Branchen.</p>
+</div>
+<div class="term">
+  <h3>Multi-Cloud <span class="lvl biz">🔵</span></h3>
+  <p>Nutzung <strong>mehrerer Cloud-Anbieter</strong> parallel (SAP + AWS + Azure). Reduziert Lock-in.</p>
+  <p class="small">SAP BTP läuft auf AWS, Azure, GCP — der Kunde kann wählen.</p>
+</div>
+</div>
+
+<h2>7.3 &nbsp;Cloud-Eigenschaften</h2>
+
+<table>
+  <tr><th>Begriff</th><th>Was bedeutet es?</th><th>Beispiel</th></tr>
+  <tr><td><strong>Cloud-native</strong></td><td>Software von Anfang an für die Cloud gebaut (Container, Microservices)</td><td>SAP BTP-Apps</td></tr>
+  <tr><td><strong>Subscription</strong></td><td>Abo-Modell (jährliche Zahlung)</td><td>SuccessFactors pro User pro Jahr</td></tr>
+  <tr><td><strong>Scalability</strong></td><td>System kann bei mehr Last wachsen</td><td>Blackfriday-Traffic im Shop</td></tr>
+  <tr><td><strong>Elasticity</strong></td><td>Es kann auch <em>zurück-</em>skalieren, wenn Last sinkt</td><td>Nachts weniger Rechenpower nutzen</td></tr>
+  <tr><td><strong>Availability</strong></td><td>Verfügbarkeit („99,9% Uptime")</td><td>SLA-Zusagen im Vertrag</td></tr>
+  <tr><td><strong>Managed Service</strong></td><td>Betrieb übernimmt der Anbieter, nicht der Kunde</td><td>HANA Cloud, RISE with SAP</td></tr>
+</table>
+
+<h2>7.4 &nbsp;Integration &amp; APIs im Praxis-Detail</h2>
+
+<div class="term">
+  <h3>Endpoint <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die konkrete <strong>URL</strong>, unter der eine API angesprochen wird.</span></div>
+  <div class="row"><span class="k">Beispiel</span><span class="v"><code>https://api.nordlicht.de/v1/orders</code></span></div>
+  <div class="mem"><strong>Merksatz:</strong> Die „Adresse", an die man das Paket schickt.</div>
+</div>
+
+<div class="term">
+  <h3>Request &amp; Response <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Request</span><span class="v">Die Frage, die geschickt wird.</span></div>
+  <div class="row"><span class="k">Response</span><span class="v">Die Antwort, die zurückkommt.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Frage → Antwort" — wie im Restaurant.</div>
+</div>
+
+<div class="term">
+  <h3>Middleware <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Software <em>zwischen</em> zwei Systemen. Übersetzt, filtert, dirigiert Datenströme.</span></div>
+  <div class="row"><span class="k">SAP-Beispiel</span><span class="v">SAP Integration Suite (früher CPI/PI/PO).</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Der „Simultan-Dolmetscher" zwischen Systemen.</div>
+</div>
+
+<div class="term">
+  <h3>Event vs. Webhook <span class="lvl tech">🔴</span></h3>
+  <div class="row"><span class="k">Event</span><span class="v">Eine Nachricht, dass „etwas passiert ist" (z. B. Bestellung erstellt).</span></div>
+  <div class="row"><span class="k">Webhook</span><span class="v">Eine spezielle URL, die bei einem Event <em>aufgerufen</em> wird — konkrete Implementierung eines Event-Empfängers.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Event = Nachricht · Webhook = Briefkasten-URL.</div>
+</div>
+
+<h2>7.5 &nbsp;Einfache Architektur — Frontend zu Datenbank</h2>
+
+<div class="arch">
+  <div class="layer blue"><div class="lbl">Frontend</div>Fiori-App / Web-Shop / Mobile-App — bedient den Nutzer.</div>
+  <div class="layer purple"><div class="lbl">API-Layer</div>REST/OData/GraphQL — spricht mit dem Backend.</div>
+  <div class="layer teal"><div class="lbl">Backend</div>Business-Logik in ABAP/Java/Node — validiert, rechnet, orchestriert.</div>
+  <div class="layer gold"><div class="lbl">Integration</div>Middleware (SAP Integration Suite, Event Mesh) — verbindet mit anderen Systemen.</div>
+  <div class="layer green"><div class="lbl">Datenbank</div>SAP HANA / HANA Cloud — speichert und liefert Daten.</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🧠 Prinzip: Trennung der Schichten</div>
+  <p>Frontend und Backend werden immer getrennt gebaut — das erlaubt, das Frontend zu wechseln (Fiori heute, WhatsApp morgen), ohne das Backend anzufassen. Über die API bleiben sie verbunden.</p>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 8: PROJEKTBEGRIFFE ================= -->
+<section>
+<h1 class="chapter"><span class="num">08</span>Projektbegriffe</h1>
+<p class="chapter-lead">
+  Wenn ein SAP-Deal geschlossen ist, beginnt die eigentliche Arbeit: das <strong>Projekt</strong>.
+  Hier findest du die wichtigsten Begriffe der Umsetzungs-Welt.
+</p>
+
+<h2>8.1 &nbsp;Von der Idee zum Go-Live</h2>
+
+<div class="vflow">
+  <div class="step"><strong>Implementation:</strong> Neue Software neu einführen.</div>
+  <div class="step"><strong>Migration:</strong> Bestehendes System auf ein anderes (z. B. ECC → S/4HANA) übertragen.</div>
+  <div class="step"><strong>Transformation:</strong> Nicht nur die Software wechseln, sondern <em>Prozesse &amp; Organisation</em> gleich mit modernisieren.</div>
+  <div class="step"><strong>Rollout:</strong> Ein bestehendes System auf weitere Länder / Werke / Bereiche ausrollen.</div>
+  <div class="step"><strong>Upgrade:</strong> Bestehendes System auf neue Version bringen.</div>
+  <div class="step"><strong>Release:</strong> Eine Auslieferungsversion (SAP Cloud ERP Public liefert 2× pro Jahr).</div>
+  <div class="step"><strong>Deployment:</strong> Die Software auf das Zielsystem bringen.</div>
+  <div class="step"><strong>Go-Live:</strong> Der Tag, an dem das neue System produktiv wird.</div>
+  <div class="step"><strong>Hypercare:</strong> Intensiv-Support in den ersten Wochen nach Go-Live.</div>
+</div>
+
+<h3>Kompakt: Die Begriffe im Überblick</h3>
+
+<table>
+  <tr><th>Begriff</th><th>Bedeutung</th><th>Beispiel</th></tr>
+  <tr><td><strong>Implementation</strong></td><td>Erstmalige Einführung</td><td>NordLicht führt zum ersten Mal SuccessFactors ein</td></tr>
+  <tr><td><strong>Migration</strong></td><td>Wechsel des Systems</td><td>ECC → S/4HANA Cloud Private</td></tr>
+  <tr><td><strong>Transformation</strong></td><td>Ganzheitliche Veränderung</td><td>Neuer Prozess + neues System + neue Rollen</td></tr>
+  <tr><td><strong>Rollout</strong></td><td>Ausdehnung eines Systems</td><td>SAP von Deutschland auf UK &amp; Polen</td></tr>
+  <tr><td><strong>Upgrade</strong></td><td>Neue Version einspielen</td><td>S/4HANA 2023 → 2026</td></tr>
+  <tr><td><strong>Release</strong></td><td>Freigegebene Version</td><td>„Release 2H/2026"</td></tr>
+  <tr><td><strong>Go-Live</strong></td><td>Produktivstart</td><td>1. April 2027, 6 Uhr: Cutover abgeschlossen</td></tr>
+  <tr><td><strong>Hypercare</strong></td><td>Support-Phase nach Go-Live</td><td>4 Wochen tägliche Ticket-Runde, Team on-site</td></tr>
+</table>
+
+<h2>8.2 &nbsp;Testing &amp; Qualität</h2>
+
+<div class="term">
+  <h3>Testing, UAT, QA <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Testing</span><span class="v">Allgemein: Software wird geprüft.</span></div>
+  <div class="row"><span class="k">UAT</span><span class="v"><strong>User Acceptance Test</strong>: der Fachbereich probiert die neue Software mit echten Szenarien.</span></div>
+  <div class="row"><span class="k">QA</span><span class="v"><strong>Quality Assurance</strong>: übergreifende Qualitätssicherung mit Standards, Prozessen, Tools.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> UAT = „Die Nutzer probieren." QA = „Wir haben einen Prozess dafür."</div>
+</div>
+
+<h2>8.3 &nbsp;Menschen &amp; Anforderungen</h2>
+
+<div class="term">
+  <h3>Change Management <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Die <strong>Begleitung der Menschen</strong> durch die Veränderung: Kommunikation, Trainings, Widerstands-Management.</span></div>
+  <div class="row"><span class="k">Wichtig</span><span class="v">70% aller ERP-Projekte scheitern nicht an der Technik, sondern am Menschen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Kein Go-Live ohne Menschen, die es nutzen wollen."</div>
+</div>
+
+<div class="term">
+  <h3>Stakeholder Management <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Der Umgang mit allen Beteiligten und Betroffenen — von Vorstand bis Endnutzer.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Frühe Einbindung ist billiger als späte Reparatur."</div>
+</div>
+
+<div class="term">
+  <h3>Requirements Engineering <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">Systematisches Erheben, Dokumentieren, Priorisieren von Anforderungen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „Klare Anforderungen halbieren die Projektdauer."</div>
+</div>
+
+<h2>8.4 &nbsp;Vorgehensmodelle: Agile, Scrum, Waterfall</h2>
+
+<table class="compare">
+  <tr>
+    <th></th>
+    <th>Waterfall</th>
+    <th>Agile / Scrum</th>
+  </tr>
+  <tr><td>Prinzip</td><td>Alles vorab planen, dann umsetzen</td><td>Kleine Schritte, ständige Anpassung</td></tr>
+  <tr><td>Struktur</td><td>Analyse → Design → Bau → Test → Go-Live</td><td>2-4 Wochen Sprints, immer wieder Ergebnis</td></tr>
+  <tr><td>Passend für</td><td>Regulierte, klar umrissene Projekte</td><td>Unklare Anforderungen, digitale Produkte</td></tr>
+  <tr><td>SAP-Kontext</td><td>Klassische ERP-Einführungen bis 2018</td><td>SAP Activate (SAPs Standardmethodik), BTP-Entwicklung</td></tr>
+</table>
+
+<div class="term">
+  <h3>Sprint &amp; Backlog <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Sprint</span><span class="v">Ein <strong>fester Zeitraum</strong> (meist 2–4 Wochen), in dem ein Team ein Ergebnis liefert.</span></div>
+  <div class="row"><span class="k">Backlog</span><span class="v">Die <strong>priorisierte Liste</strong> aller offenen Aufgaben.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Sprint = Zeitfenster · Backlog = Aufgabenliste.</div>
+</div>
+
+<div class="term">
+  <h3>SAP Activate <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Was ist es?</span><span class="v">SAPs <strong>Standard-Einführungsmethodik</strong> — ein hybrides Modell aus agilen Sprints und phasiertem Vorgehen. Phasen: Discover → Prepare → Explore → Realize → Deploy → Run.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Kein Sprint ohne Plan, kein Plan ohne Sprint.</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🎯 Merken für Projektgespräche</div>
+  <p>Wenn dich jemand fragt: <em>„Machen wir Waterfall oder Agile?"</em> — die richtige Antwort ist meist: <strong>„Wir machen SAP Activate."</strong> Das ist heute Standard und kombiniert das Beste aus beiden Welten.</p>
+</div>
+
+</section>
+
+<!-- ================= KAPITEL 9: NICHT VERWECHSELN ================= -->
+<section>
+<h1 class="chapter"><span class="num">09</span>Nicht verwechseln</h1>
+<p class="chapter-lead">
+  Das wichtigste Kapitel dieses Buches. Hier stehen die Verwechslungen, die 95% aller SAP-Neulinge machen — mit klaren Antworten in einem Satz.
+  Nutze es als Nachschlagewerk vor jedem Meeting.
+</p>
+
+<h2>9.1 &nbsp;Die klassischen Verwechslungen</h2>
+
+<div class="term">
+  <h3>SAP vs. S/4HANA <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">SAP</span><span class="v">Das <strong>Unternehmen</strong> und die <strong>Marke</strong> — hunderte Produkte.</span></div>
+  <div class="row"><span class="k">S/4HANA</span><span class="v">Ein <em>Produkt</em> aus dem SAP-Portfolio: das aktuelle Kern-ERP.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> „SAP ist die Firma, S/4HANA ist ein Auto in ihrer Modellpalette."</div>
+</div>
+
+<div class="term">
+  <h3>HANA vs. S/4HANA <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">HANA</span><span class="v">Die <strong>Datenbank</strong> (In-Memory-Technologie).</span></div>
+  <div class="row"><span class="k">S/4HANA</span><span class="v">Das <strong>ERP-System</strong>, das auf HANA läuft.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> HANA = Fundament · S/4HANA = Haus.</div>
+</div>
+
+<div class="term">
+  <h3>S/4HANA vs. Cloud ERP <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">S/4HANA</span><span class="v">Das Produkt insgesamt (On-Premise, Private, Public).</span></div>
+  <div class="row"><span class="k">Cloud ERP</span><span class="v">Der neue Sammelname (2024+) für die Cloud-Editionen von S/4HANA.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Cloud ERP = S/4HANA in der Cloud.</div>
+</div>
+
+<div class="term">
+  <h3>BTP vs. S/4HANA <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">BTP</span><span class="v">Die <strong>Plattform</strong> für Erweiterungen, Integrationen, KI, Data.</span></div>
+  <div class="row"><span class="k">S/4HANA</span><span class="v">Das <strong>ERP-System</strong>, in dem Kernprozesse laufen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> S/4HANA <em>läuft Geschäft</em>. BTP <em>erweitert und verbindet</em>.</div>
+</div>
+
+<div class="term">
+  <h3>Fiori vs. SAPUI5 vs. Fiori Elements <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Fiori</span><span class="v">Die <strong>Designsprache</strong> — wie sollen SAP-Oberflächen aussehen &amp; sich anfühlen?</span></div>
+  <div class="row"><span class="k">SAPUI5</span><span class="v">Das <strong>JavaScript-Framework</strong> — die Technik zum Bauen.</span></div>
+  <div class="row"><span class="k">Fiori Elements</span><span class="v">Ein <strong>Bau-Ansatz</strong> auf SAPUI5 mit Metadaten-getriebener Generierung.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Fiori = Look · UI5 = Technik · Fiori Elements = Bau-Fabrik.</div>
+</div>
+
+<div class="term">
+  <h3>Public vs. Private Cloud <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Public</span><span class="v">Multi-Tenant, standardisiert, günstig, wenig Anpassung — Cloud ERP Public via <em>GROW</em>.</span></div>
+  <div class="row"><span class="k">Private</span><span class="v">Single-Tenant, individuell, flexibler, teurer — Cloud ERP Private via <em>RISE</em>.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Public = WG-Zimmer · Private = eigene Wohnung.</div>
+</div>
+
+<div class="term">
+  <h3>SaaS vs. PaaS vs. IaaS <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">SaaS</span><span class="v">Fertige Anwendung — z. B. Concur, SuccessFactors.</span></div>
+  <div class="row"><span class="k">PaaS</span><span class="v">Plattform zum Entwickeln — z. B. SAP BTP.</span></div>
+  <div class="row"><span class="k">IaaS</span><span class="v">Rohe Infrastruktur — z. B. AWS, Azure.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Software → Plattform → Infrastruktur (von oben nach unten).</div>
+</div>
+
+<h2>9.2 &nbsp;KI-Welt</h2>
+
+<div class="term">
+  <h3>AI vs. Generative AI vs. AI Agents <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">AI (KI)</span><span class="v">Oberbegriff: jede Software, die intelligentes Verhalten zeigt (auch klassische ML-Modelle).</span></div>
+  <div class="row"><span class="k">Generative AI</span><span class="v">KI, die <em>Inhalte erzeugt</em> (Text, Bild, Code) — meist basierend auf LLMs.</span></div>
+  <div class="row"><span class="k">AI Agents</span><span class="v">KI-Systeme mit <em>Zielen und Werkzeugen</em>, die mehrstufige Aufgaben autonom lösen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> AI = Oberkategorie · GenAI = kreativ · Agents = zielgerichtet handeln.</div>
+</div>
+
+<div class="term">
+  <h3>Joule vs. AI Core <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Joule</span><span class="v">Der <strong>Endanwender-Copilot</strong>. Was du im Alltag benutzt.</span></div>
+  <div class="row"><span class="k">AI Core</span><span class="v">Die <strong>technische Plattform</strong>, auf der Modelle betrieben werden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Joule = das Gesicht · AI Core = der Motor.</div>
+</div>
+
+<h2>9.3 &nbsp;Integration &amp; Sicherheit</h2>
+
+<div class="term">
+  <h3>API vs. Integration <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">API</span><span class="v">Eine <em>einzelne</em> Schnittstelle — der „Türgriff".</span></div>
+  <div class="row"><span class="k">Integration</span><span class="v">Das <em>Gesamtkonzept</em>: mehrere Systeme mit APIs, Middleware, Events verbinden.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> API = Baustein · Integration = Bauwerk.</div>
+</div>
+
+<div class="term">
+  <h3>Authentication vs. Authorization <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Authentication</span><span class="v"><strong>Wer</strong> bist du? (Login, MFA)</span></div>
+  <div class="row"><span class="k">Authorization</span><span class="v"><strong>Was</strong> darfst du? (Rollen, Berechtigungen)</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Erst Ausweis, dann Türsteher.</div>
+</div>
+
+<h2>9.4 &nbsp;Entwicklung &amp; Erweiterung</h2>
+
+<div class="term">
+  <h3>Configuration vs. Customization <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">Configuration</span><span class="v">Einstellungen im Standard ändern — <em>kein Programmieren</em>.</span></div>
+  <div class="row"><span class="k">Customization</span><span class="v">Erweiterung mit Code — <em>innerhalb erlaubter Grenzen</em>.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Config = Häkchen setzen · Custom = Code schreiben.</div>
+</div>
+
+<div class="term">
+  <h3>Extension vs. Modification <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Extension</span><span class="v">Neue Funktion <em>außerhalb</em> des Standards. Updatefähig.</span></div>
+  <div class="row"><span class="k">Modification</span><span class="v">Änderung <em>am</em> Standard-Code. Bricht Updates. 🚨</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Extension = safe · Modification = riskant.</div>
+</div>
+
+<h2>9.5 &nbsp;Prozess-Welt</h2>
+
+<div class="term">
+  <h3>Process Mining vs. Process Modeling <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Process Mining</span><span class="v">Analyse <strong>echter</strong> Prozesse aus System-Logs — „Wie läuft es wirklich?"</span></div>
+  <div class="row"><span class="k">Process Modeling</span><span class="v">Design von Soll-Prozessen — „Wie soll es laufen?"</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Mining = Ist · Modeling = Soll.</div>
+</div>
+
+<div class="term">
+  <h3>Signavio vs. LeanIX <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">Signavio</span><span class="v">Für <strong>Geschäftsprozesse</strong>: modellieren, analysieren, verbessern.</span></div>
+  <div class="row"><span class="k">LeanIX</span><span class="v">Für <strong>IT-Architektur</strong>: Anwendungen, Abhängigkeiten, Lifecycle.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Signavio = Prozesse · LeanIX = Systeme.</div>
+</div>
+
+<h2>9.6 &nbsp;Einkauf &amp; HR</h2>
+
+<div class="term">
+  <h3>Ariba vs. Concur vs. Fieldglass <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Ariba</span><span class="v"><strong>Waren &amp; Dienstleistungen</strong> — direkte und indirekte Beschaffung.</span></div>
+  <div class="row"><span class="k">Concur</span><span class="v"><strong>Reisen &amp; Spesen</strong> — persönliche Ausgaben von Mitarbeitenden.</span></div>
+  <div class="row"><span class="k">Fieldglass</span><span class="v"><strong>Externe Arbeitskräfte</strong> — Freelancer, Zeitarbeit, Werkverträge.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Ariba kauft <em>Sachen</em>, Concur bezahlt <em>Reisen</em>, Fieldglass verwaltet <em>Menschen</em> (die nicht angestellt sind).</div>
+</div>
+
+<h2>9.7 &nbsp;Sales &amp; Presales</h2>
+
+<div class="term">
+  <h3>Sales vs. Presales <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">Sales</span><span class="v">Verkauft und schließt Deals.</span></div>
+  <div class="row"><span class="k">Presales</span><span class="v">Erklärt und überzeugt technisch/fachlich.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> Sales = Vertrag · Presales = Vertrauen.</div>
+</div>
+
+<div class="term">
+  <h3>PoC vs. PoV <span class="lvl pre">🟣</span></h3>
+  <div class="row"><span class="k">PoC</span><span class="v"><strong>Proof of Concept</strong> — geht es <em>technisch</em>?</span></div>
+  <div class="row"><span class="k">PoV</span><span class="v"><strong>Proof of Value</strong> — lohnt es <em>wirtschaftlich</em>?</span></div>
+  <div class="mem"><strong>Merksatz:</strong> PoC = machbar · PoV = lohnend.</div>
+</div>
+
+<div class="term">
+  <h3>ROI vs. TCO <span class="lvl must">🟢</span></h3>
+  <div class="row"><span class="k">ROI</span><span class="v">Return on Investment — <em>Rendite</em> in %.</span></div>
+  <div class="row"><span class="k">TCO</span><span class="v">Total Cost of Ownership — <em>Gesamtkosten</em> über die Nutzungszeit.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> TCO = Kosten · ROI = Ertrag.</div>
+</div>
+
+<div class="term">
+  <h3>RFI vs. RFP vs. RFQ <span class="lvl biz">🔵</span></h3>
+  <div class="row"><span class="k">RFI</span><span class="v">„Was kannst du?" — Information einholen.</span></div>
+  <div class="row"><span class="k">RFP</span><span class="v">„Wie löst du unser Problem?" — Konzept einholen.</span></div>
+  <div class="row"><span class="k">RFQ</span><span class="v">„Was kostet es?" — Preis einholen.</span></div>
+  <div class="mem"><strong>Merksatz:</strong> I → P → Q — von <em>abstrakt</em> zu <em>konkret</em>.</div>
+</div>
+
+<h2>9.8 &nbsp;RISE vs. GROW — kompakte Entscheidungshilfe</h2>
+
+<table>
+  <tr><th>Frage</th><th>RISE</th><th>GROW</th></tr>
+  <tr><td>Bin ich Bestandskunde (ECC)?</td><td>Ja</td><td>Selten</td></tr>
+  <tr><td>Habe ich komplexe Prozesse?</td><td>Ja</td><td>Nein — Standard reicht</td></tr>
+  <tr><td>Brauche ich individuelle Anpassung?</td><td>Ja</td><td>Nein / kaum</td></tr>
+  <tr><td>Bin ich Mittelstand / Wachstumsfirma?</td><td>Selten</td><td>Klassisch</td></tr>
+  <tr><td>Wie viel Zeit für Einführung?</td><td>9–24 Monate</td><td>3–9 Monate</td></tr>
+  <tr><td>Cloud-Edition</td><td>Cloud ERP Private</td><td>Cloud ERP Public</td></tr>
+</table>
+
+</section>
+
+<!-- ================= KAPITEL 10: PRAXISFÄLLE ================= -->
+<section>
+<h1 class="chapter"><span class="num">10</span>Praxisfälle: 5 End-to-End-Szenarien</h1>
+<p class="chapter-lead">
+  Fünf realistische Beispiele, die zeigen, wie SAP-Lösungen im echten Alltag zusammenwirken.
+  Jeder Fall folgt dem Schema: <strong>Problem → SAP Solution → Technology → AI → Business Value.</strong>
+</p>
+
+<div class="case">
+  <h3>Fall 1 · Manufacturing: „Der stumme Roboter"</h3>
+  <div class="row"><span class="k">Branche</span>Möbelhersteller (NordLicht Möbel GmbH)</div>
+  <div class="row"><span class="k">Problem</span>Die CNC-Fräse in Polen fällt alle paar Monate ohne Vorwarnung aus. Ausfall kostet 12.000 € pro Stunde. Wartung ist reaktiv — man weiß erst, wenn's kracht.</div>
+  <div class="row"><span class="k">SAP Solution</span>Digital Manufacturing + Asset Performance Management (APM) mit IoT-Anbindung.</div>
+  <div class="row"><span class="k">Technology</span>Sensoren senden Vibrations- und Temperaturdaten via Event Mesh in HANA Cloud. Datasphere kombiniert mit Wartungshistorie aus S/4HANA (EAM).</div>
+  <div class="row"><span class="k">AI</span>Ein Predictive-Maintenance-Modell (AI Core) erkennt Muster und meldet 10 Tage vor Ausfall: „Lager X hat 78% Ausfallwahrscheinlichkeit". Joule fasst zusammen und schlägt Wartungsauftrag vor.</div>
+  <div class="row"><span class="k">Business Value</span>Ungeplante Ausfälle −65%. Ersparnis 1,8 Mio €/Jahr. Wartungsteam plant statt hektisch zu reagieren.</div>
+</div>
+
+<div class="case">
+  <h3>Fall 2 · Retail: „Der Winter 2027 wird anders"</h3>
+  <div class="row"><span class="k">Branche</span>NordLichts B2C-Onlineshop</div>
+  <div class="row"><span class="k">Problem</span>Absatzprognose stimmt nicht — mal zu wenig Ware (Umsatzverlust), mal zu viel (Ausverkauf mit Rabatt). Fehlplanung 15%.</div>
+  <div class="row"><span class="k">SAP Solution</span>SAP IBP für Planung + Commerce Cloud für den Shop + Emarsys für Kampagnen + SAC für Reporting.</div>
+  <div class="row"><span class="k">Technology</span>Datasphere bündelt Verkaufs-, Wetter-, Trend- und Marketingdaten. Business Data Cloud stellt sie prozessreif zur Verfügung.</div>
+  <div class="row"><span class="k">AI</span>Ein Demand-Forecasting-Modell nutzt LLMs, um externe Signale (Google-Trends, Wetter, Social Media) zu interpretieren. Joule-Agent im Vertrieb schlägt Sortimentsanpassungen vor.</div>
+  <div class="row"><span class="k">Business Value</span>Prognosegenauigkeit von 85% auf 96%. Lagerkosten −18%, Umsatzverluste durch Out-of-Stock −40%. Netto: 3,2 Mio € Marge zusätzlich.</div>
+</div>
+
+<div class="case">
+  <h3>Fall 3 · HR: „Die richtigen Menschen an den richtigen Stellen"</h3>
+  <div class="row"><span class="k">Branche</span>NordLicht wächst schnell — von 850 auf geplante 1.400 Mitarbeitende in 2 Jahren</div>
+  <div class="row"><span class="k">Problem</span>Recruiting dauert 4 Monate pro Stelle. Neue Mitarbeitende brauchen 6 Monate bis zur vollen Produktivität. Fluktuation im Vertrieb 22%.</div>
+  <div class="row"><span class="k">SAP Solution</span>SuccessFactors: Recruiting, Onboarding, Learning, Performance &amp; Goals, Compensation. Employee Central als Backbone.</div>
+  <div class="row"><span class="k">Technology</span>Integration Suite verbindet SuccessFactors mit S/4HANA (Kostenstellen), Concur (Reisen für neue MA), IAS (SSO). Alle Daten in BDC für Workforce Analytics.</div>
+  <div class="row"><span class="k">AI</span>Joule filtert Bewerbungen vor („Top 10 Matches"). LMS-KI empfiehlt Trainings basierend auf Rolle und Skill Gap. Predictive Attrition markiert Mitarbeitende mit hohem Wechselrisiko.</div>
+  <div class="row"><span class="k">Business Value</span>Time-to-Hire −45%. Time-to-Productivity von 6 auf 3 Monate. Fluktuation im Vertrieb 22% → 12%. Kostenersparnis: ca. 900k €/Jahr.</div>
+</div>
+
+<div class="case">
+  <h3>Fall 4 · Procurement: „Vom Fax zum Netzwerk"</h3>
+  <div class="row"><span class="k">Branche</span>NordLicht-Einkauf: 400 Lieferanten weltweit</div>
+  <div class="row"><span class="k">Problem</span>Bestellungen per E-Mail und Fax. 22% Rechnungsfehler. Keine Sicht auf Nachhaltigkeit. Verhandlungen dauern Wochen.</div>
+  <div class="row"><span class="k">SAP Solution</span>Ariba Buying + Sourcing + Contracts. Anschluss ans SAP Business Network. Nachhaltigkeitsdaten via Green Token.</div>
+  <div class="row"><span class="k">Technology</span>Katalog-Einkauf in Ariba, Genehmigungen via Build Process Automation, Fakturenabgleich (3-way match) direkt zwischen Ariba und S/4HANA.</div>
+  <div class="row"><span class="k">AI</span>Ein Category-Buying-Agent (Joule Agent) analysiert Ausgaben und schlägt Rahmenverträge vor. Bei Streitfällen automatisiert der Dispute Agent Nachforderungen.</div>
+  <div class="row"><span class="k">Business Value</span>Rechnungsfehler von 22% auf 3%. Verhandlungszyklen −60%. Compliance-Reports (CSRD, CBAM) automatisiert. Einsparung: 4,1 Mio €/Jahr.</div>
+</div>
+
+<div class="case">
+  <h3>Fall 5 · AI &amp; Finance: „Der 3-Tage-Monatsabschluss"</h3>
+  <div class="row"><span class="k">Branche</span>NordLicht-Finance</div>
+  <div class="row"><span class="k">Problem</span>Monatsabschluss dauert 15 Werktage. Team ist im Dauerstress. Konzernabschluss-Konsolidierung fehleranfällig.</div>
+  <div class="row"><span class="k">SAP Solution</span>S/4HANA Finance (Cloud ERP Private) + SAC für Reporting + Group Reporting. BDC als semantische Datenschicht.</div>
+  <div class="row"><span class="k">Technology</span>Universal Journal in S/4HANA (eine Ledger-Wahrheit statt vieler Sub-Ledger). Realtime-Analytics ohne ETL. Fiori Elements Apps für Fachbereiche.</div>
+  <div class="row"><span class="k">AI</span>Joule beantwortet Ad-hoc-Fragen: <em>„Warum ist Marge in Region NORD niedriger?"</em> mit Root-Cause-Analyse. Ein Anomaly-Agent markiert verdächtige Buchungen vor dem Abschluss.</div>
+  <div class="row"><span class="k">Business Value</span>Abschluss in 3 Tagen statt 15. Fehler in Konsolidierung −80%. Vorstand hat Realtime-Sicht auf KPIs. Weniger Überstunden, mehr Wertschöpfung: geschätzt 1,2 Mio €/Jahr.</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🎯 Roter Faden aller Praxisfälle</div>
+  <p>Beobachte das Muster: In <strong>jedem</strong> Fall spielen 4 Ebenen zusammen — <em>Kern-ERP (S/4HANA)</em> + <em>Fachlösung (SuccessFactors/Ariba/CX/IBP)</em> + <em>Plattform (BTP mit Integration &amp; Data)</em> + <em>KI (Joule + Agents)</em>. Wenn du diese vier Ebenen bei jedem Kundenszenario im Kopf hast, kannst du <em>alle</em> Use Cases strukturiert einordnen.</p>
+</div>
+
+</section>
+
+<!-- ================= ANHANG A: SAP IN 30 MINUTEN ================= -->
+<section>
+<h1 class="chapter"><span class="num">A</span>Anhang: SAP in 30 Minuten</h1>
+<p class="chapter-lead">
+  Diese Seite ist deine <strong>Notfall-Vorbereitung</strong>: 30 Minuten vor einem Kundenmeeting oder einem Vorstellungsgespräch — hier bekommst du das ganze SAP-Ökosystem in einer strukturierten Kurzfassung.
+</p>
+
+<h2>Die Kernbotschaft in einem Satz</h2>
+<div class="box tip">
+  <p style="font-size:12pt;margin:0"><strong>SAP</strong> verkauft ein integriertes, KI-gestütztes Betriebssystem für Unternehmen — bestehend aus einem Kern-ERP (<strong>S/4HANA</strong>), einer Cloud-Plattform (<strong>BTP</strong>), spezialisierten Fachlösungen (<strong>SuccessFactors, Ariba, Concur, CX u.a.</strong>) und einer KI-Ebene (<strong>Business AI, Joule, Agents</strong>) — verbunden über <strong>Business Data Cloud</strong>.</p>
+</div>
+
+<h2>Die vier Ebenen der SAP-Welt</h2>
+<div class="arch">
+  <div class="layer purple"><div class="lbl">Ebene 4 · KI</div><strong>SAP Business AI</strong> — Joule (Copilot), Joule Agents, Generative AI Hub, AI Core, AI Launchpad. LLM-Zugriff, RAG, Grounding, Business Context.</div>
+  <div class="layer teal"><div class="lbl">Ebene 3 · Plattform &amp; Daten</div><strong>SAP BTP</strong> (Build, Integration Suite, Event Mesh, ABAP Cloud, Cloud Foundry) + <strong>Business Data Cloud</strong> (Datasphere, HANA Cloud, SAC).</div>
+  <div class="layer blue"><div class="lbl">Ebene 2 · Fachlösungen (Line-of-Business)</div><strong>SuccessFactors</strong> (HR), <strong>Ariba</strong> (Einkauf), <strong>Concur</strong> (Reisen), <strong>Fieldglass</strong> (Externe), <strong>CX</strong> (Kunde), <strong>IBP/DM/EWM/TM</strong> (Supply Chain), <strong>Signavio/LeanIX</strong> (Transformation), <strong>Sustainability Suite</strong>.</div>
+  <div class="layer gold"><div class="lbl">Ebene 1 · Kern-ERP</div><strong>SAP Cloud ERP</strong> (S/4HANA Private via RISE, S/4HANA Public via GROW) mit HANA-Datenbank. Für Finance, Logistik, Produktion, Vertrieb, Einkauf.</div>
+  <div class="layer gray"><div class="lbl">Ebene 0 · Sicherheit &amp; Betrieb</div>Cloud Identity Services (IAS, IPS), SSO, Rollen, gCTS-Transporte, Hyperscaler-Basis (AWS/Azure/GCP).</div>
+</div>
+
+<h2>Die sechs End-to-End-Prozesse</h2>
+<table>
+  <tr><th>Prozess</th><th>Von</th><th>Bis</th><th>SAP-Lösungen</th></tr>
+  <tr><td>Lead-to-Cash</td><td>Interessent</td><td>Zahlungseingang</td><td>CX Suite, S/4HANA SD, Finance</td></tr>
+  <tr><td>Source-to-Pay</td><td>Bedarf</td><td>Zahlungsausgang</td><td>Ariba, S/4HANA MM, Business Network</td></tr>
+  <tr><td>Plan-to-Produce</td><td>Absatzplanung</td><td>Fertiges Produkt</td><td>IBP, S/4HANA PP, Digital Manufacturing</td></tr>
+  <tr><td>Hire-to-Retire</td><td>Bewerbung</td><td>Austritt</td><td>SuccessFactors</td></tr>
+  <tr><td>Record-to-Report</td><td>Buchung</td><td>Konzernabschluss</td><td>S/4HANA Finance, SAC, Group Reporting</td></tr>
+  <tr><td>Design-to-Operate</td><td>Produktentwicklung</td><td>Wartung im Feld</td><td>PLM, EWM, APM, Service Cloud</td></tr>
+</table>
+
+<h2>Die zehn Sätze, die du kennen musst</h2>
+<ol>
+  <li>„SAP ist die Firma, S/4HANA ist ihr Kern-ERP, HANA ist die Datenbank darunter."</li>
+  <li>„Cloud ERP hat zwei Editionen: Public (via GROW) und Private (via RISE)."</li>
+  <li>„Clean Core heißt: Erweiterungen bauen wir auf BTP, nicht im ERP-Core."</li>
+  <li>„BTP ist die Plattform — für Integration, Erweiterung, Daten und KI."</li>
+  <li>„Joule ist der Copilot, Joule Agents sind autonome Aufgabenlöser."</li>
+  <li>„Business Data Cloud ist die neue semantische Datenschicht (2025+)."</li>
+  <li>„Signavio = Prozesse, LeanIX = IT-Landschaft."</li>
+  <li>„Ariba = Waren/Services, Concur = Reisen, Fieldglass = externe Arbeit."</li>
+  <li>„Fiori = Design, SAPUI5 = Framework, Fiori Elements = Metadata-App."</li>
+  <li>„Presales verkauft nicht — Presales macht Verkauf glaubwürdig."</li>
+</ol>
+
+<h2>Die häufigsten Vertragsformen (2026)</h2>
+<div class="grid-2">
+<div class="box tip">
+  <div class="title">RISE with SAP</div>
+  <p>Für Bestandskunden. Bundle aus S/4HANA Cloud Private + BTP + Business Network + Migration Services + Betrieb.</p>
+</div>
+<div class="box ok">
+  <div class="title">GROW with SAP</div>
+  <p>Für Mittelstand / Neukunden. Bundle rund um S/4HANA Cloud Public — schnell einführbar, Fit-to-Standard, halbjährliche Releases.</p>
+</div>
+</div>
+
+</section>
+
+<!-- ================= ANHANG B: 100 BEGRIFFE ================= -->
+<section>
+<h1 class="chapter"><span class="num">B</span>Anhang: Die 100 wichtigsten SAP-Begriffe</h1>
+<p class="chapter-lead">
+  Ein kompaktes Glossar. Jede Definition passt in 1–2 Sätze. Ideal zum schnellen Nachschlagen.
+</p>
+
+<div class="grid-2">
+<div class="gterm"><span class="t">SAP</span> — Deutsches Unternehmen und Marke; Weltmarktführer für Unternehmenssoftware.</div>
+<div class="gterm"><span class="t">ERP</span> — Enterprise Resource Planning: Software, die alle Kernprozesse eines Unternehmens integriert.</div>
+<div class="gterm"><span class="t">SAP HANA</span> — In-Memory-Datenbank, Grundlage von S/4HANA.</div>
+<div class="gterm"><span class="t">SAP HANA Cloud</span> — Managed-Cloud-Version der HANA-Datenbank auf BTP.</div>
+<div class="gterm"><span class="t">SAP ECC</span> — Der klassische Vorgänger von S/4HANA; Wartungsende regulär Ende 2027.</div>
+<div class="gterm"><span class="t">SAP Business Suite (alt)</span> — Historischer Sammelname für ECC + CRM + SCM + SRM + PLM.</div>
+<div class="gterm"><span class="t">SAP Business Suite (neu)</span> — Neu belegter Suite-Begriff für Bundle aus S/4HANA + BTP + BDC + Joule (2024+).</div>
+<div class="gterm"><span class="t">SAP S/4HANA</span> — Aktuelles Kern-ERP von SAP; läuft auf HANA.</div>
+<div class="gterm"><span class="t">SAP Cloud ERP</span> — Sammelbegriff (seit 2024) für S/4HANA-Cloud-Editionen: Public und Private.</div>
+<div class="gterm"><span class="t">RISE with SAP</span> — Kommerzangebot für S/4HANA Cloud Private + BTP + Business Network; zielt auf Bestandskunden.</div>
+<div class="gterm"><span class="t">GROW with SAP</span> — Kommerzangebot für S/4HANA Cloud Public; für Mittelstand und Neukunden.</div>
+<div class="gterm"><span class="t">Clean Core</span> — Architekturprinzip: Erweiterungen außerhalb des ERP-Kerns, um Updatefähigkeit zu bewahren.</div>
+<div class="gterm"><span class="t">Fit-to-Standard</span> — Einführungsphilosophie: Prozesse an SAP-Standard anpassen, nicht umgekehrt.</div>
+<div class="gterm"><span class="t">SAP BTP</span> — Business Technology Platform; Cloud-Plattform für Erweiterung, Integration, Daten, KI.</div>
+<div class="gterm"><span class="t">SAP Build</span> — Dachname für Low-Code-Werkzeuge auf BTP.</div>
+<div class="gterm"><span class="t">SAP Build Apps</span> — Low-Code-Tool zum App-Bau, Nachfolger von AppGyver.</div>
+<div class="gterm"><span class="t">SAP Build Process Automation</span> — Workflows und RPA in einer Cloud-Lösung.</div>
+<div class="gterm"><span class="t">SAP Build Work Zone</span> — Digitales Arbeitsportal / Nachfolger des Fiori Launchpads.</div>
+<div class="gterm"><span class="t">SAP Integration Suite</span> — Zentrales Integrationsprodukt (Cloud Integration, API Mgmt, Event Mesh).</div>
+<div class="gterm"><span class="t">SAP API Management</span> — Zentrale Verwaltung von APIs (Sicherheit, Rate Limits, Versionierung).</div>
+<div class="gterm"><span class="t">SAP Event Mesh</span> — Event-Broker für event-getriebene Architekturen.</div>
+<div class="gterm"><span class="t">Cloud Foundry</span> — Laufzeitumgebung auf BTP für Java/Node.js/Python-Anwendungen.</div>
+<div class="gterm"><span class="t">Kyma</span> — Kubernetes-basierte Runtime auf BTP für containerisierte Apps.</div>
+<div class="gterm"><span class="t">ABAP</span> — SAPs klassische Programmiersprache seit den 80ern.</div>
+<div class="gterm"><span class="t">ABAP Cloud</span> — Modernes ABAP-Programmiermodell mit strengen Regeln für Clean-Core-Entwicklung.</div>
+<div class="gterm"><span class="t">RAP</span> — RESTful ABAP Programming Model; modernes ABAP-Bau-Framework.</div>
+<div class="gterm"><span class="t">CAP</span> — Cloud Application Programming Model; RAP-Pendant für JavaScript/Java auf BTP.</div>
+<div class="gterm"><span class="t">SAPUI5</span> — JavaScript-Framework für Fiori-Web-Anwendungen.</div>
+<div class="gterm"><span class="t">Fiori</span> — SAP-Designsprache für konsistente, moderne Nutzeroberflächen.</div>
+<div class="gterm"><span class="t">Fiori Elements</span> — Metadata-getriebener App-Bau-Ansatz auf SAPUI5.</div>
+<div class="gterm"><span class="t">SAP Horizon</span> — Aktuelles Fiori-Designtheme (seit 2022), ruhig, klar, modern.</div>
+<div class="gterm"><span class="t">Design Tokens</span> — Variablen für Farben, Abstände, Typografie im Designsystem.</div>
+<div class="gterm"><span class="t">API</span> — Application Programming Interface; definierte Schnittstelle zwischen Systemen.</div>
+<div class="gterm"><span class="t">REST</span> — Standard-Architektur für Web-APIs (GET, POST, PUT, DELETE).</div>
+<div class="gterm"><span class="t">OData</span> — REST-Erweiterung für Business-Daten mit Filter/Sortierung/Paging in der URL.</div>
+<div class="gterm"><span class="t">JSON</span> — Kompaktes Datenformat für moderne APIs.</div>
+<div class="gterm"><span class="t">XML</span> — Ältere Auszeichnungssprache, in klassischen SAP-Integrationen verbreitet.</div>
+<div class="gterm"><span class="t">Git</span> — Versionskontrollsystem für Code.</div>
+<div class="gterm"><span class="t">Repository</span> — Ordner mit Git-Historie.</div>
+<div class="gterm"><span class="t">Branch / Commit / Merge</span> — Parallele Entwicklungslinie / Speicherpunkt / Zusammenführung.</div>
+<div class="gterm"><span class="t">CI/CD</span> — Continuous Integration / Delivery: automatisierte Tests und Deployment.</div>
+<div class="gterm"><span class="t">gCTS</span> — Git-basiertes SAP-Transportsystem.</div>
+<div class="gterm"><span class="t">Deployment</span> — Software auf ein Zielsystem bringen.</div>
+<div class="gterm"><span class="t">Runtime</span> — Laufzeitumgebung, in der Anwendungen ausgeführt werden.</div>
+<div class="gterm"><span class="t">Tenant</span> — Logische Mandantentrennung in Multi-Tenant-Cloud.</div>
+<div class="gterm"><span class="t">Instance</span> — Physische Installation einer Anwendung.</div>
+<div class="gterm"><span class="t">Microservices</span> — Software als Sammlung kleiner unabhängiger Services.</div>
+<div class="gterm"><span class="t">Extension</span> — Neue Funktion außerhalb des Standards; updatefähig.</div>
+<div class="gterm"><span class="t">Customization</span> — Anpassung mit Code im erlaubten Rahmen.</div>
+<div class="gterm"><span class="t">Configuration</span> — Einstellungen ohne Programmierung.</div>
+<div class="gterm"><span class="t">Modification</span> — Änderung am SAP-Standard-Code; bricht Updates.</div>
+<div class="gterm"><span class="t">Transport</span> — Bündel von Änderungen, das durch Dev/Test/Prod wandert.</div>
+<div class="gterm"><span class="t">System Landscape</span> — Systeme im Verbund: typischerweise Dev, Test, Prod.</div>
+<div class="gterm"><span class="t">SAP Business AI</span> — Dachbegriff für SAPs KI-Angebote.</div>
+<div class="gterm"><span class="t">Joule</span> — SAPs generativer KI-Copilot in allen Anwendungen.</div>
+<div class="gterm"><span class="t">Joule Agents</span> — Autonome KI-Agenten mit Zielen und Werkzeugen.</div>
+<div class="gterm"><span class="t">Generative AI Hub</span> — Zentraler Zugang zu LLMs verschiedener Anbieter.</div>
+<div class="gterm"><span class="t">SAP AI Core</span> — Technische Plattform für ML-Modelle bei SAP.</div>
+<div class="gterm"><span class="t">SAP AI Launchpad</span> — UI zur Verwaltung von AI-Core-Modellen.</div>
+<div class="gterm"><span class="t">LLM</span> — Large Language Model; KI-Modell, das Text versteht und erzeugt.</div>
+<div class="gterm"><span class="t">RAG</span> — Retrieval-Augmented Generation; LLM sucht erst in Wissensquellen, dann antwortet es.</div>
+<div class="gterm"><span class="t">Embeddings</span> — Numerische Repräsentation von Text zur Bedeutungssuche.</div>
+<div class="gterm"><span class="t">Vector Search</span> — Suche nach Ähnlichkeit im Vektorraum.</div>
+<div class="gterm"><span class="t">Grounding</span> — LLM-Antworten auf reale Daten „festbinden".</div>
+<div class="gterm"><span class="t">Business Context</span> — Rollen-, Berechtigungs-, Prozesswissen in KI-Antworten einfließen lassen.</div>
+<div class="gterm"><span class="t">AI Governance</span> — Regeln für verantwortungsvollen KI-Einsatz (Datenschutz, EU AI Act).</div>
+<div class="gterm"><span class="t">SAP Business Data Cloud (BDC)</span> — Semantische Datenschicht (2025+); vereint SAP-Daten mit Business-Kontext.</div>
+<div class="gterm"><span class="t">SAP Datasphere</span> — Data-Warehouse-/Fabric-Lösung auf BTP.</div>
+<div class="gterm"><span class="t">SAP Analytics Cloud (SAC)</span> — BI-, Planning-, Predictive-Cloud.</div>
+<div class="gterm"><span class="t">SAP BW / BW/4HANA</span> — Klassisches SAP Business Warehouse.</div>
+<div class="gterm"><span class="t">Data Warehouse</span> — Strukturierter Datenspeicher für Reporting.</div>
+<div class="gterm"><span class="t">Data Lake</span> — Reservoir für Rohdaten aller Art.</div>
+<div class="gterm"><span class="t">Data Fabric</span> — Konzept: verteilte Daten logisch verbinden.</div>
+<div class="gterm"><span class="t">Master Data</span> — Stammdaten: Kunden, Lieferanten, Produkte, Mitarbeitende.</div>
+<div class="gterm"><span class="t">Data Governance</span> — Regeln für Datenpflege und -qualität.</div>
+<div class="gterm"><span class="t">SAP SuccessFactors</span> — Cloud-HR-Suite (HXM).</div>
+<div class="gterm"><span class="t">HXM</span> — Human Experience Management; Konzept über HR hinaus.</div>
+<div class="gterm"><span class="t">Employee Central</span> — Digitale Personalakte in SuccessFactors.</div>
+<div class="gterm"><span class="t">SF Recruiting / Onboarding</span> — Stellen &amp; Bewerbungen / Einarbeitung.</div>
+<div class="gterm"><span class="t">SF Learning</span> — LMS in SuccessFactors.</div>
+<div class="gterm"><span class="t">SF Performance &amp; Goals</span> — Ziele &amp; Beurteilungen.</div>
+<div class="gterm"><span class="t">SF Compensation</span> — Gehalts- und Bonusplanung.</div>
+<div class="gterm"><span class="t">Workforce Analytics</span> — Analytics zur Belegschaft.</div>
+<div class="gterm"><span class="t">SAP Ariba</span> — Cloud-Suite für Source-to-Pay.</div>
+<div class="gterm"><span class="t">Ariba Buying / Sourcing / Contracts</span> — Katalog-/Ausschreibung-/Vertragsmodule.</div>
+<div class="gterm"><span class="t">Ariba Network</span> — B2B-Netzwerk, heute Teil des SAP Business Network.</div>
+<div class="gterm"><span class="t">SAP Concur</span> — Cloud für Reisen, Spesen, Rechnungen.</div>
+<div class="gterm"><span class="t">SAP Fieldglass</span> — Cloud für externe Arbeitskräfte.</div>
+<div class="gterm"><span class="t">SAP IBP</span> — Integrated Business Planning für Absatz-/Bedarfs-/Netzplanung.</div>
+<div class="gterm"><span class="t">SAP Digital Manufacturing</span> — Cloud-MES.</div>
+<div class="gterm"><span class="t">SAP EWM</span> — Extended Warehouse Management.</div>
+<div class="gterm"><span class="t">SAP TM</span> — Transportation Management.</div>
+<div class="gterm"><span class="t">SAP EAM / APM</span> — Enterprise Asset Management / Asset Performance Management.</div>
+<div class="gterm"><span class="t">SAP PLM</span> — Product Lifecycle Management.</div>
+<div class="gterm"><span class="t">SAP CX</span> — Customer Experience Suite (Sales, Service, Commerce, CDC, Emarsys, CPQ).</div>
+<div class="gterm"><span class="t">SAP Sales Cloud</span> — CRM für den Vertrieb.</div>
+<div class="gterm"><span class="t">SAP Service Cloud</span> — Kundenservice-Cloud.</div>
+<div class="gterm"><span class="t">SAP Commerce Cloud</span> — E-Commerce-Plattform.</div>
+<div class="gterm"><span class="t">SAP Customer Data Cloud</span> — Consent-/Profil-Management.</div>
+<div class="gterm"><span class="t">SAP Emarsys</span> — Multichannel-Marketing-Automation.</div>
+<div class="gterm"><span class="t">CPQ</span> — Configure, Price, Quote — Konfigurator + Angebot.</div>
+<div class="gterm"><span class="t">SAP Signavio</span> — BPM-Suite: Process Modeling, Mining, Insights.</div>
+<div class="gterm"><span class="t">Process Mining</span> — Analyse echter Prozesse aus System-Logs.</div>
+<div class="gterm"><span class="t">Process Modeling</span> — Design von Soll-Prozessen (BPMN).</div>
+<div class="gterm"><span class="t">SAP LeanIX</span> — Enterprise-Architecture-Cloud.</div>
+<div class="gterm"><span class="t">SAP WalkMe</span> — Digital-Adoption-Platform als Software-Overlay.</div>
+<div class="gterm"><span class="t">SAP Business Network</span> — Dachname für Procurement/Logistics/Asset-Netzwerke.</div>
+<div class="gterm"><span class="t">SAP Sustainability Control Tower</span> — ESG-Reporting-Cloud.</div>
+<div class="gterm"><span class="t">Sustainability Footprint Management</span> — Berechnung CO₂-Fußabdruck auf Produktebene.</div>
+<div class="gterm"><span class="t">SAP Green Token</span> — Rückverfolgbarkeit nachhaltiger Materialien.</div>
+<div class="gterm"><span class="t">Cloud Identity Services</span> — Dachname für IAS und IPS.</div>
+<div class="gterm"><span class="t">IAS</span> — Identity Authentication Service; Login &amp; SSO.</div>
+<div class="gterm"><span class="t">IPS</span> — Identity Provisioning Service; User-Provisioning.</div>
+<div class="gterm"><span class="t">SSO</span> — Single Sign-On: ein Login für viele Anwendungen.</div>
+<div class="gterm"><span class="t">Authentication</span> — Prüfung, wer du bist.</div>
+<div class="gterm"><span class="t">Authorization</span> — Prüfung, was du darfst.</div>
+<div class="gterm"><span class="t">Lead / Prospect / Opportunity</span> — Interessent / qualifizierter Interessent / konkrete Verkaufschance.</div>
+<div class="gterm"><span class="t">Pipeline / Forecast</span> — Summe offener Deals / realistische Erwartung.</div>
+<div class="gterm"><span class="t">ARR / ACV</span> — Annual Recurring Revenue / Annual Contract Value.</div>
+<div class="gterm"><span class="t">Upselling / Cross-Selling</span> — Mehr vom Gleichen / zusätzliche Produkte.</div>
+<div class="gterm"><span class="t">RFI / RFP / RFQ</span> — Anfrage Information / Angebot / Preis.</div>
+<div class="gterm"><span class="t">Sales vs. Presales</span> — Vertrag vs. technisch-fachliche Überzeugung.</div>
+<div class="gterm"><span class="t">Discovery</span> — Presales-Gespräch zur Bedarfserhebung.</div>
+<div class="gterm"><span class="t">Pain Point</span> — Konkretes Problem des Kunden.</div>
+<div class="gterm"><span class="t">Use Case</span> — Konkretes Anwendungsszenario.</div>
+<div class="gterm"><span class="t">Solution Architecture</span> — Technischer Bauplan der Lösung.</div>
+<div class="gterm"><span class="t">Value Proposition</span> — Nutzenversprechen in einem Satz.</div>
+<div class="gterm"><span class="t">Business Case</span> — Wirtschaftliche Rechtfertigung.</div>
+<div class="gterm"><span class="t">ROI / TCO</span> — Rendite / Gesamtkosten.</div>
+<div class="gterm"><span class="t">PoC / PoV</span> — Machbarkeitsnachweis / Wertnachweis.</div>
+<div class="gterm"><span class="t">Demo Story</span> — Erzählung hinter einer Live-Demo.</div>
+<div class="gterm"><span class="t">Cloud Computing</span> — IT-Ressourcen als Service über Internet.</div>
+<div class="gterm"><span class="t">IaaS / PaaS / SaaS</span> — Infrastruktur / Plattform / Software als Service.</div>
+<div class="gterm"><span class="t">Public / Private / Hybrid / Multi-Cloud</span> — Cloud-Betriebsmodelle.</div>
+<div class="gterm"><span class="t">Subscription</span> — Abo-Preismodell.</div>
+<div class="gterm"><span class="t">Scalability / Elasticity</span> — Skalierbarkeit / elastische Anpassung.</div>
+<div class="gterm"><span class="t">Implementation / Migration / Transformation</span> — Neueinführung / Wechsel / Ganzheitliche Veränderung.</div>
+<div class="gterm"><span class="t">Rollout / Upgrade / Go-Live / Hypercare</span> — Ausdehnung / neue Version / Produktivstart / Support-Phase danach.</div>
+<div class="gterm"><span class="t">UAT / QA</span> — User Acceptance Test / Quality Assurance.</div>
+<div class="gterm"><span class="t">Change Management</span> — Menschen durch Veränderung begleiten.</div>
+<div class="gterm"><span class="t">Sprint / Backlog</span> — Zeitfenster / Aufgabenliste (Agile/Scrum).</div>
+<div class="gterm"><span class="t">SAP Activate</span> — SAPs Standard-Einführungsmethodik.</div>
+<div class="gterm"><span class="t">Universal Journal</span> — Einheitliches Ledger in S/4HANA Finance.</div>
+<div class="gterm"><span class="t">End-to-End-Prozess</span> — Prozess über mehrere Abteilungen hinweg (Lead-to-Cash, Source-to-Pay, …).</div>
+</div>
+
+</section>
+
+<!-- ================= ANHANG C: ÖKOSYSTEM AUF EINER SEITE ================= -->
+<section>
+<h1 class="chapter"><span class="num">C</span>Anhang: SAP-Ökosystem auf einer Seite</h1>
+<p class="chapter-lead">Deine visuelle Landkarte. Wenn du das nicht sofort verstehst — schlage ein Kapitel nach. Wenn du es sofort verstehst — herzlichen Glückwunsch, du bist SAP-schlau.</p>
+
+<div class="eco">
+  <div class="pillar">
+    <h4>🏛️ Kern-ERP</h4>
+    <ul>
+      <li>S/4HANA (On-Prem)</li>
+      <li>Cloud ERP Public (via GROW)</li>
+      <li>Cloud ERP Private (via RISE)</li>
+      <li>HANA (Datenbank)</li>
+      <li>Universal Journal (Finance)</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🧱 Plattform (BTP)</h4>
+    <ul>
+      <li>Build (Apps, Process, Work Zone)</li>
+      <li>Integration Suite</li>
+      <li>API Management</li>
+      <li>Event Mesh</li>
+      <li>ABAP Environment, Cloud Foundry, Kyma</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🤖 Business AI</h4>
+    <ul>
+      <li>Joule (Copilot)</li>
+      <li>Joule Agents</li>
+      <li>Generative AI Hub</li>
+      <li>AI Core / AI Launchpad</li>
+      <li>Grounding, RAG, Vector Search</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <h4>📊 Data &amp; Analytics</h4>
+    <ul>
+      <li>Business Data Cloud (BDC)</li>
+      <li>Datasphere</li>
+      <li>Analytics Cloud (SAC)</li>
+      <li>HANA Cloud</li>
+      <li>BW/4HANA (klassisch)</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>👤 HR (SuccessFactors)</h4>
+    <ul>
+      <li>Employee Central</li>
+      <li>Recruiting, Onboarding</li>
+      <li>Learning (LMS)</li>
+      <li>Performance &amp; Goals</li>
+      <li>Compensation, Workforce Analytics</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🛒 Procurement / Spend</h4>
+    <ul>
+      <li>Ariba (Buying, Sourcing, Contracts)</li>
+      <li>Ariba Network</li>
+      <li>Concur (Travel, Expense, Invoice)</li>
+      <li>Fieldglass (Contingent Workforce)</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <h4>🏭 Supply Chain</h4>
+    <ul>
+      <li>IBP (Planung)</li>
+      <li>Digital Manufacturing (MES)</li>
+      <li>EWM (Lager) · TM (Transport)</li>
+      <li>EAM · APM (Assets)</li>
+      <li>PLM</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>💬 Customer Experience</h4>
+    <ul>
+      <li>Sales Cloud, Service Cloud</li>
+      <li>Commerce Cloud</li>
+      <li>Customer Data Cloud</li>
+      <li>Emarsys (Marketing)</li>
+      <li>CPQ</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🔄 Transformation</h4>
+    <ul>
+      <li>Signavio (BPM)</li>
+      <li>LeanIX (EA)</li>
+      <li>WalkMe (Adoption)</li>
+      <li>Process Mining / Insights</li>
+    </ul>
+  </div>
+
+  <div class="pillar">
+    <h4>🌐 Business Network</h4>
+    <ul>
+      <li>Network for Procurement</li>
+      <li>Network for Logistics</li>
+      <li>Asset Collaboration</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🌱 Sustainability</h4>
+    <ul>
+      <li>Sustainability Control Tower</li>
+      <li>Footprint Management</li>
+      <li>Green Token</li>
+      <li>ESG- &amp; CSRD-Reporting</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <h4>🔐 Security &amp; Identity</h4>
+    <ul>
+      <li>Cloud Identity Services</li>
+      <li>IAS (Auth-n) · IPS (Provisioning)</li>
+      <li>SSO / MFA</li>
+      <li>Rollen, Berechtigungen</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Und wie hängt alles zusammen?</h2>
+<div class="arch">
+  <div class="layer purple"><div class="lbl">Über allem</div>Business AI (Joule, Agents) durchdringt jede Anwendung — als Copilot, als Autopilot.</div>
+  <div class="layer teal"><div class="lbl">Daten verbinden</div>Business Data Cloud vereint Daten aus allen SAP-Systemen — mit Business-Semantik.</div>
+  <div class="layer blue"><div class="lbl">Fachlösungen liefern</div>SuccessFactors, Ariba, Concur, CX, IBP, Signavio erledigen ihre Fachdomänen.</div>
+  <div class="layer gold"><div class="lbl">Der Kern rechnet</div>Cloud ERP (S/4HANA) buchhaltet, plant, bilanziert.</div>
+  <div class="layer green"><div class="lbl">BTP verbindet</div>BTP-Plattform (Integration, Extension, Event) verbindet die Welten — ohne den Core zu modifizieren.</div>
+  <div class="layer gray"><div class="lbl">Sicherheit &amp; Betrieb</div>Cloud Identity Services, Hyperscaler-Basis, gCTS-Transporte.</div>
+</div>
+
+<div class="box mem">
+  <div class="title">🧭 Der eine Satz zum Merken</div>
+  <p style="font-size:11pt">
+  <strong>Kern-ERP + Fachlösungen</strong> laufen das Geschäft.<br/>
+  <strong>BTP + Business Data Cloud</strong> verbinden und veredeln die Daten.<br/>
+  <strong>Business AI</strong> liegt wie eine Schicht über allem und macht es intelligent.
+  </p>
+</div>
+
+</section>
+
+<!-- ================= ANHANG D: 30 VERSTÄNDNISFRAGEN ================= -->
+<section>
+<h1 class="chapter"><span class="num">D</span>Anhang: 30 Verständnisfragen mit Lösungen</h1>
+<p class="chapter-lead">
+  Prüfe dein Wissen. Antworten stehen jeweils direkt unter der Frage.
+  Ziel: <strong>90% richtig</strong> — dann bist du fit für jedes SAP-Gespräch.
+</p>
+
+<h2>Grundlagen (Frage 1–5)</h2>
+
+<div class="qa">
+  <div class="q">1. Was bedeutet ERP und warum brauchen Unternehmen es?</div>
+  <div class="a">ERP steht für Enterprise Resource Planning. Es verbindet alle Kernprozesse (Finance, Einkauf, Vertrieb, Produktion, HR) in einem System mit gemeinsamer Datenbasis — statt Excel-Chaos gibt es „eine Wahrheit in Echtzeit".</div>
+</div>
+
+<div class="qa">
+  <div class="q">2. Was ist der Unterschied zwischen HANA und S/4HANA?</div>
+  <div class="a">HANA ist die In-Memory-Datenbank. S/4HANA ist das ERP-System, das auf HANA läuft. HANA ist Fundament — S/4HANA ist das Haus.</div>
+</div>
+
+<div class="qa">
+  <div class="q">3. Nenne die 6 wichtigsten End-to-End-Prozesse.</div>
+  <div class="a">Lead-to-Cash · Source-to-Pay · Plan-to-Produce · Hire-to-Retire · Record-to-Report · Design-to-Operate.</div>
+</div>
+
+<div class="qa">
+  <div class="q">4. Was ist der Unterschied zwischen Public und Private Cloud bei SAP Cloud ERP?</div>
+  <div class="a">Public = Multi-Tenant, standardisiert, halbjährliche Releases, „Fit-to-Standard" (via GROW). Private = Single-Tenant, hohe Flexibilität, jährliche Releases (via RISE) — für komplexe Bestandskunden.</div>
+</div>
+
+<div class="qa">
+  <div class="q">5. Was heißt „Clean Core"?</div>
+  <div class="a">Ein Architekturprinzip: Erweiterungen bauen wir <em>außerhalb</em> des ERP-Kerns (auf BTP oder als Extensions), nie im Standard-Code. Ziel: Updates bleiben schmerzfrei möglich.</div>
+</div>
+
+<h2>Portfolio (Frage 6–12)</h2>
+
+<div class="qa">
+  <div class="q">6. Was ist SAP BTP und wozu dient es?</div>
+  <div class="a">Die Business Technology Platform ist SAPs Cloud-Plattform für Erweiterung, Integration, Daten und KI. Werkzeugkasten, um S/4HANA und andere SAP-Lösungen zu verbinden und zu veredeln — ohne den Kern zu modifizieren.</div>
+</div>
+
+<div class="qa">
+  <div class="q">7. Wozu dient die SAP Business Data Cloud (BDC)?</div>
+  <div class="a">Sie ist die neue semantische Datenschicht (2025+): vereinigt Daten aus allen SAP-Systemen (S/4HANA, SuccessFactors, Ariba, …) und stellt sie mit Business-Kontext für Analytics, Planung und KI bereit.</div>
+</div>
+
+<div class="qa">
+  <div class="q">8. Was ist Joule und was unterscheidet Joule von einem Joule Agent?</div>
+  <div class="a">Joule ist SAPs generativer KI-Copilot in allen Anwendungen — reagiert auf Fragen. Ein Joule Agent hat ein Ziel und Werkzeuge und arbeitet autonom über mehrere Schritte, z. B. „Kläre diesen Zahlungsstreit".</div>
+</div>
+
+<div class="qa">
+  <div class="q">9. Erkläre den Unterschied zwischen Ariba, Concur und Fieldglass.</div>
+  <div class="a">Ariba = Waren &amp; Dienstleistungen (indirekt/direkt). Concur = Reisen &amp; Spesen von Mitarbeitenden. Fieldglass = externe Arbeitskräfte (Freelancer, Zeitarbeit).</div>
+</div>
+
+<div class="qa">
+  <div class="q">10. Was ist SuccessFactors und wozu Employee Central?</div>
+  <div class="a">SuccessFactors ist SAPs Cloud-HR-Suite (HXM). Employee Central ist das Kernmodul — die digitale Personalakte und Backbone für alle anderen Module.</div>
+</div>
+
+<div class="qa">
+  <div class="q">11. Wozu benutzt man Signavio, wozu LeanIX?</div>
+  <div class="a">Signavio = Geschäftsprozesse modellieren, analysieren (Process Mining), verbessern. LeanIX = IT-Landschaft dokumentieren, Anwendungen und Abhängigkeiten managen. Signavio = Prozesse, LeanIX = Systeme.</div>
+</div>
+
+<div class="qa">
+  <div class="q">12. Was ist das SAP Business Network?</div>
+  <div class="a">Der Dachname für SAPs B2B-Netzwerke: Network for Procurement (basiert auf Ariba Network), Network for Logistics, Asset Collaboration. Käufer, Lieferanten, Carrier und Betreiber tauschen digital Dokumente aus.</div>
+</div>
+
+<h2>Technologie &amp; UX (Frage 13–20)</h2>
+
+<div class="qa">
+  <div class="q">13. Fiori, SAPUI5, Fiori Elements — was ist was?</div>
+  <div class="a">Fiori = Designsprache. SAPUI5 = JavaScript-Framework zum Bauen. Fiori Elements = Metadata-getriebener App-Bau-Ansatz auf SAPUI5. Look – Werkzeug – Bau-Fabrik.</div>
+</div>
+
+<div class="qa">
+  <div class="q">14. Was bedeutet OData und warum ist es SAP-relevant?</div>
+  <div class="a">OData erweitert REST um Filter, Sortierung, Paging direkt in der URL. Es ist SAPs Standard-Protokoll für Datenzugriff — die Basis für viele Fiori-Anwendungen und offene APIs.</div>
+</div>
+
+<div class="qa">
+  <div class="q">15. Was ist RAP, was ist CAP?</div>
+  <div class="a">RAP = RESTful ABAP Programming Model (ABAP-Welt). CAP = Cloud Application Programming Model (Node.js/Java auf BTP). Zwei moderne Wege, Business-Apps zu bauen, je nach Tech-Stack.</div>
+</div>
+
+<div class="qa">
+  <div class="q">16. Erkläre den Unterschied zwischen Configuration, Extension und Modification.</div>
+  <div class="a">Configuration = Einstellungen ohne Programmierung. Extension = Neue Funktion außerhalb des Standards (safe, Clean Core). Modification = Änderung <em>am</em> Standard-Code (bricht Updates, sollte vermieden werden).</div>
+</div>
+
+<div class="qa">
+  <div class="q">17. Was ist gCTS?</div>
+  <div class="a">Ein Git-basiertes Transportsystem für SAP. Statt klassischer Transports werden ABAP-Änderungen wie moderne Software mit Branches, Pull Requests und CI/CD gehandhabt.</div>
+</div>
+
+<div class="qa">
+  <div class="q">18. Was ist der Unterschied zwischen Authentication und Authorization?</div>
+  <div class="a">Authentication = Prüfung, <em>wer</em> du bist (Login, MFA). Authorization = Prüfung, <em>was</em> du darfst (Rollen, Berechtigungen). Erst Ausweis, dann Türsteher.</div>
+</div>
+
+<div class="qa">
+  <div class="q">19. Was macht SAP Event Mesh?</div>
+  <div class="a">Ein Event-Broker: Systeme reagieren auf Ereignisse („Bestellung erstellt") statt regelmäßig zu fragen. Ermöglicht event-getriebene, skalierbare Architekturen.</div>
+</div>
+
+<div class="qa">
+  <div class="q">20. Was ist ein Tenant?</div>
+  <div class="a">Eine logische Mandantentrennung in einer Multi-Tenant-Cloud: Kunden teilen sich eine Instanz, sehen aber jeweils nur ihre eigenen Daten.</div>
+</div>
+
+<h2>Sales &amp; Presales (Frage 21–25)</h2>
+
+<div class="qa">
+  <div class="q">21. Was unterscheidet Sales von Presales?</div>
+  <div class="a">Sales schließt Deals ab (Preis, Vertrag, Zahlen). Presales macht die Lösung fachlich-technisch glaubwürdig (Demos, Solution Architecture, Business Case). Sales = Vertrag, Presales = Vertrauen.</div>
+</div>
+
+<div class="qa">
+  <div class="q">22. Erkläre PoC vs. PoV.</div>
+  <div class="a">Proof of Concept = beweist, dass es <em>technisch</em> funktioniert. Proof of Value = beweist, dass es sich <em>wirtschaftlich</em> lohnt. Erst „geht", dann „lohnt".</div>
+</div>
+
+<div class="qa">
+  <div class="q">23. ROI vs. TCO — wo ist der Unterschied?</div>
+  <div class="a">TCO = Total Cost of Ownership: Gesamtkosten über die Nutzungszeit (Lizenz, Betrieb, Wartung, Migration). ROI = Return on Investment: die Rendite in Prozent. TCO = Kosten, ROI = Ertrag.</div>
+</div>
+
+<div class="qa">
+  <div class="q">24. RFI, RFP, RFQ — was ist was?</div>
+  <div class="a">RFI = „Was kannst du?" (Information). RFP = „Wie löst du das Problem?" (Proposal). RFQ = „Was kostet es?" (Quote). In dieser Reihenfolge wird's konkreter.</div>
+</div>
+
+<div class="qa">
+  <div class="q">25. Was ist eine „Demo Story"?</div>
+  <div class="a">Die Erzählung hinter einer Live-Demo — mit Persona, Aufgabe und emotionalem Bogen. Ohne Story ist eine Demo nur Klicken; ohne Demo ist die Story nur Marketing. Zusammen: Presales-Gold.</div>
+</div>
+
+<h2>Projekt &amp; Sonderfragen (Frage 26–30)</h2>
+
+<div class="qa">
+  <div class="q">26. Was ist SAP Activate?</div>
+  <div class="a">SAPs Standard-Einführungsmethodik: hybride Kombi aus phasiertem Vorgehen und agilen Sprints. Phasen: Discover → Prepare → Explore → Realize → Deploy → Run.</div>
+</div>
+
+<div class="qa">
+  <div class="q">27. Was ist der Unterschied zwischen Implementation, Migration und Transformation?</div>
+  <div class="a">Implementation = erstmalige Neueinführung. Migration = Wechsel von System A zu System B (z. B. ECC → S/4HANA). Transformation = ganzheitliche Veränderung — nicht nur System, sondern auch Prozesse, Organisation, Rollen.</div>
+</div>
+
+<div class="qa">
+  <div class="q">28. Was passiert in der Hypercare-Phase?</div>
+  <div class="a">Direkt nach Go-Live: intensiver Support (oft on-site), tägliche Ticket-Runden, schnelle Bugfixes, Nachschulungen. Meist 2–8 Wochen. Ziel: Stabilisierung und Vertrauen.</div>
+</div>
+
+<div class="qa">
+  <div class="q">29. RISE with SAP oder GROW with SAP — welches Angebot passt für welchen Kunden?</div>
+  <div class="a">RISE = für Bestandskunden mit komplexen Prozessen, die von ECC in die Private Cloud wollen. GROW = für Mittelstand und Neukunden, die Fit-to-Standard in der Public Cloud einführen — schnell, einfach, updatefähig.</div>
+</div>
+
+<div class="qa">
+  <div class="q">30. Warum ist „Business AI" für SAP anders als generische KI (ChatGPT &amp; Co)?</div>
+  <div class="a">Weil SAP KI mit <strong>Business Context</strong> und <strong>Grounding</strong> verbindet: rollenbasiert, mit Zugriff auf reale Belege/Verträge/Stammdaten, mit Governance (EU AI Act, DSGVO) und in Prozesse eingebettet. Kein Halluzinieren, sondern nachvollziehbare Antworten mit Wahrheitsanker.</div>
+</div>
+
+<div class="box mem" style="margin-top:20pt">
+  <div class="title">🏆 Herzlichen Glückwunsch!</div>
+  <p>Wenn du diese 30 Fragen sicher beantworten kannst, bist du <strong>SAP-schlau</strong>. Du kannst in Kundengesprächen, Presales-Sessions und Techtalks souverän einordnen und mitreden. Der Rest ist Übung. 🚀</p>
+</div>
+
+<hr/>
+
+<p class="small center">
+  SAP-Schlau · Persönliches Lernbuch · 2026 Edition<br/>
+  Erstellt für ein breites Verständnis des SAP-Ökosystems.<br/>
+  <em>Was ist es? Wofür ist es da? Welches Problem löst es? Wie hängt es zusammen? — Jetzt kannst du das beantworten.</em>
+</p>
+
+</section>
+
+</body>
+</html>

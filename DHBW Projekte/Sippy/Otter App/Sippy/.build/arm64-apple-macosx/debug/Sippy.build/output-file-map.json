@@ -1,0 +1,180 @@
+{
+  "": {
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/primary.swiftdeps"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Models/AppSettings.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/AppSettings.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/AppSettings.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/AppSettings~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/AppSettings.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/AppSettings.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Models/HydrationDay.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationDay.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationDay.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationDay~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationDay.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationDay.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Models/HydrationEntry.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationEntry.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationEntry.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationEntry~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationEntry.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationEntry.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Services/HydrationStore.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationStore.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationStore.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationStore~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationStore.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HydrationStore.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Services/IconGenerator.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/IconGenerator.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/IconGenerator.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/IconGenerator~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/IconGenerator.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/IconGenerator.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Services/LaunchAtLoginManager.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/LaunchAtLoginManager.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/LaunchAtLoginManager.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/LaunchAtLoginManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/LaunchAtLoginManager.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/LaunchAtLoginManager.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Services/NotificationManager.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/NotificationManager.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/NotificationManager.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/NotificationManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/NotificationManager.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/NotificationManager.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Services/PreviewRenderer.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PreviewRenderer.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PreviewRenderer.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PreviewRenderer~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PreviewRenderer.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PreviewRenderer.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/SippyApp.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SippyApp.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SippyApp.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SippyApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SippyApp.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SippyApp.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Theme/Palette.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Palette.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Palette.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Palette~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Palette.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Palette.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Theme/Typography.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Typography.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Typography.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Typography~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Typography.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/Typography.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/HourlyProgress.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HourlyProgress.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HourlyProgress.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HourlyProgress~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HourlyProgress.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/HourlyProgress.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/MenuBarIcon.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIcon.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIcon.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIcon~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIcon.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIcon.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/MenuBarIconCache.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIconCache.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIconCache.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIconCache~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIconCache.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MenuBarIconCache.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/OtterMascot.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OtterMascot.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OtterMascot.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OtterMascot~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OtterMascot.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OtterMascot.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/PopoverAnchor.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverAnchor.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverAnchor.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverAnchor~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverAnchor.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverAnchor.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/QuickAddButtons.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/QuickAddButtons.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/QuickAddButtons.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/QuickAddButtons~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/QuickAddButtons.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/QuickAddButtons.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/SegmentedNav.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SegmentedNav.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SegmentedNav.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SegmentedNav~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SegmentedNav.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SegmentedNav.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/Components/WaterGlass.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WaterGlass.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WaterGlass.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WaterGlass~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WaterGlass.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WaterGlass.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/MonthView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MonthView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MonthView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MonthView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MonthView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/MonthView.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/OnboardingView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OnboardingView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OnboardingView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OnboardingView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OnboardingView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/OnboardingView.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/PopoverRootView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverRootView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverRootView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverRootView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverRootView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/PopoverRootView.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/SettingsView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SettingsView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SettingsView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SettingsView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SettingsView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/SettingsView.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/TodayView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/TodayView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/TodayView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/TodayView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/TodayView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/TodayView.dia"
+  },
+  "/Users/I748634/Otter App/Sippy/Sources/Sippy/Views/WidgetView.swift": {
+    "dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WidgetView.d",
+    "object": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WidgetView.swift.o",
+    "swiftmodule": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WidgetView~partial.swiftmodule",
+    "swift-dependencies": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WidgetView.swiftdeps",
+    "diagnostics": "/Users/I748634/Otter App/Sippy/.build/arm64-apple-macosx/debug/Sippy.build/WidgetView.dia"
+  }
+}

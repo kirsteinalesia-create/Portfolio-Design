@@ -1,0 +1,524 @@
+/* =========================================================
+   SAP-Schlau – Learning Book CSS
+   Inspiration: SAP Horizon Design (klar, modern, ruhig)
+   ========================================================= */
+
+@page {
+  size: A4;
+  margin: 20mm 18mm 22mm 18mm;
+  @bottom-center {
+    content: "SAP-Schlau · Persönliches Lernbuch · Seite " counter(page) " / " counter(pages);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #6b7280;
+  }
+  @top-right {
+    content: string(chapter-title);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.5pt;
+    color: #6b7280;
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-center { content: normal; }
+  @top-right { content: normal; }
+}
+
+:root {
+  --sap-blue: #0070f2;
+  --sap-blue-dark: #0040b0;
+  --sap-blue-deep: #002d6a;
+  --sap-gold: #f0ab00;
+  --sap-green: #188918;
+  --sap-red: #bb0000;
+  --sap-purple: #7858ff;
+  --sap-teal: #049f9a;
+  --ink: #1d2d3e;
+  --ink-2: #354a5f;
+  --muted: #6b7280;
+  --line: #e5e9ee;
+  --line-2: #d5dae0;
+  --paper: #ffffff;
+  --paper-tint: #f7f9fc;
+  --paper-blue: #eef4fb;
+  --paper-warn: #fff7e6;
+  --paper-ok: #edf7ed;
+  --paper-danger: #fbecec;
+  --paper-purple: #f2edff;
+  --paper-teal: #e6f6f5;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--paper);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--sap-blue-deep);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 8pt 0;
+}
+
+h1.chapter {
+  font-size: 28pt;
+  color: var(--sap-blue-deep);
+  border-bottom: 3px solid var(--sap-blue);
+  padding-bottom: 8pt;
+  margin-top: 0;
+  margin-bottom: 4pt;
+  string-set: chapter-title content();
+  page-break-before: always;
+}
+
+h1.chapter .num {
+  display: inline-block;
+  color: var(--sap-blue);
+  font-size: 14pt;
+  vertical-align: super;
+  margin-right: 6pt;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.chapter-lead {
+  font-size: 11pt;
+  color: var(--ink-2);
+  margin: 0 0 18pt 0;
+  padding: 10pt 14pt;
+  background: var(--paper-blue);
+  border-left: 3px solid var(--sap-blue);
+  border-radius: 4pt;
+}
+
+h2 {
+  font-size: 16pt;
+  margin-top: 18pt;
+  padding-top: 4pt;
+  color: var(--sap-blue-dark);
+}
+
+h3 {
+  font-size: 12.5pt;
+  margin-top: 14pt;
+  color: var(--ink);
+}
+
+h4 {
+  font-size: 11pt;
+  margin-top: 10pt;
+  color: var(--sap-blue-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+p { margin: 0 0 8pt 0; }
+
+strong { color: var(--sap-blue-deep); font-weight: 700; }
+em { font-style: italic; color: var(--ink-2); }
+
+ul, ol { margin: 0 0 8pt 0; padding-left: 18pt; }
+li { margin-bottom: 3pt; }
+li::marker { color: var(--sap-blue); }
+
+code {
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  font-size: 9.2pt;
+  background: #eef1f5;
+  padding: 1pt 4pt;
+  border-radius: 3pt;
+  color: #334155;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 14pt 0;
+}
+
+a { color: var(--sap-blue-dark); text-decoration: none; }
+
+/* ---------- Cover ---------- */
+.cover {
+  page: cover;
+  height: 297mm;
+  padding: 30mm 22mm;
+  background: linear-gradient(135deg, #002d6a 0%, #0040b0 45%, #0070f2 100%);
+  color: #fff;
+  display: block;
+  position: relative;
+  page-break-after: always;
+}
+.cover::before {
+  content: "";
+  position: absolute;
+  right: -60mm; top: -60mm;
+  width: 220mm; height: 220mm;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.10), transparent 60%);
+  border-radius: 50%;
+}
+.cover::after {
+  content: "";
+  position: absolute;
+  left: -40mm; bottom: -40mm;
+  width: 180mm; height: 180mm;
+  background: radial-gradient(circle at center, rgba(240,171,0,0.18), transparent 60%);
+  border-radius: 50%;
+}
+.cover .brand {
+  font-size: 11pt;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 40mm;
+}
+.cover h1 {
+  color: #fff;
+  font-size: 60pt;
+  line-height: 1;
+  margin: 0 0 8mm 0;
+  letter-spacing: -0.02em;
+}
+.cover .subtitle {
+  font-size: 18pt;
+  font-weight: 400;
+  opacity: 0.9;
+  margin-bottom: 30mm;
+  max-width: 140mm;
+  line-height: 1.35;
+}
+.cover .tagline {
+  font-size: 12pt;
+  opacity: 0.75;
+  border-left: 3px solid var(--sap-gold);
+  padding-left: 10pt;
+  max-width: 130mm;
+}
+.cover .footer-cover {
+  position: absolute;
+  left: 22mm; right: 22mm; bottom: 20mm;
+  display: flex; justify-content: space-between; align-items: end;
+  font-size: 10pt; opacity: 0.85;
+}
+.cover .badges { display: flex; gap: 6pt; margin-top: 20mm; }
+.cover .badge {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 4pt 10pt;
+  border-radius: 999px;
+  font-size: 9.5pt;
+}
+
+/* ---------- Table of Contents ---------- */
+.toc {
+  page-break-after: always;
+}
+.toc h1 {
+  font-size: 26pt;
+  color: var(--sap-blue-deep);
+  border-bottom: 3px solid var(--sap-blue);
+  padding-bottom: 8pt;
+  margin-bottom: 16pt;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--line-2);
+  padding: 6pt 0;
+  font-size: 11pt;
+}
+.toc li.h2 { padding-left: 14pt; font-size: 10pt; color: var(--ink-2); }
+.toc .num { color: var(--sap-blue); font-weight: 600; margin-right: 10pt; min-width: 22pt; display: inline-block; }
+.toc .title { flex: 1; }
+.toc .page { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+/* ---------- Level Badges ---------- */
+.lvl {
+  display: inline-block;
+  font-size: 8.5pt;
+  padding: 1pt 7pt;
+  border-radius: 999px;
+  font-weight: 600;
+  vertical-align: middle;
+  margin-left: 4pt;
+  letter-spacing: 0.02em;
+}
+.lvl.must    { background: #e6f6ea; color: #14682a; border: 1px solid #b7e0c1; }
+.lvl.biz     { background: #e5f0fd; color: #0b4a8f; border: 1px solid #b7d1f0; }
+.lvl.pre     { background: #f0eafe; color: #4a2fb0; border: 1px solid #d6c8f5; }
+.lvl.tech    { background: #fbe4e4; color: #8a0f0f; border: 1px solid #f0c1c1; }
+
+/* ---------- Term Card ---------- */
+.term {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--sap-blue);
+  border-radius: 6pt;
+  padding: 10pt 12pt 8pt 12pt;
+  margin: 8pt 0 10pt 0;
+  background: var(--paper);
+}
+.term h3 {
+  margin: 0 0 4pt 0;
+  font-size: 12pt;
+  color: var(--sap-blue-deep);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4pt;
+}
+.term .row { margin: 3pt 0; }
+.term .k {
+  display: inline-block;
+  width: 96pt;
+  color: var(--muted);
+  font-size: 9.5pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: top;
+}
+.term .v { display: inline; }
+.term .mem {
+  background: var(--paper-warn);
+  border-left: 2px solid var(--sap-gold);
+  padding: 5pt 8pt;
+  border-radius: 3pt;
+  margin-top: 6pt;
+  font-style: italic;
+  font-size: 10pt;
+}
+.term .nv {
+  background: var(--paper-danger);
+  border-left: 2px solid var(--sap-red);
+  padding: 4pt 8pt;
+  border-radius: 3pt;
+  margin-top: 4pt;
+  font-size: 9.7pt;
+}
+.term .nv strong { color: var(--sap-red); }
+
+/* Compact term (used in the 100-terms glossary) */
+.gterm {
+  break-inside: avoid;
+  padding: 5pt 8pt;
+  border-bottom: 1px solid var(--line);
+}
+.gterm .t { font-weight: 700; color: var(--sap-blue-deep); }
+
+/* ---------- Info Boxes ---------- */
+.box {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  border-radius: 6pt;
+  padding: 10pt 14pt;
+  margin: 10pt 0;
+  border: 1px solid var(--line);
+  background: var(--paper-tint);
+}
+.box .title {
+  font-weight: 700;
+  color: var(--sap-blue-deep);
+  font-size: 10.5pt;
+  margin-bottom: 4pt;
+  display: flex; align-items: center; gap: 6pt;
+}
+.box.tip     { background: var(--paper-blue); border-left: 3px solid var(--sap-blue); }
+.box.tip .title { color: var(--sap-blue-dark); }
+.box.warn    { background: var(--paper-warn); border-left: 3px solid var(--sap-gold); }
+.box.warn .title { color: #8a5c00; }
+.box.mem     { background: var(--paper-warn); border-left: 3px solid var(--sap-gold); }
+.box.mem .title { color: #8a5c00; }
+.box.ok      { background: var(--paper-ok); border-left: 3px solid var(--sap-green); }
+.box.ok .title { color: #14682a; }
+.box.danger  { background: var(--paper-danger); border-left: 3px solid var(--sap-red); }
+.box.danger .title { color: var(--sap-red); }
+.box.example { background: #f4f7fb; border-left: 3px solid var(--sap-blue-dark); }
+.box.example .title { color: var(--sap-blue-dark); }
+.box.purple  { background: var(--paper-purple); border-left: 3px solid var(--sap-purple); }
+.box.purple  .title { color: #4a2fb0; }
+.box.teal    { background: var(--paper-teal); border-left: 3px solid var(--sap-teal); }
+.box.teal    .title { color: #036461; }
+
+/* ---------- Tables ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8pt 0 14pt 0;
+  font-size: 9.8pt;
+  break-inside: auto;
+}
+th, td {
+  text-align: left;
+  padding: 6pt 8pt;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+th {
+  background: var(--paper-blue);
+  color: var(--sap-blue-deep);
+  font-weight: 700;
+  border-bottom: 2px solid var(--sap-blue);
+  font-size: 9.6pt;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+tr:nth-child(even) td { background: #fafbfd; }
+table.compare th:first-child, table.compare td:first-child {
+  font-weight: 600;
+  color: var(--sap-blue-dark);
+  width: 22%;
+}
+
+/* ---------- Two-column layout for cards ---------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8pt;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8pt;
+}
+@media print {
+  .grid-2 > *, .grid-3 > * { break-inside: avoid; }
+}
+
+/* ---------- Flow diagrams (CSS-only) ---------- */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6pt;
+  margin: 10pt 0;
+  break-inside: avoid;
+}
+.flow .step {
+  padding: 6pt 10pt;
+  background: #fff;
+  border: 1px solid var(--sap-blue);
+  color: var(--sap-blue-deep);
+  border-radius: 6pt;
+  font-size: 9.6pt;
+  font-weight: 600;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+.flow .step.alt { background: var(--paper-blue); }
+.flow .step.gold { background: var(--paper-warn); border-color: var(--sap-gold); color: #8a5c00; }
+.flow .step.green { background: var(--paper-ok); border-color: var(--sap-green); color: #14682a; }
+.flow .arrow { color: var(--sap-blue); font-weight: 700; }
+
+/* Vertical stack flow */
+.vflow { display: flex; flex-direction: column; gap: 4pt; margin: 8pt 0; }
+.vflow .step {
+  padding: 6pt 10pt;
+  background: #fff;
+  border: 1px solid var(--line-2);
+  border-left: 3px solid var(--sap-blue);
+  border-radius: 4pt;
+  font-size: 9.8pt;
+}
+.vflow .step strong { color: var(--sap-blue-deep); }
+
+/* ---------- Architecture / layered diagrams ---------- */
+.arch { display: flex; flex-direction: column; gap: 4pt; margin: 10pt 0; }
+.arch .layer {
+  padding: 8pt 10pt;
+  border-radius: 5pt;
+  font-size: 9.8pt;
+  border: 1px solid var(--line);
+}
+.arch .layer .lbl { font-weight: 700; font-size: 9pt; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); margin-bottom: 2pt; }
+.arch .layer.blue  { background: var(--paper-blue); border-left: 3px solid var(--sap-blue); }
+.arch .layer.gold  { background: var(--paper-warn); border-left: 3px solid var(--sap-gold); }
+.arch .layer.green { background: var(--paper-ok);   border-left: 3px solid var(--sap-green); }
+.arch .layer.purple{ background: var(--paper-purple);border-left: 3px solid var(--sap-purple); }
+.arch .layer.teal  { background: var(--paper-teal); border-left: 3px solid var(--sap-teal); }
+.arch .layer.gray  { background: #f2f4f7; border-left: 3px solid #6b7280; }
+
+/* Ecosystem grid (one-pager) */
+.eco { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6pt; margin: 8pt 0; }
+.eco .pillar {
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 8pt 10pt;
+  background: #fff;
+}
+.eco .pillar h4 {
+  margin: 0 0 4pt 0;
+  color: var(--sap-blue-deep);
+  font-size: 10pt;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 2px solid var(--sap-blue);
+  padding-bottom: 3pt;
+}
+.eco .pillar ul { padding-left: 14pt; margin: 4pt 0 0 0; }
+.eco .pillar li { font-size: 8.8pt; margin-bottom: 1pt; }
+
+/* Case study card */
+.case {
+  border: 1px solid var(--line);
+  border-radius: 6pt;
+  padding: 12pt 14pt;
+  margin: 12pt 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  background: var(--paper);
+}
+.case h3 { color: var(--sap-blue-deep); border-bottom: 2px solid var(--sap-blue); padding-bottom: 3pt; margin-bottom: 8pt; }
+.case .row { margin: 4pt 0; }
+.case .k { display: inline-block; width: 110pt; color: var(--muted); font-weight: 600; font-size: 9.6pt; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: top; }
+
+/* Q & A */
+.qa { break-inside: avoid; page-break-inside: avoid; margin: 8pt 0; }
+.qa .q {
+  background: var(--paper-blue);
+  border-left: 3px solid var(--sap-blue);
+  padding: 6pt 10pt;
+  border-radius: 4pt;
+  font-weight: 600;
+  color: var(--sap-blue-deep);
+}
+.qa .a {
+  background: var(--paper-ok);
+  border-left: 3px solid var(--sap-green);
+  padding: 6pt 10pt;
+  border-radius: 4pt;
+  margin-top: 3pt;
+  color: #143c1a;
+}
+
+/* Utility */
+.small { font-size: 9pt; color: var(--muted); }
+.center { text-align: center; }
+.no-break { break-inside: avoid; page-break-inside: avoid; }
+.section-intro { color: var(--ink-2); margin-bottom: 12pt; }
+.pill {
+  display: inline-block;
+  font-size: 8.5pt;
+  padding: 1pt 7pt;
+  border-radius: 999px;
+  background: #eef1f5;
+  color: var(--ink-2);
+  margin-right: 3pt;
+}
+.divider {
+  height: 1px; background: linear-gradient(90deg, transparent, var(--line-2), transparent);
+  margin: 12pt 0;
+}

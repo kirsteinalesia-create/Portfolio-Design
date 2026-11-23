@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>                    <string>Sippy</string>
+    <key>CFBundleDisplayName</key>             <string>Sippy</string>
+    <key>CFBundleExecutable</key>              <string>Sippy</string>
+    <key>CFBundleIdentifier</key>              <string>com.sippy.SippyApp</string>
+    <key>CFBundleVersion</key>                 <string>1.0</string>
+    <key>CFBundleShortVersionString</key>      <string>1.0</string>
+    <key>CFBundlePackageType</key>             <string>APPL</string>
+    <key>CFBundleIconFile</key>                <string>AppIcon</string>
+    <key>CFBundleSignature</key>               <string>????</string>
+    <key>LSMinimumSystemVersion</key>          <string>14.0</string>
+    <key>LSApplicationCategoryType</key>       <string>public.app-category.healthcare-fitness</string>
+    <key>LSUIElement</key>                     <true/>
+    <key>NSHumanReadableCopyright</key>        <string>Sippy — a friendly hydration tracker.</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key><true/>
+    <key>NSPrincipalClass</key>                <string>NSApplication</string>
+    <key>NSHighResolutionCapable</key>         <true/>
+</dict>
+</plist>
