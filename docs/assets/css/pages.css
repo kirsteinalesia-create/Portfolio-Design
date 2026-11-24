@@ -1364,7 +1364,7 @@ main, .page-body, .content-section {
 .station-insight {
   background: var(--c-paper);
   color: var(--fg);
-  padding: 90px 0 100px;
+  padding: 60px 0 80px;
 }
 .station-insight .container {
   max-width: 1080px;
@@ -1383,13 +1383,13 @@ main, .page-body, .content-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: start;
   /* Kein extra Abstand mehr zwischen H2 und erstem Block — nur der
      Margin-Bottom der H2 (20px) trennt Überschrift und Text. Zwischen
      zwei aufeinanderfolgenden Blöcken bleibt großzügiger Abstand. */
   margin-top: 0;
 }
-.insight-block + .insight-block { margin-top: 80px; }
+.insight-block + .insight-block { margin-top: 48px; }
 .insight-block.reverse {
   grid-template-columns: 1fr 1fr;
 }
