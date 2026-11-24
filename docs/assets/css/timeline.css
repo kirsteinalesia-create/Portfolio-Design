@@ -707,14 +707,12 @@ a.tl-card:visited { color: inherit; }
   margin: 40px auto 0;
 }
 .star-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--c-paper);
+  border: 1px solid var(--line);
   border-radius: 20px;
   padding: 36px 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   text-align: center;
-  color: var(--c-paper);
+  color: var(--fg);
 }
 .star-icon {
   display: inline-flex;
@@ -723,20 +721,19 @@ a.tl-card:visited { color: inherit; }
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+  background: var(--c-blush);
   margin-bottom: 18px;
-  color: var(--c-pink);
+  color: var(--accent);
 }
 .star-card h3 {
   font-size: 1.15rem;
   margin: 0 0 8px;
-  color: var(--c-paper);
+  color: var(--fg);
 }
 .star-card p {
   font-size: 0.9rem;
   margin: 0;
-  opacity: 0.7;
-  color: var(--c-paper);
+  color: var(--muted);
 }
 
 /* ================ Responsive ================ */
@@ -756,6 +753,37 @@ a.tl-card:visited { color: inherit; }
   .station-story { padding: 24px 0 60px; }
   .station-examples { padding: 24px 0 60px; }
 }
-padding: 24px 0 60px; }
-  .station-examples { padding: 24px 0 60px; }
+
+/* ————— Tablet: 600px ————— */
+@media (max-width: 600px) {
+  /* Wave height further reduced on small screens */
+  .wave-transition,
+  .wave-outro { height: 180px; }
+  /* Timeline card: tighter padding */
+  .tl-card { padding: 22px 20px; border-radius: 16px; }
+  .tl-card h3 { font-size: 1.25rem; }
+  /* Modal: near full-screen sheet */
+  .modal { width: 96vw; border-radius: 18px; }
+  .modal-header { padding: 24px 20px 16px; border-radius: 18px 18px 0 0; }
+  .modal-header h2 { font-size: 1.6rem; }
+  .modal-body { padding: 20px; }
+  /* Examples grid: single column */
+  .examples-grid { grid-template-columns: 1fr; gap: 20px; }
+  /* Station back link: full-width on small phones */
+  .station-back a { width: 100%; max-width: 320px; justify-content: center; }
+}
+
+/* ————— Small phones: 480px ————— */
+@media (max-width: 480px) {
+  /* Timeline line left-align */
+  .timeline::before,
+  .timeline::after { left: 16px; }
+  .timeline-item { padding-left: 44px; }
+  .timeline-item .dot { left: 5px !important; }
+  /* Card fully fluid */
+  .tl-card { padding: 18px 16px; }
+  /* Station hero compact */
+  .station-hero { padding: calc(var(--nav-h) + 32px) 0 16px; }
+  .station-hero .back-link { padding: 8px 16px; font-size: 0.8rem; }
+  .station-hero .station-meta { gap: 12px; font-size: 0.8rem; }
 }

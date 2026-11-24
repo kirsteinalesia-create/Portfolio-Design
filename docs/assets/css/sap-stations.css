@@ -272,15 +272,15 @@
   max-width: none;
 }
 
-/* ————— Enhanced timeline cards: gradient tags ————— */
-.st-tl-chips .tag {
-  color: #fff;
-  background: linear-gradient(135deg, var(--accent), var(--c-brown)) !important;
-  border: none !important;
-  box-shadow: 0 6px 16px -10px rgba(107,63,42,0.4);
+/* ————— Enhanced timeline cards: rosa tags ————— */
+.st-tl-chips .tag,
+.st-tl-chips .tag:nth-child(2n),
+.st-tl-chips .tag:nth-child(3n) {
+  background: rgba(200, 112, 130, 0.08) !important;
+  color: var(--c-rose) !important;
+  border: 1px solid rgba(200, 112, 130, 0.5) !important;
+  box-shadow: none;
 }
-.st-tl-chips .tag:nth-child(2n) { background: linear-gradient(135deg, var(--c-brown), var(--c-rose)) !important; }
-.st-tl-chips .tag:nth-child(3n) { background: linear-gradient(135deg, var(--c-tan), #a06040) !important; }
 
 /* ————— Timeline section: enhanced star cards ————— */
 .star-card {
@@ -301,32 +301,35 @@ a.star-card {
 }
 a.star-card * { pointer-events: none; }
 a.star-card .star-icon { transition: background 0.3s var(--ease-out), color 0.3s var(--ease-out); }
-a.star-card:hover .star-icon { background: rgba(255,255,255,0.18); color: #fff; }
+a.star-card:hover .star-icon { background: var(--c-blush); color: var(--accent); }
 
-/* ————— TWN card: rosa-brown accent ————— */
+/* ————— TWN card: rosa accent ————— */
 .star-card--twn {
-  background: linear-gradient(135deg, rgba(200,112,130,0.15), rgba(107,63,42,0.12));
-  border-color: rgba(200,112,130,0.25);
+  background: linear-gradient(135deg, rgba(200,112,130,0.18), transparent), var(--c-paper) !important;
+  border: 1.5px solid rgba(200,112,130,0.5) !important;
 }
 .star-card--twn:hover {
-  border-color: rgba(200,112,130,0.45);
+  border-color: rgba(200,112,130,0.75) !important;
 }
-.star-card--twn .star-icon {
-  background: linear-gradient(135deg, rgba(200,112,130,0.25), rgba(107,63,42,0.2));
-  color: rgba(238,178,192,0.9);
+.star-card--twn .star-icon,
+.star-card--twn:hover .star-icon {
+  background: var(--c-rose) !important;
+  color: #fff !important;
+  border: none;
 }
 
-/* ————— AI@STAR card: blue-brown accent ————— */
+/* ————— AI@STAR card: soft blue accent ————— */
 a.star-card[href*="star-ai"] {
-  background: linear-gradient(135deg, rgba(100,170,240,0.15), rgba(107,63,42,0.12));
-  border-color: rgba(100,170,240,0.25);
+  background: linear-gradient(135deg, rgba(185,136,113,0.18), transparent), var(--c-paper) !important;
+  border: 1.5px solid rgba(185,136,113,0.5) !important;
 }
 a.star-card[href*="star-ai"]:hover {
-  border-color: rgba(100,170,240,0.45);
+  border-color: rgba(185,136,113,0.75) !important;
 }
 a.star-card[href*="star-ai"] .star-icon {
-  background: linear-gradient(135deg, rgba(100,170,240,0.25), rgba(107,63,42,0.2));
-  color: rgba(150,200,255,0.9);
+  background: var(--c-tan);
+  color: #fff;
+  border: none;
 }
 
 /* ————— Insight section kicker ————— */
@@ -518,4 +521,45 @@ body.station-tokyo .wave-outro .schleier { opacity: 1; }
   .st-particles span:nth-child(3) { display: none; }
   .st-quote { padding: 32px 24px 28px; }
   .img-carousel { padding: 20px 44px; }
+}
+
+/* ————— Tablet: 768px ————— */
+@media (max-width: 768px) {
+  /* Hero: stack claim block below intro text */
+  .st-claim { font-size: 1rem; margin-top: 20px; }
+  /* Quote: tighter padding */
+  .st-quote { padding: 28px 20px 24px; border-radius: 16px; }
+  /* Big idea: reduce size */
+  .st-big-idea { font-size: clamp(1.2rem, 4.5vw, 1.8rem); margin-bottom: 32px; }
+  /* Carousel: tighter arrows */
+  .img-carousel { padding: 16px 36px; }
+}
+
+/* ————— Mobile: 600px ————— */
+@media (max-width: 600px) {
+  /* Chips: smaller pills */
+  .st-chips { gap: 8px; margin-top: 14px; }
+  .st-chips .chip { padding: 8px 16px; font-size: 0.8rem; }
+  /* Quote block */
+  .st-quote { padding: 24px 16px 20px; }
+  .st-quote-mark { font-size: 3.5rem; }
+  .st-quote p { font-size: 0.95rem; }
+  /* Role badge: tighter */
+  .st-badge { padding: 14px 16px; gap: 10px; }
+  .st-badge-ico { width: 36px; height: 36px; font-size: 0.95rem; }
+  .st-badge h3 { font-size: 0.95rem; }
+  .st-badge p { font-size: 0.82rem; }
+  /* Carousel: near-full-width */
+  .img-carousel { padding: 12px 32px; }
+  .img-carousel .carousel-slide img { border-radius: 12px; }
+}
+
+/* ————— Small phones: 480px ————— */
+@media (max-width: 480px) {
+  /* Big idea */
+  .st-big-idea { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+  /* Carousel: minimal side padding so image is nearly full-width */
+  .img-carousel { padding: 8px 24px; }
+  /* Highlight quote strip */
+  .st-highlight { padding: 14px 16px; font-size: 0.9rem; }
 }

@@ -188,6 +188,47 @@
   .about-intro-photo { width: clamp(300px, 44vw, 480px); }
 }
 
+/* About-Intro: Einspaltig auf Tablet / Mobile */
+@media (max-width: 860px) {
+  .about-intro {
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .about-intro > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+  .about-intro-text {
+    max-width: 100%;
+  }
+  .about-intro-photo {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: min(380px, 80vw);
+    aspect-ratio: 4/5;
+    align-self: center;
+    border-radius: 28px;
+    margin: 0 auto;
+  }
+  .about-intro-photo img:not(.portrait-plant) {
+    border-radius: 28px;
+  }
+  .about-intro-photo .portrait-plant {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro-photo {
+    width: min(300px, 85vw);
+  }
+}
+
 /* ================ Hintergrund-Dekorationen (mehrfach nutzbar) ================ */
 
 /* Container für floating shapes hinter Content */
@@ -1457,7 +1498,42 @@ main, .page-body, .content-section {
   .station-insight { padding: 60px 0 70px; }
 }
 
-/* Ultrawide (≥ 2400px): About-Intro Portrait und Dekorationen hochskalieren */
+/* ————— Kleine Phones: Kontakt-Formular ————— */
+@media (max-width: 600px) {
+  .contact-form { padding: 24px 20px; border-radius: 16px; }
+  .contact-grid { gap: 32px; }
+}
+
+/* ————— Station-Seiten auf kleinen Phones ————— */
+@media (max-width: 600px) {
+  .station-fazit { padding: 48px 0 56px; }
+  .fazit-summary { font-size: 1rem; }
+  .st-chips { gap: 8px; }
+  .chip { font-size: 0.72rem; padding: 6px 12px; }
+  .section-head h2,
+  .st-h2 { font-size: clamp(1.5rem, 6vw, 2.2rem); }
+  .st-kicker { font-size: 0.72rem; letter-spacing: 0.18em; }
+}
+
+/* ————— Skill-Bars auf kleinen Phones ————— */
+@media (max-width: 480px) {
+  .skill-bars { grid-template-columns: 1fr; }
+  .skill-bar .label { font-size: 0.82rem; }
+}
+
+/* ————— About Werte-Grid ————— */
+@media (max-width: 600px) {
+  .values-grid { grid-template-columns: 1fr; gap: 20px; }
+  .value-card { padding: 28px 24px; }
+}
+
+/* ————— Project Cards auf Mobile ————— */
+@media (max-width: 600px) {
+  .project-grid { grid-template-columns: 1fr; gap: 24px; }
+  .project-card .card-media { aspect-ratio: 16/9; }
+}
+
+/* ————— Ultrawide (≥ 2400px): About-Intro Portrait und Dekorationen hochskalieren ————— */
 @media (min-width: 2400px) {
   .about-intro-photo { width: clamp(600px, 32vw, 900px); }
   .about-intro-photo .portrait-plant { width: 620px; left: -260px; bottom: -220px; }
@@ -1468,5 +1544,8 @@ main, .page-body, .content-section {
   .station-role .role-copy { max-width: 580px; }
   .station-insight { padding: 110px 0 120px; }
   .insight-block { gap: 80px; }
+  /* Large screen: Contact form wider */
+  .contact-grid { gap: 80px; }
+  .contact-form { padding: 56px; }
 }
 

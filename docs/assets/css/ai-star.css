@@ -337,13 +337,8 @@ body.ai-star .site-header.is-scrolled {
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 26px 50px -28px rgba(8,10,70,0.8);
-  transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
 }
 .post-card img { width: 100%; display: block; }
-.post-card:hover {
-  transform: translateY(-6px) scale(1.015);
-  box-shadow: 0 34px 64px -26px rgba(139,92,246,0.55);
-}
 
 /* =========================================================
    Sticker-Feature

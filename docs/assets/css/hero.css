@@ -595,15 +595,25 @@
   .hero-dots { right: 24px; bottom: 24px; }
 }
 
+/* ————— Tablet (≤ 768px) ————— */
+@media (max-width: 768px) {
+  .hero-content { max-width: 100%; padding-right: 0; }
+  .hero h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+  .hero-tagline { font-size: 0.95rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-actions .btn { width: auto; }
+}
+
 @media (max-width: 600px) {
-  .hero-visual { height: 460px; }
+  .hero-visual { height: 420px; }
   .icon-node { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
   .icon-node svg { width: 22px; height: 22px; }
-  .hero-visual .blob-pink  { width: 380px; height: 380px; right: -20%; }
-  .hero-visual .blob-brown { width: 440px; height: 440px; right: -28%; top: 68%; }
-  .photo-stage { width: 320px; height: 400px; right: -8%; transform: translate(-16px, -50%); }
-  .hero h1 { font-size: 3rem; }
+  .hero-visual .blob-pink  { width: 340px; height: 340px; right: -20%; }
+  .hero-visual .blob-brown { width: 400px; height: 400px; right: -28%; top: 68%; }
+  .photo-stage { width: 300px; height: 380px; right: -8%; transform: translate(-16px, -50%); }
+  .hero h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
   .hero-dots button { width: 32px; height: 32px; }
+  .hero-divider { margin: 28px 0 20px; }
 }
 
 /* Sehr kleine Phones (< 420px) */

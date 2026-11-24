@@ -41,7 +41,7 @@
 
     /* ---- Home (index) ---- */
     "Welcome to my portfolio ~|~ Willkommen in meinem Portfolio",
-    "I'm a design student at SAP & DHBW Mannheim — design is my passion, my craft, and the way I see the world. ~|~ Ich bin Designstudentin bei SAP & der DHBW Mannheim — Design ist meine Leidenschaft, mein Handwerk und die Art, wie ich die Welt sehe.",
+    "I'm a design student at SAP and DHBW Mannheim. Design is my passion, my craft, and the way I see the world. ~|~ Ich studiere Design bei SAP und an der DHBW Mannheim. Design ist meine <b>Leidenschaft</b>, mein Handwerk und die Art, wie ich die <b>Welt</b> wahrnehme.",
 
     /* ---- About ---- */
     "01 · About me ~|~ 01 · Über mich",
