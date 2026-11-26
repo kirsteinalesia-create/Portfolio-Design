@@ -387,6 +387,7 @@
   pointer-events: none;
   color: var(--c-blush, #d48c98);
   z-index: 1;                        /* HINTER Blob-Pink (3) und Portrait (5) → Foto liegt vor der Linie */
+  clip-path: inset(0 0 0 0);         /* verhindert Überlauf links/oben aus hero-visual heraus */
 }
 
 /* Alte Konstrukte ausblenden, falls noch im DOM (z.B. .orbit-shape, .orbit-ring) */
@@ -562,7 +563,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 520px;
+    height: clamp(340px, 55vw, 540px);
     order: 2;
     margin-top: 40px;
     overflow: hidden;
@@ -571,17 +572,21 @@
     clip-path: inset(0 0 0 0);
   }
   .hero-visual .blob-pink {
-    right: -18%;
+    width: clamp(220px, 55vw, 520px);
+    height: clamp(220px, 55vw, 520px);
+    right: -12%;
   }
   .hero-visual .blob-brown {
-    right: -26%;
+    width: clamp(260px, 66vw, 620px);
+    height: clamp(260px, 66vw, 620px);
+    right: -20%;
     top: 65%;
   }
   .photo-stage {
-    right: -8%;
-    width: 460px;
-    height: 560px;
-    transform: translate(-24px, -50%);
+    right: -6%;
+    width: clamp(200px, 46vw, 460px);
+    height: clamp(260px, 58vw, 560px);
+    transform: translate(-16px, -50%);
   }
   .hero-schleier-bl {
     position: absolute;
@@ -594,8 +599,6 @@
   .hero-schleier-bl img {
     width: 75vw;
   }
-  /* Icon-Orbit auf Mobile: kompakter Kreis-Radius (kleinere Icons + engerer Abstand),
-     bleibt am gleichen relativen Punkt (Kompositionsmittelpunkt) verankert. */
   .hero-dots { right: 24px; bottom: 24px; }
 }
 
@@ -606,15 +609,23 @@
   .hero-tagline { font-size: 0.95rem; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 12px; }
   .hero-actions .btn { width: auto; }
+  .hero-visual {
+    height: clamp(300px, 50vw, 460px);
+  }
+  .hero-visual .blob-pink  { width: clamp(180px, 50vw, 400px); height: clamp(180px, 50vw, 400px); right: -14%; }
+  .hero-visual .blob-brown { width: clamp(220px, 62vw, 480px); height: clamp(220px, 62vw, 480px); right: -22%; top: 66%; }
+  .photo-stage { width: clamp(170px, 42vw, 360px); height: clamp(220px, 54vw, 460px); }
+  .icon-node { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
+  .icon-node svg { width: 22px; height: 22px; }
 }
 
 @media (max-width: 600px) {
-  .hero-visual { height: 420px; }
-  .icon-node { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
-  .icon-node svg { width: 22px; height: 22px; }
-  .hero-visual .blob-pink  { width: 340px; height: 340px; right: -20%; }
-  .hero-visual .blob-brown { width: 400px; height: 400px; right: -28%; top: 68%; }
-  .photo-stage { width: 300px; height: 380px; right: -8%; transform: translate(-16px, -50%); }
+  .hero-visual { height: clamp(260px, 90vw, 400px); }
+  .icon-node { width: 46px; height: 46px; margin: -23px 0 0 -23px; }
+  .icon-node svg { width: 20px; height: 20px; }
+  .hero-visual .blob-pink  { width: 68vw; height: 68vw; right: -16%; }
+  .hero-visual .blob-brown { width: 82vw; height: 82vw; right: -24%; top: 68%; }
+  .photo-stage { width: 58vw; height: 76vw; right: -6%; transform: translate(-10px, -50%); }
   .hero h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
   .hero-dots button { width: 32px; height: 32px; }
   .hero-divider { margin: 28px 0 20px; }
@@ -622,15 +633,27 @@
 
 /* Sehr kleine Phones (< 420px) */
 @media (max-width: 420px) {
-  .hero-visual { height: 380px; }
-  .hero-visual .blob-pink  { width: 300px; height: 300px; right: -15%; }
-  .hero-visual .blob-brown { width: 350px; height: 350px; right: -22%; }
-  .photo-stage { width: 270px; height: 340px; right: -5%; }
+  .hero-visual { height: clamp(240px, 95vw, 360px); }
+  .hero-visual .blob-pink  { width: 72vw; height: 72vw; right: -12%; }
+  .hero-visual .blob-brown { width: 88vw; height: 88vw; right: -18%; }
+  .photo-stage { width: 62vw; height: 80vw; right: -4%; }
   .hero h1 { font-size: 2.6rem; }
   .hero-tagline { font-size: 0.98rem; }
   .hero-actions { gap: 12px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
-  .icon-node { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  .icon-node { width: 40px; height: 40px; margin: -20px 0 0 -20px; }
+}
+
+/* Mittlere Screens (1025–1280px): Schrift + Visual proportional verkleinern */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hero-visual {
+    width: min(56vw, 820px);
+  }
+  .hero-visual .blob-pink  { width: min(52vw, 580px); height: min(52vw, 580px); }
+  .hero-visual .blob-brown { width: min(62vw, 700px); height: min(62vw, 700px); }
+  .photo-stage             { width: min(44vw, 500px); height: min(80vh, 760px); }
+  .hero h1                 { font-size: clamp(2.8rem, 5vw, 4.5rem); }
+  .hero-tagline            { font-size: 0.95rem; max-width: 420px; }
 }
 
 /* Breite Screens: Hero-Visual etwas größer */
