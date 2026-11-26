@@ -1596,10 +1596,11 @@ body.page-work-dhbw .project-card::before {
 }
 body.page-work-dhbw .project-card::after {
   background: linear-gradient(to top,
-    rgba(0,0,0,0.75) 0%,
-    rgba(0,0,0,0.45) 35%,
-    rgba(0,0,0,0.12) 65%,
-    transparent 100%);
+    rgba(0,0,0,0.88) 0%,
+    rgba(0,0,0,0.75) 20%,
+    rgba(0,0,0,0.40) 42%,
+    rgba(0,0,0,0.08) 60%,
+    transparent 75%);
 }
 body.page-work-dhbw .project-card .card-media {
   filter: none;
