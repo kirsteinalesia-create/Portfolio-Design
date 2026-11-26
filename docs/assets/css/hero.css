@@ -565,6 +565,10 @@
     height: 520px;
     order: 2;
     margin-top: 40px;
+    overflow: hidden;
+  }
+  .orbit-path {
+    clip-path: inset(0 0 0 0);
   }
   .hero-visual .blob-pink {
     right: -18%;
