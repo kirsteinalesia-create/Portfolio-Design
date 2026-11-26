@@ -41,7 +41,7 @@
 
     /* ---- Home (index) ---- */
     "Welcome to my portfolio ~|~ Willkommen in meinem Portfolio",
-    "I'm a design student at SAP and DHBW Mannheim. Design is my passion, my craft, and the way I see the world. I'm naturally curious, love exploring new perspectives and enjoy turning creative ideas into meaningful solutions that go beyond aesthetics. ~|~ Ich studiere Mediendesign bei SAP und an der DHBW Mannheim. Design ist meine <b>Leidenschaft</b> und prägt meinen Blick auf die <b>Welt</b>. Ich liebe es, neue Perspektiven zu entdecken und kreative Ideen in bedeutungsvolle Lösungen zu verwandeln.",
+    "I'm a design student at SAP and DHBW Mannheim. Design is my passion and the way I see the world. I'm curious by nature and love turning creative ideas into meaningful solutions that go beyond aesthetics. ~|~ Ich studiere Mediendesign bei SAP und an der DHBW Mannheim. Design ist meine <b>Leidenschaft</b> und prägt meinen Blick auf die <b>Welt</b>. Ich liebe es, neue Perspektiven zu entdecken und kreative Ideen in bedeutungsvolle Lösungen zu verwandeln.",
 
     /* ---- About ---- */
     "01 · About me ~|~ 01 · Über mich",
