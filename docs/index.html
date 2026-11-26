@@ -10,7 +10,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Sacramento&family=Great+Vibes&family=Alex+Brush&family=Send+Flowers&family=Allura&family=Pinyon+Script&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Send+Flowers&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Preload: erstes sichtbares Portrait -->
+  <link rel="preload" href="assets/img/Bild7.svg" as="image" />
 
   <link rel="stylesheet" href="assets/css/style.css?v=3" />
   <link rel="stylesheet" href="assets/css/hero.css" />
@@ -68,7 +71,7 @@
         </h1>
 
         <p class="hero-tagline" style="margin-top: 36px;">
-          I'm a design student at SAP and DHBW Mannheim. Design is my <b>passion</b>, my craft, and the way I see the <b>world</b>.
+          I'm a design student at SAP and DHBW Mannheim. Design is my <b>passion</b>, my craft, and the way I see the <b>world</b>. I'm naturally curious, love exploring new perspectives and enjoy turning creative ideas into meaningful solutions that go beyond aesthetics.
         </p>
 
         <div class="hero-actions">
@@ -116,19 +119,19 @@
            exakt derselben vertikalen Höhe liegen (siehe hero.css). -->
       <div class="photo-stage">
         <div class="photo-slot is-active" data-key="about">
-          <img src="assets/img/Bild7.svg" alt="Portrait: About me" />
+          <img src="assets/img/Bild7.svg" alt="Portrait: About me" fetchpriority="high" />
         </div>
         <div class="photo-slot" data-key="sap">
-          <img src="assets/img/Bild3.svg" alt="Portrait: Work at SAP" />
+          <img src="assets/img/Bild3.svg" alt="Portrait: Work at SAP" loading="lazy" />
         </div>
         <div class="photo-slot" data-key="dhbw">
-          <img src="assets/img/Bild6.svg" alt="Portrait: Work at DHBW" />
+          <img src="assets/img/Bild6.svg" alt="Portrait: Work at DHBW" loading="lazy" />
         </div>
         <div class="photo-slot" data-key="contact">
-          <img src="assets/img/Bild5.svg" alt="Portrait: Contact" />
+          <img src="assets/img/Bild5.svg" alt="Portrait: Contact" loading="lazy" />
         </div>
         <div class="photo-slot" data-key="hover" aria-hidden="true">
-          <img src="assets/img/Bild4.svg" alt="" />
+          <img src="assets/img/Bild4.svg" alt="" loading="lazy" />
         </div>
       </div>
 

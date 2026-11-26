@@ -397,10 +397,23 @@ function initIntroSplash() {
     return;
   }
 
-  setTimeout(() => {
+  // Splash erst ausblenden wenn Seite vollständig geladen ist (Bilder inkl.)
+  // — mindestens aber 1800ms, maximal 4000ms als Sicherheitsnetz
+  const hideSplash = () => {
     splash.classList.add("is-done");
     sessionStorage.setItem("introSeen", "1");
-  }, 2200);
+  };
+
+  const minTimer = setTimeout(hideSplash, 1800);
+
+  window.addEventListener("load", () => {
+    clearTimeout(minTimer);
+    // Kurze Pause nach load für sauberen Übergang
+    setTimeout(hideSplash, 300);
+  }, { once: true });
+
+  // Sicherheitsnetz: spätestens nach 4s aufmachen
+  setTimeout(hideSplash, 4000);
 }
 
 /* ————— Easter Egg: 3x auf Logo klicken → Konfetti-Herzchen ————— */

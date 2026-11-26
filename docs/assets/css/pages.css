@@ -144,8 +144,8 @@
   position: absolute;
   top: calc(var(--nav-h) + 80px);
   right: 0;
-  bottom: 48px;
-  width: clamp(320px, 40vw, 600px);
+  height: clamp(555px, 81vh, 845px);
+  width: clamp(390px, 47vw, 700px);
   border-radius: 28px 0 0 28px;
   z-index: 1;
 }
@@ -494,14 +494,7 @@ main, .page-body, .content-section {
   padding-left: 30px;
 }
 .edu-timeline::before {
-  content: "";
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent-soft), var(--c-tan));
-  border-radius: 2px;
+  display: none;
 }
 
 .edu-item {
@@ -557,9 +550,73 @@ main, .page-body, .content-section {
 .about-details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  column-gap: 80px;
+  row-gap: 0;
   margin-top: 40px;
   align-items: start;
+}
+.edu-item {
+  padding-bottom: 28px;
+  border-left: 2px solid var(--c-blush);
+  padding-left: 18px;
+  position: relative;
+}
+.edu-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--accent);
+  flex-shrink: 0;
+}
+.edu-item--phantom {
+  border: none;
+  padding: 0;
+}
+.edu-item--phantom::before { display: none; }
+.edu-item .year {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.edu-item h4 {
+  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--fg);
+}
+.edu-item .place {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.edu-item .edu-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 10px;
+  text-decoration: none;
+  transition: gap 0.3s var(--ease-out);
+}
+.edu-item .edu-more:hover { gap: 10px; }
+
+.edu-item p:not(.place) {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
 }
 @media (max-width: 900px) {
   .about-details-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1531,6 +1588,21 @@ main, .page-body, .content-section {
 @media (max-width: 600px) {
   .project-grid { grid-template-columns: 1fr; gap: 24px; }
   .project-card .card-media { aspect-ratio: 16/9; }
+}
+
+/* ————— Work at DHBW: braunen Schleier der Kacheln entfernen ————— */
+body.page-work-dhbw .project-card::before {
+  opacity: 0;
+}
+body.page-work-dhbw .project-card::after {
+  background: linear-gradient(to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.45) 35%,
+    rgba(0,0,0,0.12) 65%,
+    transparent 100%);
+}
+body.page-work-dhbw .project-card .card-media {
+  filter: none;
 }
 
 /* ————— Ultrawide (≥ 2400px): About-Intro Portrait und Dekorationen hochskalieren ————— */

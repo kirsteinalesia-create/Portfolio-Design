@@ -38,7 +38,7 @@
   z-index: 999;
 }
 
-/* Timeline-Section — kein zusätzlicher Fade nötig, Welle 3 liefert Anschluss */
+/* Timeline-Section */
 .timeline-section {
   position: relative;
   padding: 40px 0 120px;
@@ -271,7 +271,7 @@
 .timeline-item.left  .tl-card::before { right: -30px; }
 .timeline-item.right .tl-card::before { left:  -30px; }
 
-/* Timeline: brauner Text/Header darüber (Ausblick) */
+/* Timeline: Text auf dunklem Hintergrund */
 .timeline-section h2,
 .timeline-section p,
 .timeline-section .eyebrow {
@@ -451,7 +451,7 @@ a.tl-card:visited { color: inherit; }
   letter-spacing: 0.02em;
 }
 
-/* Braun-dunkler Inhaltsbereich für die Story */
+/* Story-Bereich: dunkles Braun */
 .station-story {
   background: var(--c-brown-dk);
   color: var(--c-paper);
